@@ -71,21 +71,13 @@ export default class WikiManager {
     async setup() {
         // Cache DOM elements
         this.sidebar = document.getElementById('wiki-sidebar');
-        console.log(this.sidebar) //OK
-        this.toggleBtn = document.getElementById('wiki-toggle-btn');
-        console.log(this.toggleBtn) // su manin
-        this.menuIcon = document.getElementById('wiki-menu-icon');
-        console.log(this.menuIcon) // su manin
-        this.closeIcon = document.getElementById('wiki-close-icon');
-        console.log(this.closeIcon) // su manin
-        this.pageTitle = document.getElementById('wiki-page-title');
-        console.log(this.pageTitle) // su manin
-        this.content = document.getElementById('wiki-content');
-        console.log(this.content) // su manin
-        this.loading = document.getElementById('wiki-loading');
-        console.log(this.loading) // su manin
+        this.toggleBtn = document.getElementById('wiki-toggle-btn'); // bug liveservice(locale) ma funziona html non caricato
+        this.menuIcon = document.getElementById('wiki-menu-icon'); // bug liveservice(locale) ma funziona html non caricato
+        this.closeIcon = document.getElementById('wiki-close-icon'); // bug liveservice(locale) ma funziona html non caricato
+        this.pageTitle = document.getElementById('wiki-page-title'); // bug liveservice(locale) ma funziona html non caricato
+        this.content = document.getElementById('wiki-content'); // bug liveservice(locale) ma funziona html non caricato
+        this.loading = document.getElementById('wiki-loading'); // bug liveservice(locale) ma funziona html non caricato
         this.navContent = document.getElementById('wiki-nav-content');
-        console.log(this.navContent) //OK
         
         // Verifica che tutti gli elementi esistano
         if (!this.validateDOMElements()) {
@@ -233,7 +225,6 @@ export default class WikiManager {
             
             container.appendChild(subContainer);
         }
-        
         return container;
     }
     

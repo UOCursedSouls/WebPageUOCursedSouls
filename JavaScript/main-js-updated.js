@@ -90,7 +90,7 @@ class App {
         IndexManager.ReplaceHtmlContent("sectionDownload", htmlSectionsDownload);
 
         let htmlSectionsWiki = await this.htmlBuilder.GetStringView('ViewSections/Wiki.html');
-        console.log(htmlSectionsWiki);
+        // console.log(htmlSectionsWiki); locale non carica intero a casua di LiveService ma da browser e ok
         htmlSectionsWiki = await HtmlBuilder.RepalceKeysDataInfoOnString(htmlSectionsWiki, this.jsonDataInfo);
         IndexManager.ReplaceHtmlContent("sectionWiki", htmlSectionsWiki);
 
@@ -103,7 +103,6 @@ class App {
      */
     setupNavigation() {
         const navLinks = document.querySelectorAll('.nav-rune, nav a[href^="#"]');
-        console.log(navLinks);
         navLinks.forEach(link => {
             link.addEventListener('click', async (e) => {
                 e.preventDefault();
@@ -136,7 +135,6 @@ class App {
         // console.log(`section${this.capitalize(sectionId)}`);
 
         const targetSection = document.getElementById(sectionId);
-        console.log(targetSection);
         if (!targetSection) {
             console.warn(`Section not found: ${sectionId}`);
             return;
