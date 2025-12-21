@@ -84,6 +84,72 @@ p {
     font-size: 1.4rem;
 }
 
+/* Colore Link Globale (Wiki e Contenuti) */
+a {
+    color: #ffb347 !important; /* Arancione chiaro */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+a:hover {
+    color: #ffd180 !important; /* Arancione ancora più chiaro/crema */
+    text-shadow: var(--uo-glow); /* Aggiunge il bagliore dorato definito nelle variabili */
+}
+/*==================================================*/
+/* STILE CODE & PRE GENERICO (Tutto il sito)        */
+/*==================================================*/
+
+/* Elemento CODE inline: per parole singole o comandi nel testo */
+code {
+    font-family: "UO-Font", "Georgia", serif !important;
+    color: #00e1ff !important; /* Ciano Magico */
+    
+    /* Sfondo e Bordi */
+    background-color: rgba(0, 0, 0, 0.6) !important; /* Sfondo scuro semi-trasparente */
+    border: 1px solid rgba(212, 176, 107, 0.3) !important; /* Bordo oro sfumato */
+    border-radius: 4px !important;
+    
+    /* Spaziatura e Testo */
+    padding: 2px 6px !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 1px !important;
+    text-transform: none !important; /* Mantiene minuscole/MAIUSCOLE */
+    
+    /* Ombra interna per dare profondità */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Blocco PRE: per i blocchi di codice multiriga (```) */
+pre {
+    background-color: rgba(5, 5, 5, 0.85) !important; /* Più scuro e coprente */
+    border: 1px solid var(--uo-border) !important; /* Bordo standard UO */
+    padding: 15px !important;
+    border-radius: 8px !important;
+    margin: 15px 0 !important;
+    overflow-x: auto; /* Scroll se il codice è troppo lungo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Forza lo stile del codice dentro i blocchi PRE */
+pre code {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: block !important;
+    line-height: 1.5 !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+}
+
+/* Scrollbar personalizzata per i blocchi di codice (stile UO) */
+pre::-webkit-scrollbar {
+    height: 6px;
+}
+pre::-webkit-scrollbar-thumb {
+    background: var(--uo-gold);
+    border-radius: 10px;
+}
 /*===============================*/
 /*       HEADER / NAVBAR         */
 /*===============================*/
@@ -226,18 +292,46 @@ header {
     }
 }
 
-/* Desktop specific styles */
+/*===============================*/
+/*       WIKI DESKTOP LAYOUT     */
+/*===============================*/
 @media (min-width: 992px) {
-    #navbar .navbar-collapse {
-        display: flex !important;
-        justify-content: center;
+    
+    #wiki-toggle-btn {
+        display: none !important;
+    }
+
+    .wiki-container {
+        display: flex;
+        align-items: stretch;
+    }
+
+    /* Sidebar DESKTOP */
+    .wiki-sidebar {
+        position: sticky;
+        top: 70px; /* sotto la navbar */
+        left: 0;
+
+        transform: none !important;
+        width: 280px;
+        height: calc(100vh - 70px);
+
+        z-index: 1;
     }
     
-    #navbar .navbar-nav {
-        gap: 2.5rem;
+    /* Sidebar SEMPRE visibile */
+    body:not(.wiki-open) .wiki-sidebar {
+        transform: none;
     }
-    
-    #navbar .navbar-brand {
+
+    /* Contenuto spostato a destra */
+    .wiki-main {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+    }
+
+    /* Toggle inutile su desktop */
+    .wiki-toggle-btn {
         display: none;
     }
 }
@@ -396,8 +490,10 @@ canvas#fx {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    pointer-events: none; /* ← RIMUOVI QUESTA RIGA COMPLETAMENTE */
     z-index: 1;
+    margin: 0;
+    padding: 0;
 }
 /*=============================================
 =            SECTION: CONTACTS & STAFF        =
@@ -497,6 +593,7 @@ canvas#fx {
     .staff-entry-large { font-size: 0.85rem; }
     .border-end { border: none !important; }
 }
+
 /*=============================================
 =            SECTION: STATUS & ROADMAP       =
 =============================================*/
@@ -680,14 +777,20 @@ canvas#fx {
     background: var(--uo-bg-overlay);
     backdrop-filter: blur(4px);
     border-right: 1px solid var(--uo-border);
-    transition: all 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
     box-shadow: var(--uo-shadow-box);
-    position: sticky;
+
+    position: fixed;
     top: 60px;
+    left: 0;
     height: calc(100vh - 60px);
+
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    z-index: 100;
+}
+
+body.wiki-open .wiki-sidebar {
+    transform: translateX(0);
 }
 
 .wiki-sidebar.collapsed {
@@ -904,6 +1007,28 @@ canvas#fx {
     margin: 0 auto;
 }
 
+/* Contenitore della navigazione DEVE avere altezza e overflow */
+#wiki-nav-content {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Il contenitore genitore .wiki-nav deve essere flessibile */
+.wiki-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* CRITICO per flex children con overflow */
+}
+
+/* Assicura che i pulsanti non causino overflow orizzontale */
+.wiki-nav-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .wiki-content h1 {
     font-size: 3rem;
     color: var(--uo-text-accent);
@@ -991,6 +1116,13 @@ canvas#fx {
     color: var(--uo-text-accent);
 }
 
+/* Specifica per i link dentro la Wiki se vuoi un controllo maggiore */
+.wiki-content a {
+    font-weight: bold;
+    border-bottom: 1px dashed rgba(212, 176, 107, 0.4);
+    animation: uo-anim-glow 3s ease-in-out infinite;
+}
+
 /*===============================*/
 /*       UTILITY CLASSES         */
 /*===============================*/
@@ -1035,92 +1167,105 @@ canvas#fx {
     padding:20px;
     color:#d4b06b;
 }
-
 /*===============================*/
 /*       RESPONSIVE              */
 /*===============================*/
+
 /* Header responsive */
 @media (max-width: 768px) {
+
     header {
         height: auto;
         min-height: 60px;
     }
-    
+
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
         padding: 0.5rem 0;
     }
-    
+
     nav ul li a {
         font-size: 1rem;
     }
-    
+
     /* Sections responsive */
     .section {
-        /* padding: 60px 15px 40px; */
         padding-top: var(--navbar-height-mobile);
     }
-    
+
     h1.section-title {
         font-size: 2rem;
     }
-    
+
     p.text-block {
         font-size: 1.2rem;
     }
-    
-    /* Wiki Sidebar Mobile */
+
+    /* ===============================
+       WIKI SIDEBAR (MOBILE – FIXED)
+    =============================== */
+
     .wiki-sidebar {
         position: fixed;
-        left: -280px;
-        /* top: 60px; */
-        height: calc(100vh - 60px);
-        z-index: 1020;
-        transition: left 0.3s ease;
+        top: var(--navbar-height-mobile);
+        left: 0;
+
+        width: 260px;
+        height: calc(100vh - var(--navbar-height-mobile));
+
+        /* 🔥 UNICA animazione */
+        transform: translateX(-100%);
+        transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+
+        z-index: 200;
+    }
+
+    body.wiki-open .wiki-sidebar {
+        transform: translateX(0);
+    }
+
+    /* Contenuto NON si sposta su mobile */
+    .wiki-content-wrapper {
+        margin-left: 0 !important;
+    }
+
+    .wiki-header {
         top: var(--navbar-height-mobile);
     }
-    
-    .wiki-sidebar:not(.collapsed) {
-        left: 0;
-    }
-    
-    .wiki-header {
-        top: 60px;
-    }
-    
+
     .wiki-page-title {
         font-size: 1.5rem;
     }
-    
+
     .wiki-content h1 {
         font-size: 2rem;
     }
-    
+
     .wiki-content h2 {
         font-size: 1.6rem;
     }
-    
+
     .wiki-content h3 {
         font-size: 1.3rem;
     }
-    
+
     .wiki-content p,
     .wiki-content li {
         font-size: 1.2rem;
     }
-    
+
     /* GIFs responsive */
     .corner-gif-left,
     .corner-gif-right {
         width: 100px;
     }
-    
+
     .corner-gif-left {
         bottom: 10px;
         left: 10px;
     }
-    
+
     .corner-gif-right {
         bottom: 10px;
         right: 10px;
@@ -1128,21 +1273,23 @@ canvas#fx {
 }
 
 @media (max-width: 480px) {
+
     .logo {
         width: 90vw;
     }
-    
+
     .grid {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 20px 0;
     }
-    
+
     .corner-gif-left,
     .corner-gif-right {
         display: none;
     }
 }
+
 
 /*===============================*/
 /* UO CUSTOM BOOTSTRAP SWITCH  */

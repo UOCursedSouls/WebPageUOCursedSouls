@@ -1,16 +1,29 @@
 /*===============================*/
 /*       WIKI MANAGER MODULE     */
 /*===============================*/
+
+/**
+ * Marked.js serve per convertire Markdown → HTML
+ * Viene caricato via CDN nell'index.html
+ */
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
 export default class WikiManager {
+
     constructor() {
-        this.wikiStructure = null;
-        this.currentPage = 'home';
-        this.sidebarOpen = true;
-        this.expandedSections = {};
-        
-        // DOM Elements
+        /* ===============================
+           STATO INTERNO
+        =============================== */
+
+        this.wikiStructure = null;       // Struttura della wiki (JSON)
+        this.currentPage = 'home';       // Pagina attualmente caricata
+        this.sidebarOpen = false;         // Stato sidebar (open / collapsed)
+        this.expandedSections = {};      // Stato categorie aperte
+
+        /* ===============================
+           RIFERIMENTI DOM
+        =============================== */
+
         this.sidebar = null;
         this.toggleBtn = null;
         this.menuIcon = null;
@@ -19,58 +32,35 @@ export default class WikiManager {
         this.content = null;
         this.loading = null;
         this.navContent = null;
-        
+        this.contentWrapper = null;
+        this.wikiHomeBtn = null;
+
         this.initialized = false;
     }
-    
-    /**
-     * Inizializza il WikiManager
-     */
+
+    /* =====================================================
+       INIZIALIZZAZIONE
+    ===================================================== */
     async init() {
+        if (this.initialized) {
+            console.warn('⚠️ WikiManager già inizializzato, init saltata');
+            return;
+        }
         try {
-            // Carica l'HTML della Wiki
-            //await this.loadWikiHTML();
-            
-            // Setup elementi DOM e funzionalità
             await this.setup();
-            
             this.initialized = true;
-            console.log('✅ WikiManager initialized successfully');
-        } catch (error) {
-            console.error('❌ Error initializing WikiManager:', error);
+            console.log('✅ WikiManager initialized');
+        } catch (err) {
+            console.error('❌ WikiManager init error:', err);
         }
     }
-    
-    /**
-     * Carica l'HTML della sezione Wiki
-     */
-    async loadWikiHTML() {
-        try {
-            const response = await fetch('./Views/ViewSections/Wiki.html');
-            if (!response.ok) throw new Error('Failed to load Wiki HTML');
-            
-            const html = await response.text();
-            const wikiSection = document.getElementById('sectionWiki');
-            
-            if (wikiSection) {
-                wikiSection.innerHTML = html;
-                
-                // Aspetta che il DOM sia aggiornato
-                await new Promise(resolve => setTimeout(resolve, 100));
-            } else {
-                throw new Error('Wiki section not found in DOM');
-            }
-        } catch (error) {
-            console.error('Error loading Wiki HTML:', error);
-            throw error;
-        }
-    }
-    
-    /**
-     * Setup iniziale dopo il caricamento dell'HTML
-     */
+
+    /* =====================================================
+       SETUP GENERALE
+    ===================================================== */
+
     async setup() {
-        // Cache DOM elements
+        /* Cache DOM */
         this.sidebar = document.getElementById('wiki-sidebar');
         this.toggleBtn = document.getElementById('wiki-toggle-btn'); // bug liveservice(locale) ma funziona html non caricato
         this.menuIcon = document.getElementById('wiki-menu-icon'); // bug liveservice(locale) ma funziona html non caricato
@@ -79,28 +69,26 @@ export default class WikiManager {
         this.content = document.getElementById('wiki-content'); // bug liveservice(locale) ma funziona html non caricato
         this.loading = document.getElementById('wiki-loading'); // bug liveservice(locale) ma funziona html non caricato
         this.navContent = document.getElementById('wiki-nav-content');
-        
-        // Verifica che tutti gli elementi esistano
+        this.contentWrapper = document.querySelector('.wiki-content-wrapper');
+
         if (!this.validateDOMElements()) {
-            throw new Error('Required DOM elements not found');
+            throw new Error("Required DOM elements not found");
         }
-        
+
         // Load wiki structure
         await this.loadWikiStructure();
-        
         // Setup event listeners
         this.setupEventListeners();
-        
         // Render navigation
         this.renderNavigation();
-        
         // Load home page
-        this.loadPage('home');
+        this.loadPage('Home');
     }
-    
-    /**
-     * Valida che tutti gli elementi DOM necessari esistano
-     */
+
+    /* =====================================================
+     Valida che tutti gli elementi DOM necessari esistano
+    ===================================================== */
+
     validateDOMElements() {
         const requiredElements = {
             sidebar: this.sidebar,
@@ -122,75 +110,76 @@ export default class WikiManager {
         
         return true;
     }
-    
-    /**
-     * Carica la struttura della wiki dal JSON
-     */
+
+    /* =====================================================
+       CARICAMENTO STRUTTURA WIKI (JSON)
+    ===================================================== */
+
     async loadWikiStructure() {
         try {
             const response = await fetch('./Json/Wiki-Structure.json');
             if (!response.ok) throw new Error('Failed to load wiki structure');
             
             this.wikiStructure = await response.json();
-            console.log('✅ Wiki structure loaded');
+            console.log('📚 Wiki structure loaded');
         } catch (error) {
             console.error('Error loading wiki structure:', error);
             // Fallback a struttura vuota
             this.wikiStructure = {};
+            console.warn('⚠️ Wiki structure missing');
         }
     }
-    
-    /**
-     * Setup event listeners
-     */
+
+    /* =====================================================
+       EVENTI
+    ===================================================== */
+
     setupEventListeners() {
-        // Toggle sidebar
+        if (this.listenersAttached) return;
+        this.listenersAttached = true;
         if (this.toggleBtn) {
             this.toggleBtn.addEventListener('click', () => this.toggleSidebar());
-        }
-        
-        // Home button
-        const homeBtn = document.querySelector('.wiki-nav-home');
-        if (homeBtn) {
-            homeBtn.addEventListener('click', () => this.loadPage('home'));
+        } else {
+            console.warn('⚠️ Wiki toggle button not found (this.toggleBtn), event listener not attached');
         }
     }
-    
-    /**
-     * Toggle sidebar visibility
-     */
+
     toggleSidebar() {
         this.sidebarOpen = !this.sidebarOpen;
-        
-        if (this.sidebarOpen) {
-            this.sidebar.classList.remove('collapsed');
-            this.menuIcon.classList.remove('hidden');
-            this.closeIcon.classList.add('hidden');
-        } else {
-            this.sidebar.classList.add('collapsed');
-            this.menuIcon.classList.add('hidden');
-            this.closeIcon.classList.remove('hidden');
-        }
+        console.log(`Wiki sidebar ${this.sidebarOpen ? 'opened' : 'closed'}`);
+        // console.trace('toggleSidebar called');
+        document.body.classList.toggle('wiki-open', this.sidebarOpen);
     }
-    
-    /**
-     * Render navigation menu
-     */
-    renderNavigation() {
-        if (!this.wikiStructure || !this.navContent) return;
+
+    /* =====================================================
+       NAVIGAZIONE
+    ===================================================== */
+
+    async renderNavigation() {
+        // Verifica che entrambe le proprietà esistano
+        if (!this.wikiStructure || !this.navContent) {
+            return;
+        }
         
+        // Pulisce il contenuto esistente
         this.navContent.innerHTML = '';
         
-        Object.entries(this.wikiStructure).forEach(([key, value]) => {
-            const element = this.renderNavItem(key, value, '');
-            this.navContent.appendChild(element);
-        });
+        // Itera attraverso le voci dell'oggetto usando for...of
+        const structureEntries = Object.entries(this.wikiStructure);
+        
+        for (const [key, value] of structureEntries) {
+            // Crea l'elemento di navigazione
+            const navElement = this.renderNavItem(key, value, '');
+            
+            // Aggiunge l'elemento al contenitore
+            this.navContent.appendChild(navElement);
+        }
     }
-    
+
     /**
      * Render singolo item di navigazione
      */
-    renderNavItem(name, data, path) {
+    async renderNavItem(name, data, path) {
         const currentPath = path ? `${path}/${name}` : name;
         const container = document.createElement('div');
         
@@ -228,124 +217,221 @@ export default class WikiManager {
         }
         return container;
     }
-    
-    /**
-     * Crea bottone categoria
-     */
+
+    renderNavItem(name, data, path) {
+        // Calcola il percorso corrente
+        const currentPath = path ? `${path}/${name}` : name;
+        
+        // Crea il contenitore principale
+        const container = document.createElement('div');
+        
+        // Gestisce i diversi tipi di contenuto
+        if (data.items) {
+            this.renderCategoryWithItems(name, data, currentPath, container);
+        } else if (data.subcategories) {
+            this.renderCategoryWithSubcategories(name, data, currentPath, container);
+        }
+        
+        return container;
+    }
+
+    renderCategoryWithItems(name, data, currentPath, container) {
+        // Crea il pulsante della categoria
+        const categoryButton = this.createCategoryButton(name, currentPath);
+        container.appendChild(categoryButton);
+        
+        // Crea il contenitore per gli elementi
+        const itemsContainer = this.createItemsContainer(currentPath);
+        
+        // Aggiunge tutti gli elementi
+        this.addItemsToContainer(data.items, currentPath, itemsContainer);
+        
+        container.appendChild(itemsContainer);
+    }
+
+    renderCategoryWithSubcategories(name, data, currentPath, container) {
+        // Crea il pulsante della categoria
+        const categoryButton = this.createCategoryButton(name, currentPath);
+        container.appendChild(categoryButton);
+        
+        // Crea il contenitore per le sottocategorie
+        const subcategoryContainer = this.createSubcategoryContainer(currentPath);
+        
+        // Aggiunge tutte le sottocategorie
+        this.addSubcategoriesToContainer(data.subcategories, currentPath, subcategoryContainer);
+        
+        container.appendChild(subcategoryContainer);
+    }
+
+    createItemsContainer(currentPath) {
+        const container = document.createElement('div');
+        container.className = 'wiki-nav-items';
+        container.style.display = this.expandedSections[currentPath] ? 'block' : 'none';
+        return container;
+    }
+
+    createSubcategoryContainer(currentPath) {
+        const container = document.createElement('div');
+        container.className = 'wiki-nav-subcategory';
+        container.style.display = this.expandedSections[currentPath] ? 'block' : 'none';
+        return container;
+    }
+
+    addItemsToContainer(items, currentPath, container) {
+        for (let i = 0; i < items.length; i++) {
+            const itemName = items[i];
+            const itemPath = `${currentPath}/${itemName}`;
+            const itemButton = this.createItemButton(itemName, itemPath);
+            container.appendChild(itemButton);
+        }
+    }
+
+    addSubcategoriesToContainer(subcategories, currentPath, container) {
+        const subcategoryNames = Object.keys(subcategories);
+        
+        for (let i = 0; i < subcategoryNames.length; i++) {
+            const subName = subcategoryNames[i];
+            const subData = subcategories[subName];
+            const subElement = this.renderNavItem(subName, subData, currentPath);
+            container.appendChild(subElement);
+        }
+    }
+
+    //* =====================================================
     createCategoryButton(name, path) {
-        const button = document.createElement('button');
-        button.className = 'wiki-nav-item wiki-nav-category';
-        button.innerHTML = `
-            <svg class="wiki-nav-category-icon ${this.expandedSections[path] ? 'expanded' : ''}" 
-                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" 
-                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        const btn = document.createElement('button');
+        btn.className = 'wiki-nav-item wiki-nav-category';
+
+        btn.innerHTML = `
+            <svg class="wiki-nav-category-icon ${this.expandedSections[path] ? 'expanded' : ''}"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-            ${name}
+            <span class="wiki-nav-category-text">${name}</span>
         `;
-        
-        button.addEventListener('click', () => this.toggleSection(path));
-        
-        return button;
-    }
-    
-    /**
-     * Crea bottone item
-     */
-    createItemButton(name, path) {
-        const button = document.createElement('button');
-        button.className = 'wiki-nav-item';
-        button.textContent = name;
-        
-        if (this.currentPage === path) {
-            button.classList.add('active');
-        }
-        
-        button.addEventListener('click', () => this.loadPage(path));
-        
-        return button;
-    }
-    
-    /**
-     * Toggle sezione espansa/collassata
-     */
-    toggleSection(path) {
-        this.expandedSections[path] = !this.expandedSections[path];
-        this.renderNavigation();
-    }
-    
-    /**
-     * Carica una pagina wiki
-     */
-    async loadPage(path) {
-        if (!this.initialized) {
-            console.warn('WikiManager not initialized yet');
-            return;
-        }
-        
-        this.currentPage = path;
-        
-        // Update title
-        const pageName = path === 'home' ? 'Wiki Home' : path.split('/').pop();
 
-        // Questo va abilitato se si vuole HEADER di WIKI 
-        // this.pageTitle.textContent = pageName;
-        
-        // Update active state in navigation
-        document.querySelectorAll('.wiki-nav-item').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.page === path || btn.textContent.trim() === pageName) {
-                btn.classList.add('active');
-            }
+        btn.addEventListener('click', () => {
+            this.expandedSections[path] = !this.expandedSections[path];
+            this.renderNavigation();
         });
-        
+
+        return btn;
+    }
+
+
+    createItemButton(name, path) {
+        const btn = document.createElement('button');
+        btn.className = 'wiki-nav-item';
+        btn.textContent = name;
+
+        btn.addEventListener('click', () => this.loadPage(path));
+        return btn;
+    }
+
+    /* =====================================================
+       CARICAMENTO PAGINE
+    ===================================================== */
+
+    async loadPage(path) {
+        console.log(`Loading wiki page: ${path}`);
+        // if (!this.initialized) {
+        //     console.warn('WikiManager not initialized yet');
+        //     return;
+        // }
+        this.currentPage = path;
+
+        // blocco altezza per evitare salti layout
+        if (this.contentWrapper) {
+            this.contentWrapper.style.minHeight =
+                `${this.contentWrapper.offsetHeight || 500}px`;
+        }
         // Show loading
         this.loading.classList.remove('hidden');
         this.content.classList.add('hidden');
-        
+
         try {
-            // Load content from .md file
-            const content = await this.loadMarkdownFile(path);
-            
-            // Render content
-            // this.renderContent(content);
-            this.renderContentByMarkedJS(content);
-            
+            console.log(`📄 Wiki page loaded: ${path}`);
+            const md = await this.loadMarkdownFile(path);
+            this.renderContentByMarkedJS(md);
         } catch (error) {
             console.error('Error loading page:', error);
-            this.renderContent('# Errore\n\nImpossibile caricare il contenuto della pagina.');
+            this.renderContentByMarkedJS('# Errore\nPagina non trovata.');
         } finally {
-            // Hide loading
             this.loading.classList.add('hidden');
             this.content.classList.remove('hidden');
+
+            setTimeout(() => {
+                if (this.contentWrapper) {
+                    this.contentWrapper.style.minHeight = '';
+                }
+            }, 50);
         }
     }
-    
-    /**
-     * Carica file markdown
-     */
+
+    /* =====================================================
+       MARKDOWN LOADING
+    ===================================================== */
+
     async loadMarkdownFile(path) {
         // If it's home, load default content
+        console.log(`Loading markdown for path: ${path}`);
         if (path === 'home') {
             return this.getHomeContent();
         }
         
         // Try to load the .md file
-        try {
-            const response = await fetch(`./Documents/UOCS_Wiki_md/${path}.md`);
-            if (!response.ok) throw new Error('File not found');
+        try { 
+            const url = `./Documents/UOCS_Wiki_md/${path}.md`;
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('File MD not found');
+
             return await response.text();
         } catch (error) {
-            // Return mock content if file doesn't exist
-            console.warn(`Markdown file not found: ${path}.md, using mock content`);
-            return this.getMockContent(path);
+            throw new Error(`Error loading markdown file for url "${url}": ${error.message}, using mock content`);
+            // return this.getMockContent(path);
         }
     }
-    
-    /**
-     * Contenuto home page
-     */
-    getHomeContent() {
+
+    /* =====================================================
+       MARKDOWN RENDER + LINK WIKI
+    ===================================================== */
+
+    renderContentByMarkedJS(markdown) {
+        this.content.innerHTML = marked.parse(markdown);
+
+        /**
+         * 🔗 Intercetta link del tipo:
+         * [Leatherworking](#sectionWiki/Skills/Leatherworking)
+         */
+        const wikiLinks = this.content.querySelectorAll('a[href^="#sectionWiki/"]');
+
+        wikiLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const route = link
+                    .getAttribute('href')
+                    .replace('#sectionWiki/', '');
+
+                // Supporta Troll-Leather → Troll Leather
+                const normalizedPath = route
+                    .split('/')
+                    .map(p => p.replace(/-/g, ' '))
+                    .join('/');
+
+                this.loadPage(normalizedPath);
+            });
+        });
+    }
+
+    /* =====================================================
+       CONTENUTI DEFAULT
+    ===================================================== */
+
+getHomeContent() {
         return `# Wiki di UOCS
 
 Benvenuto nella Wiki ufficiale del nostro shard Ultima Online!
@@ -367,7 +453,7 @@ Usa il menu laterale per esplorare le diverse sezioni. Clicca su una categoria p
 
 La wiki viene costantemente aggiornata con nuove informazioni sul mondo di UOCS. Torna spesso per scoprire le novità!`;
     }
-    
+
     /**
      * Mock content per pagine non trovate
      */
@@ -417,162 +503,15 @@ Informazioni extra e consigli utili per sfruttare al meglio questo elemento nel 
 - Altri elementi correlati
 - Guide correlate`;
     }
-    
-    /**
-     * Render markdown content to HTML
-     */
-    renderContent(markdown) {
-        const lines = markdown.split('\n');
-        let html = '';
-        let inTable = false;
-        let tableHtml = '';
-        let isFirstTableRow = true;
-        let inList = false;
-        
-        lines.forEach((line, index) => {
-            // Headers
-            if (line.startsWith('# ')) {
-                if (inList) {
-                    html += '</ul>';
-                    inList = false;
-                }
-                html += `<h1>${this.parseInlineMarkdown(line.slice(2))}</h1>`;
-            } else if (line.startsWith('## ')) {
-                if (inList) {
-                    html += '</ul>';
-                    inList = false;
-                }
-                html += `<h2>${this.parseInlineMarkdown(line.slice(3))}</h2>`;
-            } else if (line.startsWith('### ')) {
-                if (inList) {
-                    html += '</ul>';
-                    inList = false;
-                }
-                html += `<h3>${this.parseInlineMarkdown(line.slice(4))}</h3>`;
-            }
-            // Lists
-            else if (line.startsWith('- ')) {
-                if (!inList) {
-                    html += '<ul>';
-                    inList = true;
-                }
-                const content = this.parseInlineMarkdown(line.slice(2));
-                html += `<li>${content}</li>`;
-            }
-            // Tables
-            else if (line.startsWith('|')) {
-                if (inList) {
-                    html += '</ul>';
-                    inList = false;
-                }
-                
-                if (!inTable) {
-                    inTable = true;
-                    tableHtml = '<table>';
-                    isFirstTableRow = true;
-                }
-                
-                if (line.includes('---')) {
-                    // Skip separator line
-                    return;
-                }
-                
-                const cells = line.split('|').filter(cell => cell.trim());
-                const tag = isFirstTableRow ? 'th' : 'td';
-                tableHtml += '<tr>';
-                cells.forEach(cell => {
-                    tableHtml += `<${tag}>${this.parseInlineMarkdown(cell.trim())}</${tag}>`;
-                });
-                tableHtml += '</tr>';
-                isFirstTableRow = false;
-            } else {
-                // Close table if needed
-                if (inTable) {
-                    tableHtml += '</table>';
-                    html += tableHtml;
-                    inTable = false;
-                    tableHtml = '';
-                    isFirstTableRow = true;
-                }
-                
-                // Close list if needed
-                if (inList && line.trim() === '') {
-                    html += '</ul>';
-                    inList = false;
-                }
-                
-                // Empty lines
-                if (line.trim() === '') {
-                    html += '<br>';
-                }
-                // Paragraphs
-                else if (line.trim()) {
-                    const content = this.parseInlineMarkdown(line);
-                    html += `<p>${content}</p>`;
-                }
-            }
-        });
-        
-        // Close list if still open
-        if (inList) {
-            html += '</ul>';
-        }
-        
-        // Close table if still open
-        if (inTable) {
-            tableHtml += '</table>';
-            html += tableHtml;
-        }
-        
-        this.content.innerHTML = html;
-    }
-    
-    /**
-     * Parse inline markdown (bold, italic, code)
-     */
-    parseInlineMarkdown(text) {
-        return text
-            .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>') // Bold + Italic
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-            .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italic
-            .replace(/`(.*?)`/g, '<code>$1</code>'); // Code
-    }
+    /* =====================================================
+       CLEANUP
+    ===================================================== */
 
-    /**
-     * Render markdown content to HTML
-     */
-    renderContentByMarkedJS(markdown) {
-        // Invece di fare il parsing a mano, usa la libreria Marked
-        // che hai caricato nell'index.html via CDN
-        if (typeof marked !== 'undefined') {
-            this.content.innerHTML = marked.parse(markdown);
-        } else {
-            console.error("Marked.js non è caricato!");
-            // Fallback rudimentale se la libreria fallisce
-            this.content.innerText = markdown;
-        }
-    }
-    
-    /**
-     * Distruggi il WikiManager (cleanup)
-     */
     destroy() {
-        // Remove event listeners
-        if (this.toggleBtn) {
-            this.toggleBtn.removeEventListener('click', this.toggleSidebar);
-        }
-        
-        // Clear references
         this.sidebar = null;
         this.toggleBtn = null;
-        this.menuIcon = null;
-        this.closeIcon = null;
-        this.pageTitle = null;
         this.content = null;
-        this.loading = null;
         this.navContent = null;
-        
         this.initialized = false;
-        console.log('🗑️ WikiManager destroyed');
     }
 }
