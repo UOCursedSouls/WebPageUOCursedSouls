@@ -141,7 +141,7 @@ class Main_App_UOCS {
         // Sections
         const sections = [
             "Home",
-            // "Wiki",
+            "Wiki",
             "Rules",
             "Media",
             "Downloads",
