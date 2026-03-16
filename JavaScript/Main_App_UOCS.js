@@ -334,10 +334,16 @@ class Main_App_UOCS {
     /*===============================*/
     hideLoadingScreen() {
         const loader = document.getElementById('app-loading');
+        console.log('🔄 hideLoadingScreen called, loader found:', !!loader);
         if (loader) {
             loader.style.pointerEvents = 'none';
             loader.style.opacity = '0';
-            setTimeout(() => loader.remove(), 600);
+            setTimeout(() => {
+                if (loader.parentNode) {
+                    loader.parentNode.removeChild(loader);
+                }
+                console.log('🔄 Loader removed from DOM');
+            }, 600);
         }
     }
 
