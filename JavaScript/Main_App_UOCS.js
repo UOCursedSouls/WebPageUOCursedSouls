@@ -102,6 +102,8 @@ class Main_App_UOCS {
             console.log('✅ UOCS App initialized successfully');
         } catch (error) {
             console.error('❌ Error initializing app:', error);
+        } finally {
+            this.hideLoadingScreen();
         }
     }
 
@@ -333,8 +335,9 @@ class Main_App_UOCS {
     hideLoadingScreen() {
         const loader = document.getElementById('app-loading');
         if (loader) {
+            loader.style.pointerEvents = 'none';
             loader.style.opacity = '0';
-            setTimeout(() => loader.remove(), 500);
+            setTimeout(() => loader.remove(), 600);
         }
     }
 
