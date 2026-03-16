@@ -310,12 +310,8 @@ class Main_App_UOCS {
         // Show target
         targetSection.classList.add('active');
 
-        // Lazy init wiki
-        // if (sectionId === 'sectionWiki' && this.wikiManager && !this.wikiManager.initialized) {
-        //     console.log(sectionId, this.wikiManager && !this.wikiManager.initialized);
-        //     console.log('📚 Initializing WikiManager...');
-        //     // await this.wikiManager.init();
-        // }
+        // Toggle body class for wiki section (hides decorative GIFs)
+        document.body.classList.toggle('wiki-section-active', sectionId === 'sectionWiki');
 
         // History
         if (addToHistory) {

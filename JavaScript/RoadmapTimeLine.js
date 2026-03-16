@@ -12,11 +12,11 @@ export default class RoadmapTimeline {
 
         // Mappa status dal JSON → label e classe CSS
         this.statusConfig = {
-            completed: { label: 'COMPLETATO', cssClass: 'completed' },
-            active:    { label: 'IN CORSO',   cssClass: 'active' },
-            current:   { label: 'IN CORSO',   cssClass: 'active' },
-            future:    { label: 'FUTURO',     cssClass: 'future' },
-            upcoming:  { label: 'FUTURO',     cssClass: 'future' }
+            completed: { label: 'COMPLETED',    cssClass: 'completed' },
+            active:    { label: 'IN PROGRESS',  cssClass: 'active' },
+            current:   { label: 'IN PROGRESS',  cssClass: 'active' },
+            future:    { label: 'UPCOMING',     cssClass: 'future' },
+            upcoming:  { label: 'UPCOMING',     cssClass: 'future' }
         };
     }
 
@@ -117,8 +117,8 @@ export default class RoadmapTimeline {
     /*===============================*/
 
     formatDate(dateStr) {
-        const months = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu',
-                        'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const date = new Date(dateStr);
         return `${months[date.getMonth()]} ${date.getFullYear()}`;
     }

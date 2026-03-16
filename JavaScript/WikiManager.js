@@ -390,76 +390,73 @@ export default class WikiManager {
     ===================================================== */
 
 getHomeContent() {
-        return `# Wiki di UOCS
+        return `# UOCS Wiki
 
-Benvenuto nella Wiki ufficiale del nostro shard Ultima Online!
+Welcome to the official Wiki of our Ultima Online shard!
 
-## Cosa troverai qui
+## What you will find here
 
-Questa wiki contiene tutte le informazioni dettagliate su:
+This wiki contains all the detailed information about:
 
-- **Skills**: Tutte le abilità disponibili nel gioco
-- **Classi**: Le classi giocabili con le loro specializzazioni
-- **Razze**: Le razze uniche del nostro mondo
-- **Items**: Oggetti, armi, strumenti e risorse
+- **Skills**: All available abilities in the game
+- **Classes**: Playable classes with their specializations
+- **Races**: The unique races of our world
+- **Items**: Weapons, armor, tools, and resources
 
-## Come navigare
+## How to navigate
 
-Usa il menu laterale per esplorare le diverse sezioni. Clicca su una categoria per espanderla e vedere tutti gli elementi disponibili.
+Use the sidebar menu to explore the different sections. Click on a category to expand it and see all available entries.
 
-## Aggiornamenti recenti
+## Recent updates
 
-La wiki viene costantemente aggiornata con nuove informazioni sul mondo di UOCS. Torna spesso per scoprire le novità!`;
+The wiki is constantly updated with new information about the world of UOCS. Check back often to discover what's new!`;
     }
 
-    /**
-     * Mock content per pagine non trovate
-     */
     getMockContent(path) {
         const pageName = path.split('/').pop();
         const category = path.split('/')[0];
-        
+
         return `# ${pageName}
 
-## Descrizione
+## Description
 
-Questa è la pagina wiki per **${pageName}**. Qui troverai tutte le informazioni dettagliate su questo elemento del gioco.
+This is the wiki page for **${pageName}**. Here you will find all the detailed information about this game element.
 
-## Caratteristiche principali
+## Main characteristics
 
-- **Requisito Livello**: 25
-- **Categoria**: ${category}
-- **Rarità**: Comune/Raro/Epico
-- **Utilizzo**: Descrizione dell'utilizzo principale
+- **Level Requirement**: 25
+- **Category**: ${category}
+- **Rarity**: Common/Rare/Epic
+- **Usage**: Main usage description
 
-## Statistiche
+## Statistics
 
-| Attributo | Valore |
-|-----------|--------|
-| Difficoltà | Media |
-| Costo | 1000 GP |
-| Peso | 5 Stone |
+| Attribute | Value |
+|-----------|-------|
+| Difficulty | Medium |
+| Cost | 1000 GP |
+| Weight | 5 Stone |
 
-## Dettagli
+## Details
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Questo elemento è fondamentale per il tuo personaggio e offre vantaggi unici nel mondo di UOCS.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. This element is fundamental for your character and offers unique advantages in the world of UOCS.
 
-### Come ottenerlo
+### How to obtain
 
-Puoi ottenere questo elemento attraverso:
-- Crafting con le skill appropriate
-- Drop da creature specifiche
-- Acquisto dai mercanti NPC
-- Scambio con altri giocatori
+You can obtain this element through:
+- Crafting with the appropriate skills
+- Drops from specific creatures
+- Purchasing from NPC merchants
+- Trading with other players
 
-## Note aggiuntive
+## Additional notes
 
-Informazioni extra e consigli utili per sfruttare al meglio questo elemento nel tuo gameplay.
+Extra information and useful tips to make the most of this element in your gameplay.
 
-## Vedi anche
+## See also
 
-- Altri elementi correlati
-- Guide correlate`;
+- Related elements
+- Related guides`;
     }
     /* =====================================================
        CLEANUP
