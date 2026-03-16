@@ -384,8 +384,9 @@ html {
 /*       HOME SECTION            */
 /*===============================*/
 .logo {
-    width: 450px;
-    max-width: 90vw;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
     filter: drop-shadow(var(--uo-glow-light));
     animation: fadein 2s ease;
     margin-bottom: 2rem;
@@ -597,19 +598,34 @@ canvas#fx {
 /*=============================================
 =            SECTION: STATUS & ROADMAP       =
 =============================================*/
-/* --- ROADMAP "CORDA" --- */
 
-.roadmap-container {
+/* Sezione wrapper */
+.roadmap-section {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
+}
+
+.roadmap-section-title {
+    font-size: 1.4rem;
+    color: var(--uo-text-accent);
+    text-shadow: var(--uo-shadow-strong);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Timeline verticale (la corda) */
+.roadmap-timeline {
     position: relative;
-    max-width: 600px;
-    margin: 40px auto; /* Margine per distanziarla dallo status */
     padding-left: 40px;
 }
 
-/* La corda fisica */
-.roadmap-rope {
+/* La linea verticale */
+.roadmap-timeline::before {
+    content: "";
     position: absolute;
-    left: 20px;
+    left: 18px;
     top: 0;
     bottom: 0;
     width: 3px;
@@ -617,135 +633,179 @@ canvas#fx {
     box-shadow: var(--uo-shadow);
 }
 
+/* Singolo item */
 .roadmap-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     text-align: left;
 }
 
-/* Il nodo sulla corda */
+.roadmap-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Nodo sulla corda */
 .roadmap-node {
     position: absolute;
-    left: -28px; /* Allineato alla corda */
-    top: 5px;
+    left: -30px;
+    top: 1rem;
     width: 18px;
     height: 18px;
     background: var(--uo-bg-secondary);
     border: 2px solid var(--uo-border);
     border-radius: 50%;
     z-index: 2;
+    transition: all 0.3s ease;
 }
 
-/* Nodo Completato */
-.roadmap-item.completed .roadmap-node {
+/* Nodo - Completato (verde) */
+.roadmap-completed .roadmap-node {
     background: #0fb303;
-    box-shadow: 0 0 8px #1b551b;
+    border-color: #0fb303;
+    box-shadow: 0 0 8px rgba(15, 179, 3, 0.5);
 }
 
-/* Nodo Attivo */
-.roadmap-item.active .roadmap-node {
+/* Nodo - Attivo (oro pulsante) */
+.roadmap-active .roadmap-node {
     background: var(--uo-text-accent);
-    box-shadow: var(--uo-glow);
     border-color: #fff;
+    box-shadow: var(--uo-glow);
+    animation: pulse-node 2s ease-in-out infinite;
 }
 
-.roadmap-content {
+@keyframes pulse-node {
+    0%, 100% { box-shadow: 0 0 5px rgba(212, 176, 107, 0.4); }
+    50% { box-shadow: 0 0 15px rgba(212, 176, 107, 0.8); }
+}
+
+/* Nodo - Futuro (grigio) */
+.roadmap-future .roadmap-node {
+    background: var(--uo-bg-secondary);
+    border-color: var(--uo-border);
+    opacity: 0.6;
+}
+
+/* Card */
+.roadmap-card {
     background: var(--uo-bg-overlay);
     border: 1px solid var(--uo-border);
-    padding: 12px 20px;
-    border-radius: 4px;
-    transition: transform 0.2s;
-}
-
-.roadmap-content:hover {
-    border-color: var(--uo-text-accent);
-}
-
-.roadmap-content h3 {
-    font-size: 1.2rem;
-    color: var(--uo-text-accent);
-    margin: 0;
-}
-
-.roadmap-content .date {
-    font-size: 0.8rem;
-    color: var(--uo-text-secondary);
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* Contenitore immagine */
-.roadmap-image {
-    width: 100%;            /* Prende tutta la larghezza del roadmap-content */
-    margin-bottom: 15px;    /* Spazio tra immagine e titolo */
-    border-radius: 8px;     /* Opzionale: arrotonda gli angoli */
-    overflow: hidden;       /* Taglia eventuali bordi dell'immagine fuori raggio */
-    border: 1px solid var(--uo-border); /* Opzionale: bordo a tema */
-}
-
-/* Immagine adattiva */
-.roadmap-image img {
-    width: 100%;            /* Forza l'immagine alla larghezza del contenitore */
-    height: auto;           /* Mantiene le proporzioni originali */
-    display: block;         /* Rimuove spazi vuoti sotto l'immagine */
-    object-fit: cover;      /* Assicura che riempia bene l'area se dai un'altezza fissa */
-    transition: transform 0.3s ease; /* Effetto per l'hover */
-}
-
-/* Effetto al passaggio del mouse sull'item */
-.roadmap-item:hover .roadmap-image img {
-    transform: scale(1.05); /* Leggero zoom quando passi sopra l'item */
-}
-
-/* Contenitore Principale */
-.roadmap-item.roadmap-image-inside {
-    position: relative;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    transition: border-color 0.3s ease, transform 0.2s ease;
     overflow: hidden;
-    min-height: 200px; /* Altezza minima per dare respiro all'immagine */
-    display: flex;
-    align-items: flex-end; /* Spinge il testo verso il basso */
+}
+
+.roadmap-card:hover {
+    border-color: var(--uo-text-accent);
+    transform: translateX(4px);
+}
+
+/* Immagine dentro la card */
+.roadmap-card-image {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+    overflow: hidden;
     border: 1px solid var(--uo-border);
-    background-color: #000;
 }
 
-/* Lo sfondo dell'immagine */
-.roadmap-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+.roadmap-card-image img {
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    z-index: 1;
-    filter: brightness(0.7) grayscale(0.2); /* Immagine più scura per far risaltare il testo */
+    height: 180px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-/* Overlay sfumato per leggere meglio il testo */
-.roadmap-item.roadmap-image-inside::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-    z-index: 2;
-}
-
-/* Contenuto del testo */
-.roadmap-item.roadmap-image-inside .roadmap-content {
-    position: relative;
-    z-index: 3; /* Sopra l'immagine e l'overlay */
-    padding: 20px;
-    width: 100%;
-}
-
-/* Effetto Hover */
-.roadmap-item.roadmap-image-inside:hover .roadmap-bg-image {
+.roadmap-card:hover .roadmap-card-image img {
     transform: scale(1.05);
-    filter: brightness(0.9) grayscale(0); /* Si colora e si schiarisce leggermente al passaggio */
+}
+
+/* Data */
+.roadmap-card-date {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--uo-text-secondary);
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+}
+
+/* Titolo */
+.roadmap-card-title {
+    font-size: 1.3rem;
+    color: var(--uo-text-accent);
+    text-shadow: var(--uo-shadow);
+    margin: 0 0 0.5rem;
+}
+
+/* Descrizione */
+.roadmap-card-desc {
+    color: var(--uo-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+/* Badge stato */
+.roadmap-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+.roadmap-badge-completed {
+    color: #6fa36f;
+    border-color: #6fa36f;
+    background: rgba(111, 163, 111, 0.1);
+}
+
+.roadmap-badge-active {
+    color: var(--uo-text-accent);
+    border-color: var(--uo-text-accent);
+    background: rgba(212, 176, 107, 0.1);
+}
+
+.roadmap-badge-future {
+    color: #888;
+    border-color: #555;
+    background: rgba(80, 80, 80, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .roadmap-section {
+        padding: 0 0.5rem;
+    }
+
+    .roadmap-timeline {
+        padding-left: 30px;
+    }
+
+    .roadmap-timeline::before {
+        left: 13px;
+    }
+
+    .roadmap-node {
+        left: -24px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .roadmap-card-title {
+        font-size: 1.1rem;
+    }
+
+    .roadmap-card-desc {
+        font-size: 1rem;
+    }
+
+    .roadmap-card-image img {
+        height: 140px;
+    }
 }
 
 /*===============================*/

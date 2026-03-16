@@ -3,13 +3,15 @@
 /*===============================*/
 
 // Import modules
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 import UtilityClass from "./UtilityClass.js";
 import HtmlBuilder from "./HtmlBuilder.js";
 import IndexManager from "./IndexManager.js";
 import WikiManager from "./WikiManager.js";
 import ParticleEffect from "./ParticleEffect.js";
 import UOServerApi from "./UOServerApi.js";
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import RoadmapTimeline from "./RoadmapTimeLine.js";
+// import RoadmapTimeline from "./RoadmapTimelineDeep.js";
 
 class Main_App_UOCS {
     constructor() {
@@ -19,6 +21,7 @@ class Main_App_UOCS {
         this.jsonDataInfo = null;
         this.htmlBuilder = null;
         this.wikiManager = null;
+        this.roadmapTimeline = null;
         this.currentSection = 'sectionHome';
         this.navbarScroll = null;
 
@@ -95,6 +98,7 @@ class Main_App_UOCS {
             setInterval(() => this.Tick(), 60000); // Aggiorna ogni 60 secondi
 
             this.initialized = true;
+            this.hideLoadingScreen();
             console.log('✅ UOCS App initialized successfully');
         } catch (error) {
             console.error('❌ Error initializing app:', error);
@@ -114,14 +118,20 @@ class Main_App_UOCS {
 
         // Wiki manager (lazy loaded)
         this.wikiManager = new WikiManager();
+        console.log('📚 WikiManager ready (lazy load)');
+
+        // Roadmap Timeline (lazy loaded)       // I dati li caricherai dopo dal JSON
+        // this.roadmapTimeline = new RoadmapTimeline('roadmap-timeline-container',this.jsonDataInfo.roadmap.items);
+        this.roadmapTimeline = new RoadmapTimeline('roadmapContainer',this.jsonDataInfo.roadmap.items);
+        // this.roadmapTimeline = new RoadmapTimeline(this.jsonDataInfo.roadmap.items);
+        console.log(this.jsonDataInfo.roadmap.items);
+        console.log('🗺️ RoadmapTimeline ready (lazy load)');
 
         // Ambient particle effect
         this.particleEffect = new ParticleEffect('fx', 'ambient', 60);
 
         // UO Shard API instance (IP, Porta, [User], [Pass])
         this.uoShardApi = new UOServerApi('127.0.0.1', '2593');
-
-        // console.log('📚 WikiManager ready (lazy load)');
     }
 
     /*===============================*/
@@ -155,7 +165,7 @@ class Main_App_UOCS {
             if (section === "Status") {
                 // Roadmap items
                 let htmlElementRoadmap_item = await this.htmlBuilder.GetStringView("ViewElements/Roadmap_Item.html");
-                html = await HtmlBuilder.ProcessRoadmapSection(html, this.jsonDataInfo, htmlElementRoadmap_item);
+                // html = await HtmlBuilder.ProcessRoadmapSection(html, this.jsonDataInfo, htmlElementRoadmap_item);
             }
             IndexManager.ReplaceHtmlContent(`section${section}`, html);
         }
@@ -163,6 +173,64 @@ class Main_App_UOCS {
         // Wiki init (but content loads on demand)
         // this.wikiManager.init();
         await this.wikiManager.init();
+
+        await this.roadmapTimeline.init();
+
+        // Setup contact form validation
+        this.setupContactForm();
+    }
+
+    /*===============================*/
+    /*     CONTACT FORM VALIDATION   */
+    /*===============================*/
+    setupContactForm() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('contactName');
+            const email = document.getElementById('contactEmail');
+            const subject = document.getElementById('contactSubject');
+            const message = document.getElementById('contactMessage');
+
+            // Reset borders
+            [name, email, subject, message].forEach(el => {
+                el.style.borderColor = '';
+            });
+
+            const errors = [];
+
+            if (!name.value.trim() || name.value.trim().length < 2) {
+                errors.push(name);
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+                errors.push(email);
+            }
+
+            if (!subject.value) {
+                errors.push(subject);
+            }
+
+            if (!message.value.trim() || message.value.trim().length < 10) {
+                errors.push(message);
+            }
+
+            if (errors.length > 0) {
+                errors.forEach(el => {
+                    el.style.borderColor = '#b25a5a';
+                });
+                this.ShowToast('Validation Error', 'Please fill in all required fields correctly.', 'error');
+                return;
+            }
+
+            // Form is valid - show success (no backend yet)
+            this.ShowToast('Scroll Sent!', 'Your message has been received. We will reply soon.', 'success');
+            form.reset();
+        });
     }
 
     /*===============================*/
@@ -257,6 +325,17 @@ class Main_App_UOCS {
 
         this.currentSection = sectionId;
         console.log(`📍 Navigated to: ${sectionId}`);
+    }
+
+    /*===============================*/
+    /*        LOADING SCREEN         */
+    /*===============================*/
+    hideLoadingScreen() {
+        const loader = document.getElementById('app-loading');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.remove(), 500);
+        }
     }
 
     /*===============================*/

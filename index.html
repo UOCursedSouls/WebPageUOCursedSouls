@@ -3,71 +3,89 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>UltimaOnline Cursed Souls</title>
-        
+        <title>Ultima Online Cursed Souls - Shard Italiano</title>
+        <meta name="description" content="Ultima Online Cursed Souls: uno shard italiano con razze uniche, classi personalizzate e un sistema di crafting rivisitato. Unisciti all'avventura!" />
+        <meta name="keywords" content="Ultima Online, shard, MMORPG, UO, Cursed Souls, free shard, italiano" />
+        <meta property="og:title" content="Ultima Online Cursed Souls" />
+        <meta property="og:description" content="Shard italiano di Ultima Online con razze uniche, classi personalizzate e un mondo in continua evoluzione." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="./Images/UltimaOnlineCursedSouls.png" />
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        
+
         <!-- Custom CSS Unificato -->
         <link rel="stylesheet" href="./Styles/uocs_style.css">
     </head>
     <body>
+        <!-- LOADING STATE -->
+        <div id="app-loading" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#2b1f12,#0b0704 80%);transition:opacity 0.5s ease;">
+            <div style="text-align:center;color:#d4b06b;font-family:'UO-Font',Georgia,serif;">
+                <div style="width:50px;height:50px;border:4px solid rgba(212,176,107,0.3);border-top:4px solid #d4b06b;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem;"></div>
+                <p style="font-size:1.4rem;text-shadow:0 0 10px #000;">Loading Cursed Souls...</p>
+            </div>
+            <style>@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}</style>
+        </div>
+
         <!-- HEADER / NAVBAR -->
-        <header>
-            <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <header role="banner">
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Navigazione principale">
                 <!-- Il contenuto verrà caricato dinamicamente -->
             </nav>
         </header>
 
         <!-- Canvas Effects -->
-        <canvas id="fx"></canvas>
+        <canvas id="fx" aria-hidden="true"></canvas>
 
-        <!-- HOME SECTION -->
-        <section id="sectionHome" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
+        <!-- MAIN CONTENT -->
+        <main role="main">
+            <!-- HOME SECTION -->
+            <section id="sectionHome" class="section" aria-label="Home">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
 
-        <!-- WIKI SECTION -->
-        <section id="sectionWiki" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
+            <!-- WIKI SECTION -->
+            <section id="sectionWiki" class="section" aria-label="Wiki">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
 
-        <!-- RULES SECTION -->
-        <section id="sectionRules" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
+            <!-- RULES SECTION -->
+            <section id="sectionRules" class="section" aria-label="Regolamento">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
 
-        <!-- MEDIA SECTION -->
-        <section id="sectionMedia" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
+            <!-- MEDIA SECTION -->
+            <section id="sectionMedia" class="section" aria-label="Media Gallery">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
 
-        <!-- DOWNLOAD SECTION -->
-        <section id="sectionDownloads" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
-        
-        <!-- STATUS SECTION -->
-        <section id="sectionStatus" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
-        
-        <!-- CONTACT SECTION -->
-        <section id="sectionContact" class="section">
-            <!-- Il contenuto verrà caricato dinamicamente -->
-        </section>
-        
+            <!-- DOWNLOAD SECTION -->
+            <section id="sectionDownloads" class="section" aria-label="Downloads">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
+
+            <!-- STATUS SECTION -->
+            <section id="sectionStatus" class="section" aria-label="Server Status">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="sectionContact" class="section" aria-label="Contatti">
+                <!-- Il contenuto verrà caricato dinamicamente -->
+            </section>
+        </main>
+
         <!-- Corner Decorations -->
-        <img src="./Images/UOdrake.gif" class="corner-gif-left" alt="Decorazione" />
-        <img src="./Images/ultima-online-wizard.gif" class="corner-gif-right" alt="Decorazione" />
+        <img src="./Images/UOdrake.gif" class="corner-gif-left" alt="Drago decorativo" loading="lazy" aria-hidden="true" />
+        <img src="./Images/ultima-online-wizard.gif" class="corner-gif-right" alt="Mago decorativo" loading="lazy" aria-hidden="true" />
 
         <!-- TOAST NOTIFICATION -->
-        <div id="toastContainer" class="toast-container position-absolute p-3 bottom-0 end-0" style="z-index: 2000;">
+        <div id="toastContainer" class="toast-container position-absolute p-3 bottom-0 end-0" style="z-index: 2000;" aria-live="polite">
             <div id="toastLiveNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <strong class="me-auto" id="toastTitle">System</strong>
                     <small id="toastTime">now</small>
-                    <button type="button" class="btn-close ms-2" data-bs-dismiss="toast"></button>
+                    <button type="button" class="btn-close ms-2" data-bs-dismiss="toast" aria-label="Chiudi notifica"></button>
                 </div>
                 <div class="toast-body" id="toastMessage">
                     Test message
@@ -76,16 +94,16 @@
         </div>
 
         <!-- FOOTER -->
-        <footer id="footer" class="text-center py-4">
+        <footer id="footer" class="text-center py-4" role="contentinfo">
             <!-- Il contenuto verrà caricato dinamicamente -->
         </footer>
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        
+
         <!-- Marked.js per Markdown -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
-        
+
         <!-- Scripts Custom Main_App_UOCS.js -->
         <script type="module" src="./JavaScript/Main_App_UOCS.js"></script>
     </body>

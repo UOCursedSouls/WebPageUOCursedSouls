@@ -176,48 +176,6 @@ export default class WikiManager {
         }
     }
 
-    /**
-     * Render singolo item di navigazione
-     */
-    async renderNavItem(name, data, path) {
-        const currentPath = path ? `${path}/${name}` : name;
-        const container = document.createElement('div');
-        
-        if (data.items) {
-            // Category with items
-            const button = this.createCategoryButton(name, currentPath);
-            container.appendChild(button);
-            
-            const itemsContainer = document.createElement('div');
-            itemsContainer.className = 'wiki-nav-items';
-            itemsContainer.style.display = this.expandedSections[currentPath] ? 'block' : 'none';
-            
-            data.items.forEach(item => {
-                const itemButton = this.createItemButton(item, `${currentPath}/${item}`);
-                itemsContainer.appendChild(itemButton);
-            });
-            
-            container.appendChild(itemsContainer);
-            
-        } else if (data.subcategories) {
-            // Category with subcategories
-            const button = this.createCategoryButton(name, currentPath);
-            container.appendChild(button);
-            
-            const subContainer = document.createElement('div');
-            subContainer.className = 'wiki-nav-subcategory';
-            subContainer.style.display = this.expandedSections[currentPath] ? 'block' : 'none';
-            
-            Object.entries(data.subcategories).forEach(([subName, subData]) => {
-                const subElement = this.renderNavItem(subName, subData, currentPath);
-                subContainer.appendChild(subElement);
-            });
-            
-            container.appendChild(subContainer);
-        }
-        return container;
-    }
-
     renderNavItem(name, data, path) {
         // Calcola il percorso corrente
         const currentPath = path ? `${path}/${name}` : name;

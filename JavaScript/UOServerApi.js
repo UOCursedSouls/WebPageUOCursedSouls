@@ -2,10 +2,11 @@
  * Classe per l'interazione con l'API di un server ModernUO.
  */
 export default class UOServerApi {
-    constructor(ip, port, username = null, password = null) {
-        this.baseUrl = `http://${ip}:${port}`;
-        this.auth = (username && password) 
-            ? btoa(`${username}:${password}`) 
+    constructor(ip, port, username = null, password = null, useHttps = false) {
+        const protocol = useHttps ? 'https' : 'http';
+        this.baseUrl = `${protocol}://${ip}:${port}`;
+        this.auth = (username && password)
+            ? btoa(`${username}:${password}`)
             : null;
     }
 
