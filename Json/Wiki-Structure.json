@@ -31,6 +31,13 @@
       "Drow"
     ]
   },
+  "Guild System": {
+    "items": [
+      "Guild Territory Stone",
+      "Crystal Mana Sphere",
+      "Guild Accountant"
+    ]
+  },
   "Items": {
     "subcategories": {
       "Armi": {
