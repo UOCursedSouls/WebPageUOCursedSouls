@@ -24,11 +24,7 @@
   },
   "Razze": {
     "items": [
-      "Elfi Lunari",
-      "Nani Forgiatori",
-      "Mezzorchi Selvaggi",
-      "Umani",
-      "Drow"
+      "Races"
     ]
   },
   "Guild System": {
