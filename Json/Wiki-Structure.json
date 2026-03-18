@@ -15,12 +15,24 @@
   },
   "Classi": {
     "items": [
+      "Alchimista",
       "Arcanista",
-      "Templare",
+      "Arciere",
       "Assassino d'Ombra",
-      "Ranger",
+      "Bardo",
+      "Chierico",
+      "Esploratore",
+      "Guerriero",
+      "Ladro",
+      "Mazziere",
+      "Minatore Combattente",
       "Necromante",
-      "Bardo"
+      "Ninja",
+      "Ranger",
+      "Sciamano",
+      "Spadaccino",
+      "Tamer",
+      "Templare"
     ]
   },
   "Razze": {
