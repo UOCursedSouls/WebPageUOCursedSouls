@@ -84,14 +84,14 @@ Ogni razza ha **cap individuali per stat** — non puoi superare il cap della tu
 
 | Razza | STR cap | DEX cap | INT cap | HP max | Mana max | Stam max | Passiva |
 |-------|---------|---------|---------|--------|----------|----------|---------|
-| 🧑 **Human** | 115 | 115 | 115 | 127 | 115 | 115 | Skill cap +5 |
-| 🧝 **Elf** | 85 | 140 | 130 | 112 | 130 | 140 | Mana regen basso mana |
-| 🗿 **Gargoyle** | 135 | 105 | 95 | 137 | 95 | 105 | Resist quando ferito |
-| 🌙 **Dark Elf** | 95 | 70 | 160 | 117 | 160 | 70 | FastCast +2 |
-| 💪 **Orc** | 160 | 95 | 70 | 150 | 70 | 95 | Anti-paralyze |
-| 🧛 **Vampire** | 105 | 135 | 105 | 122 | 105 | 135 | HP regen da cadaveri |
-| ⛏️ **Dwarf** | 145 | 85 | 95 | 142 | 95 | 85 | +10% exceptional |
-| 😈 **Demon** | 125 | 70 | 140 | 132 | 140 | 70 | Mostri non aggrano |
+| 🧑 [**Human**](#sectionWiki/Razze/Human) | 115 | 115 | 115 | 127 | 115 | 115 | Skill cap +5 |
+| 🧝 [**Elf**](#sectionWiki/Razze/Elf) | 85 | 140 | 130 | 112 | 130 | 140 | Mana regen basso mana |
+| 🗿 [**Gargoyle**](#sectionWiki/Razze/Gargoyle) | 135 | 105 | 95 | 137 | 95 | 105 | Resist quando ferito |
+| 🌙 [**Dark Elf**](#sectionWiki/Razze/Dark%20Elf) | 95 | 70 | 160 | 117 | 160 | 70 | FastCast +2 |
+| 💪 [**Orc**](#sectionWiki/Razze/Orc) | 160 | 95 | 70 | 150 | 70 | 95 | Anti-paralyze |
+| 🧛 [**Vampire**](#sectionWiki/Razze/Vampire) | 105 | 135 | 105 | 122 | 105 | 135 | HP regen da cadaveri |
+| ⛏️ [**Dwarf**](#sectionWiki/Razze/Dwarf) | 145 | 85 | 95 | 142 | 95 | 85 | +10% exceptional |
+| 😈 [**Demon**](#sectionWiki/Razze/Demon) | 125 | 70 | 140 | 132 | 140 | 70 | Mostri non aggrano |
 
 > 💡 HP calcolati con STR al massimo. Formula: HP = 70 + (STR cap / 2)
 

@@ -25,7 +25,15 @@
   },
   "Razze": {
     "items": [
-      "Races"
+      "Races",
+      "Human",
+      "Elf",
+      "Gargoyle",
+      "Dark Elf",
+      "Orc",
+      "Vampire",
+      "Dwarf",
+      "Demon"
     ]
   },
   "Guild System": {
