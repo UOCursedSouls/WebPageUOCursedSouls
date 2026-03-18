@@ -1,15 +1,15 @@
-# 🛡️ Troll Leather
-*La pelle rigenerante dei giganti delle paludi*
+# 🛡️ Ogre Leather
+*La pelle spessa dei bruti delle colline*
 
 ---
 
 ## 📜 Panoramica
 
-La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per la loro capacità rigenerativa. Questa pelle conserva parte delle proprietà vitali della creatura, offrendo una buona resistenza fisica e al veleno. È un materiale accessibile anche ai sarti meno esperti, ideale per chi inizia a lavorare pelli speciali.
+La **Ogre Leather** è una pelle grezza e resistente, ricavata dagli Ogre e dagli Ogre Lord. Queste creature massicce forniscono una pelle dalla notevole resistenza fisica, adatta a chi cerca protezione robusta senza richiedere grande abilità nel Tailoring. Il bonus ai punti vita la rende particolarmente apprezzata dai guerrieri in prima linea.
 
 > **Tipo**: Pelle speciale
-> **Colore**: 0x31A
-> **Skill Tailoring richiesta**: 35.0
+> **Colore**: 0x455
+> **Skill Tailoring richiesta**: 30.0
 
 ---
 
@@ -17,7 +17,8 @@ La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per
 
 | Creatura | Quantità Hides | Difficoltà |
 |----------|---------------|-----------|
-| Troll | 8 | ⭐⭐ |
+| Ogre | 8 | ⭐⭐ |
+| Ogre Lord | 10 | ⭐⭐⭐ |
 
 Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul cadavere. Le hides vanno poi tagliate con le forbici (scissors) per ottenere il leather.
 
@@ -27,9 +28,8 @@ Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Resistenza Fisica | +3 |
-| Resistenza al Veleno | +3 |
-| Durabilità | +50 |
+| Resistenza Fisica | +4 |
+| Resistenza al Freddo | +1 |
 
 ---
 
@@ -39,7 +39,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Rigenerazione HP | +2 |
+| Bonus Punti Vita | +5 |
 
 ---
 
@@ -54,7 +54,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 ## 🧠 Skill Coinvolte
 
-- **Tailoring** 35.0 — per craftare armature in questa pelle
+- **Tailoring** 30.0 — per craftare armature in questa pelle
 - **Arms Lore** — per identificare le proprietà
 
 ---

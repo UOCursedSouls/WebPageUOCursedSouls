@@ -1,15 +1,15 @@
-# 🛡️ Troll Leather
-*La pelle rigenerante dei giganti delle paludi*
+# 🛡️ Serpent Leather
+*La pelle velenosa dei grandi serpenti*
 
 ---
 
 ## 📜 Panoramica
 
-La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per la loro capacità rigenerativa. Questa pelle conserva parte delle proprietà vitali della creatura, offrendo una buona resistenza fisica e al veleno. È un materiale accessibile anche ai sarti meno esperti, ideale per chi inizia a lavorare pelli speciali.
+La **Serpent Leather** è una pelle pregiata ottenuta dai grandi serpenti che infestano terre e mari. Questa pelle è intrisa di tossine naturali, offrendo la migliore resistenza al veleno tra tutte le pelli speciali, oltre a potenziare il danno da veleno delle armi. È molto ricercata dagli assassini e dai cacciatori che prediligono le arti velenose.
 
 > **Tipo**: Pelle speciale
-> **Colore**: 0x31A
-> **Skill Tailoring richiesta**: 35.0
+> **Colore**: 0x590
+> **Skill Tailoring richiesta**: 65.0
 
 ---
 
@@ -17,7 +17,9 @@ La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per
 
 | Creatura | Quantità Hides | Difficoltà |
 |----------|---------------|-----------|
-| Troll | 8 | ⭐⭐ |
+| Giant Serpent | 6 | ⭐⭐ |
+| Sea Serpent | 10 | ⭐⭐⭐ |
+| Silver Serpent | 4 | ⭐⭐⭐ |
 
 Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul cadavere. Le hides vanno poi tagliate con le forbici (scissors) per ottenere il leather.
 
@@ -27,9 +29,9 @@ Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Resistenza Fisica | +3 |
-| Resistenza al Veleno | +3 |
-| Durabilità | +50 |
+| Resistenza al Veleno | +5 |
+| Resistenza Fisica | +2 |
+| Danno da Veleno Arma | +40 |
 
 ---
 
@@ -54,7 +56,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 ## 🧠 Skill Coinvolte
 
-- **Tailoring** 35.0 — per craftare armature in questa pelle
+- **Tailoring** 65.0 — per craftare armature in questa pelle
 - **Arms Lore** — per identificare le proprietà
 
 ---

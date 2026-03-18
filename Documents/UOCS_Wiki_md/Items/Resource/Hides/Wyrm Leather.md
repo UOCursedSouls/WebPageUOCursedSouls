@@ -1,15 +1,15 @@
-# 🛡️ Troll Leather
-*La pelle rigenerante dei giganti delle paludi*
+# 🛡️ Wyrm Leather
+*La pelle leggendaria degli antichi draghi*
 
 ---
 
 ## 📜 Panoramica
 
-La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per la loro capacità rigenerativa. Questa pelle conserva parte delle proprietà vitali della creatura, offrendo una buona resistenza fisica e al veleno. È un materiale accessibile anche ai sarti meno esperti, ideale per chi inizia a lavorare pelli speciali.
+La **Wyrm Leather** è la pelle più rara e potente del gioco, ottenuta dalle creature più temibili: gli Ancient Wyrm, i Shadow Wyrm e i Wyvern. Questa pelle offre una protezione eccezionale su più fronti, con bonus a fuoco, fisico e freddo, oltre a una durabilità superiore. La robe craftata con questa pelle è considerata il massimo per qualsiasi mago, grazie ai suoi bonus multipli.
 
 > **Tipo**: Pelle speciale
-> **Colore**: 0x31A
-> **Skill Tailoring richiesta**: 35.0
+> **Colore**: 0x835
+> **Skill Tailoring richiesta**: 95.0
 
 ---
 
@@ -17,7 +17,9 @@ La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per
 
 | Creatura | Quantità Hides | Difficoltà |
 |----------|---------------|-----------|
-| Troll | 8 | ⭐⭐ |
+| Ancient Wyrm | 16 | ⭐⭐⭐⭐⭐ |
+| Shadow Wyrm | 12 | ⭐⭐⭐⭐⭐ |
+| Wyvern | 6 | ⭐⭐⭐ |
 
 Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul cadavere. Le hides vanno poi tagliate con le forbici (scissors) per ottenere il leather.
 
@@ -27,8 +29,9 @@ Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Resistenza Fisica | +3 |
-| Resistenza al Veleno | +3 |
+| Resistenza al Fuoco | +4 |
+| Resistenza Fisica | +4 |
+| Resistenza al Freddo | +3 |
 | Durabilità | +50 |
 
 ---
@@ -39,7 +42,9 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Rigenerazione HP | +2 |
+| Rigenerazione HP | +3 |
+| Rigenerazione Mana | +2 |
+| Riduzione Costo Reagenti | +5 |
 
 ---
 
@@ -54,7 +59,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 ## 🧠 Skill Coinvolte
 
-- **Tailoring** 35.0 — per craftare armature in questa pelle
+- **Tailoring** 95.0 — per craftare armature in questa pelle
 - **Arms Lore** — per identificare le proprietà
 
 ---

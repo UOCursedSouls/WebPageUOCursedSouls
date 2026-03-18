@@ -1,15 +1,15 @@
-# 🛡️ Troll Leather
-*La pelle rigenerante dei giganti delle paludi*
+# 🛡️ Ettin Leather
+*La pelle ruvida dei giganti a due teste*
 
 ---
 
 ## 📜 Panoramica
 
-La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per la loro capacità rigenerativa. Questa pelle conserva parte delle proprietà vitali della creatura, offrendo una buona resistenza fisica e al veleno. È un materiale accessibile anche ai sarti meno esperti, ideale per chi inizia a lavorare pelli speciali.
+La **Ettin Leather** è una pelle robusta ricavata dagli Ettin, creature brutali a due teste che abitano le montagne e le colline rocciose. Questa pelle offre una buona resistenza al freddo e ai danni fisici, rendendola ideale per chi affronta ambienti gelidi. È una pelle di media difficoltà, accessibile a sarti con esperienza intermedia.
 
 > **Tipo**: Pelle speciale
-> **Colore**: 0x31A
-> **Skill Tailoring richiesta**: 35.0
+> **Colore**: 0x738
+> **Skill Tailoring richiesta**: 45.0
 
 ---
 
@@ -17,7 +17,7 @@ La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per
 
 | Creatura | Quantità Hides | Difficoltà |
 |----------|---------------|-----------|
-| Troll | 8 | ⭐⭐ |
+| Ettin | 6 | ⭐⭐ |
 
 Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul cadavere. Le hides vanno poi tagliate con le forbici (scissors) per ottenere il leather.
 
@@ -27,9 +27,8 @@ Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul
 
 | Proprietà | Bonus |
 |-----------|-------|
+| Resistenza al Freddo | +4 |
 | Resistenza Fisica | +3 |
-| Resistenza al Veleno | +3 |
-| Durabilità | +50 |
 
 ---
 
@@ -39,7 +38,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Rigenerazione HP | +2 |
+| Rigenerazione Stamina | +2 |
 
 ---
 
@@ -54,7 +53,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 ## 🧠 Skill Coinvolte
 
-- **Tailoring** 35.0 — per craftare armature in questa pelle
+- **Tailoring** 45.0 — per craftare armature in questa pelle
 - **Arms Lore** — per identificare le proprietà
 
 ---

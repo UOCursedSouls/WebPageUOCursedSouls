@@ -1,15 +1,15 @@
-# 🛡️ Troll Leather
-*La pelle rigenerante dei giganti delle paludi*
+# 🛡️ Lizard Leather
+*La pelle squamosa dei rettili delle terre selvagge*
 
 ---
 
 ## 📜 Panoramica
 
-La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per la loro capacità rigenerativa. Questa pelle conserva parte delle proprietà vitali della creatura, offrendo una buona resistenza fisica e al veleno. È un materiale accessibile anche ai sarti meno esperti, ideale per chi inizia a lavorare pelli speciali.
+La **Lizard Leather** è una pelle comune ma versatile, ottenuta da diverse creature rettiliane. Le sue scaglie naturali offrono una discreta protezione contro il veleno e i danni fisici. È una delle prime pelli speciali accessibili ai sarti principianti, facile da reperire grazie alla varietà di creature che la forniscono.
 
 > **Tipo**: Pelle speciale
-> **Colore**: 0x31A
-> **Skill Tailoring richiesta**: 35.0
+> **Colore**: 0x30F
+> **Skill Tailoring richiesta**: 25.0
 
 ---
 
@@ -17,7 +17,9 @@ La **Troll Leather** è una pelle pregiata ottenuta dai Troll, creature note per
 
 | Creatura | Quantità Hides | Difficoltà |
 |----------|---------------|-----------|
-| Troll | 8 | ⭐⭐ |
+| Lizardman | 4 | ⭐⭐ |
+| Lava Lizard | 3 | ⭐⭐ |
+| Alligator | 4 | ⭐ |
 
 Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul cadavere. Le hides vanno poi tagliate con le forbici (scissors) per ottenere il leather.
 
@@ -27,9 +29,8 @@ Per ottenere la pelle, uccidi la creatura e usa un coltello (skinning knife) sul
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Resistenza Fisica | +3 |
 | Resistenza al Veleno | +3 |
-| Durabilità | +50 |
+| Resistenza Fisica | +2 |
 
 ---
 
@@ -39,7 +40,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 | Proprietà | Bonus |
 |-----------|-------|
-| Rigenerazione HP | +2 |
+| Bonus Stamina | +3 |
 
 ---
 
@@ -54,7 +55,7 @@ Craftando una **Leather Hooded Robe** con questa pelle, si ottengono bonus speci
 
 ## 🧠 Skill Coinvolte
 
-- **Tailoring** 35.0 — per craftare armature in questa pelle
+- **Tailoring** 25.0 — per craftare armature in questa pelle
 - **Arms Lore** — per identificare le proprietà
 
 ---

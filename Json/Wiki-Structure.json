@@ -93,23 +93,42 @@
               "Spined Leather",
               "Horned Leather",
               "Barbed Leather",
+              "Lizard Leather",
+              "Ogre Leather",
               "Troll Leather",
-              "Drake Leather",
-              "Daemon Leather",
-              "Wyrm Leather",
+              "Ettin Leather",
+              "Cyclop Leather",
               "Gargoyle Leather",
-              "Hydra Leather",
-              "Eti Leather",
-              "Lizardman Leather",
-              "Balron Leather"
+              "Serpent Leather",
+              "Daemon Leather",
+              "Dragon Leather",
+              "Balron Leather",
+              "Wyrm Leather"
             ]
           },
           "Ore": {
             "items": [
-              "Iron Ore",
+              "Iron",
               "Dull Copper",
               "Shadow Iron",
-              "Valorite"
+              "Copper",
+              "Bronze",
+              "Gold",
+              "Agapite",
+              "Verite",
+              "Valorite",
+              "Rusty",
+              "Old Copper",
+              "Steel",
+              "Rose",
+              "Silver",
+              "Orialco",
+              "Blood Rock",
+              "Mytheril",
+              "Black Rock",
+              "Titanio",
+              "Cobalto",
+              "Demonic"
             ]
           },
           "Wood": {
