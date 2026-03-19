@@ -2,6 +2,8 @@
   "Skills": {
     "items": [
       "Skills Overview",
+      "Crafting Overview",
+      "Combat Overview",
       "Anatomy",
       "Archery",
       "Blacksmithing",
@@ -163,5 +165,10 @@
         }
       }
     }
+  },
+  "Tools": {
+    "items": [
+      "UOMapWeaver"
+    ]
   }
 }

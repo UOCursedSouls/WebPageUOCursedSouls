@@ -180,5 +180,14 @@ R: Si. Quando cambi razza tramite il Races Pad, le stats vengono resettate ai va
 
 ---
 
+---
+
+## 🔗 Vedi anche
+
+- [StatCap Progression](#sectionWiki/Guild%20System/StatCap%20Progression) — Come aumentare il tuo StatCap da 255 a 285
+- [Skills Overview](#sectionWiki/Skills/Skills%20Overview) — Il sistema skill completo, moltiplicatore x1.2 e build consigliate
+- [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) — Il sistema di gilde territoriale
+
+---
+
 *Ultimo aggiornamento: Marzo 2026*
-*Vedi anche: [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone)*
