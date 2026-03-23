@@ -7,6 +7,16 @@
 
 L'Esploratore e il cercatore di tesori e segreti: un avventuriero versatile specializzato nel trovare cio che altri non possono. Questa build combina Cartography per decifrare le mappe del tesoro, Lockpicking per aprire forzieri e porte chiuse, e Detect Hidden per individuare trappole e nemici nascosti. Magery fornisce mobilita (Recall, Gate Travel) e difesa, Mining ti permette di scavare i tesori una volta trovata la locazione, e Tracking ti guida verso creature e giocatori. Non sei un combattente di prima linea — sei quello che trova il bottino che gli altri non sanno nemmeno esista.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono l'Esploratore. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Cartography** | Decifrazione mappe del tesoro |
+| **Lockpicking** | Apertura serrature e forzieri |
+| **Detect Hidden** | Individuare trappole e nemici nascosti |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,9 +27,9 @@ L'Esploratore e il cercatore di tesori e segreti: un avventuriero versatile spec
 ## 📊 Template Skill
 
 ```
-Cartography    100
-Lockpicking    100
-Detect Hidden  100
+Cartography    100  ★ Skill di Classe
+Lockpicking    100  ★ Skill di Classe
+Detect Hidden  100  ★ Skill di Classe
 Magery         100
 Mining         100
 Tracking       100

@@ -7,6 +7,16 @@
 
 Il Tamer e il signore delle bestie: un domatore capace di piegare al proprio volere le creature piu pericolose del mondo. Questa build si concentra interamente sul controllo e il supporto dei pet, usando Magery per curare, resuscitare e potenziare i propri compagni animali. Con Animal Taming e Animal Lore al massimo, puoi domare qualsiasi creatura — dai draghi ai nightmare. Veterinary ti permette di curare i tuoi pet con le bende, mentre Magery e Eval Int forniscono supporto magico. Non combatti in prima persona: i tuoi pet sono la tua spada e il tuo scudo.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Tamer. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Animal Taming** | Domare creature selvagge e potenti |
+| **Animal Lore** | Conoscenza e gestione delle creature |
+| **Veterinary** | Cura dei compagni animali con bende |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,9 +27,9 @@ Il Tamer e il signore delle bestie: un domatore capace di piegare al proprio vol
 ## 📊 Template Skill
 
 ```
-Animal Taming   100
-Animal Lore     100
-Veterinary      100
+Animal Taming   100  ★ Skill di Classe
+Animal Lore     100  ★ Skill di Classe
+Veterinary      100  ★ Skill di Classe
 Magery          100
 Meditation      100
 Eval Int        100

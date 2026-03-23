@@ -7,6 +7,16 @@
 
 Il Ninja e il maestro dell'inganno e della furtivita: un combattente letale che colpisce dall'ombra e svanisce prima che il nemico possa reagire. Questa build combina Ninjitsu con Stealth e Hiding per creare un assassino che controlla il campo di battaglia con smoke bomb, mirror image e attacchi furtivi devastanti. Fencing fornisce armi rapide e precise, perfette per applicare veleni letali con Poisoning. Non sei il piu forte in uno scontro diretto, ma nessuno e piu pericoloso quando sceglie il momento giusto per colpire.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Ninja. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Ninjitsu** | Arti ninja: Mirror Image, Shadow Jump, Smoke Bomb |
+| **Hiding** | Nascondersi nell'ombra |
+| **Stealth** | Muoversi invisibilmente |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,9 +27,9 @@ Il Ninja e il maestro dell'inganno e della furtivita: un combattente letale che 
 ## 📊 Template Skill
 
 ```
-Ninjitsu       100
-Hiding         100
-Stealth        100
+Ninjitsu       100  ★ Skill di Classe
+Hiding         100  ★ Skill di Classe
+Stealth        100  ★ Skill di Classe
 Fencing        100
 Tactics        100
 Anatomy        100

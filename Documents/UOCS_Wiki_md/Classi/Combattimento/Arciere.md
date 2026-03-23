@@ -7,6 +7,16 @@
 
 L'Arciere e il master del combattimento a distanza: nessuno puo eguagliare la sua capacita di infliggere danni costanti senza mai avvicinarsi al nemico. Questa build punta tutto sulla Destrezza, massimizzando la velocita di tiro e la precisione. Con Archery e Tactics combinate, ogni freccia colpisce come un maglio. Chivalry fornisce buff offensivi e difensivi senza dipendere dall'Intelligenza, mentre Healing e Anatomy garantiscono la sopravvivenza. Un Arciere esperto non viene mai toccato — se il nemico si avvicina, stai giocando male.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono l'Arciere. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Archery** | Maestria nel combattimento a distanza con l'arco |
+| **Tactics** | Strategie di combattimento e bonus al danno |
+| **Chivalry** | Buff sacri offensivi e difensivi |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,11 +27,11 @@ L'Arciere e il master del combattimento a distanza: nessuno puo eguagliare la su
 ## 📊 Template Skill
 
 ```
-Archery        100
-Tactics        100
+Archery        100  ★ Skill di Classe
+Tactics        100  ★ Skill di Classe
 Anatomy        100
 Healing        100
-Chivalry       100
+Chivalry       100  ★ Skill di Classe
 Magic Resist   100
 Meditation     100
 ────────────────────

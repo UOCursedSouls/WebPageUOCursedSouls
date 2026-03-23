@@ -7,6 +7,16 @@
 
 Il Ladro e il maestro del furto e dell'inganno: un professionista capace di svuotare le tasche di chiunque senza essere notato. Questa build si concentra su Stealing e Snooping per rubare oggetti da giocatori e mostri, Hiding e Stealth per muoversi invisibilmente, e Fencing per difendersi quando le cose vanno male. Detect Hidden ti permette di trovare trappole e nemici nascosti, mentre Lockpicking apre qualsiasi serratura. Non sei un combattente — sei un opportunista che prende cio che vuole e sparisce nel nulla.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Ladro. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Stealing** | Furto di oggetti da giocatori e mostri |
+| **Snooping** | Ispezione inventari altrui |
+| **Hiding** | Nascondersi nell'ombra |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,9 +27,9 @@ Il Ladro e il maestro del furto e dell'inganno: un professionista capace di svuo
 ## 📊 Template Skill
 
 ```
-Stealing       100
-Snooping       100
-Hiding         100
+Stealing       100  ★ Skill di Classe
+Snooping       100  ★ Skill di Classe
+Hiding         100  ★ Skill di Classe
 Stealth        100
 Fencing        100
 Detect Hidden  100

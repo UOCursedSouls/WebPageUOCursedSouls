@@ -7,6 +7,16 @@
 
 Il Minatore Combattente e l'incarnazione dell'autosufficienza: un guerriero che estrae i propri minerali, forgia le proprie armi e armature, e poi le usa per combattere. Questa build combina le skill di crafting Mining e Blacksmithy con un solido template da combattente melee. Con Arms Lore puoi valutare e riparare l'equipaggiamento, rendendo inutile dipendere da altri fabbri. Swordsmanship, Tactics e Anatomy ti rendono letale in combattimento, e Healing ti mantiene in vita. Non sei il combattente piu forte, ma sei quello che non ha mai bisogno di nessuno.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Minatore Combattente. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Mining** | Estrazione minerali e risorse |
+| **Blacksmithy** | Forgiatura armi e armature |
+| **Arms Lore** | Valutazione e riparazione equipaggiamento |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,13 +27,13 @@ Il Minatore Combattente e l'incarnazione dell'autosufficienza: un guerriero che 
 ## 📊 Template Skill
 
 ```
-Mining         100
-Blacksmithy    100
+Mining         100  ★ Skill di Classe
+Blacksmithy    100  ★ Skill di Classe
 Swordsmanship  100
 Tactics        100
 Anatomy        100
 Healing        100
-Arms Lore      100
+Arms Lore      100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```

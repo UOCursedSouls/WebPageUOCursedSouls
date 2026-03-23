@@ -1,11 +1,21 @@
-# 🗡️ Assassino d'Ombra
+# 🗡️ Assassino
 *Colpisci dall'ombra, svanisci nel nulla*
 
 ---
 
 ## 📜 Panoramica
 
-L'Assassino d'Ombra e il predatore silenzioso: invisibile, letale e imprevedibile. Questa build si basa sulla combinazione di Stealth e Ninjitsu per avvicinarsi al bersaglio senza essere visto, e su Fencing e Poisoning per infliggere danni devastanti al primo colpo. La DEX alta garantisce velocita d'attacco e mobilita, mentre il veleno erode la salute del nemico anche dopo che sei scomparso nell'ombra. Non combatti lealmente — combatti per vincere.
+L'Assassino e il predatore silenzioso: invisibile, letale e imprevedibile. Questa build si basa sulla combinazione di Stealth e Ninjitsu per avvicinarsi al bersaglio senza essere visto, e su Fencing e Poisoning per infliggere danni devastanti al primo colpo. La DEX alta garantisce velocita d'attacco e mobilita, mentre il veleno erode la salute del nemico anche dopo che sei scomparso nell'ombra. Non combatti lealmente — combatti per vincere.
+
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono l'Assassino. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Fencing** | Armi veloci per colpi precisi e applicazione veleno |
+| **Poisoning** | Veleni letali su armi e bersagli |
+| **Ninjitsu** | Arti ninja: Backstab, Shadow Jump, Smoke Bomb |
 
 ## 🏆 Razze Consigliate
 
@@ -17,13 +27,13 @@ L'Assassino d'Ombra e il predatore silenzioso: invisibile, letale e imprevedibil
 ## 📊 Template Skill
 
 ```
-Fencing        100
+Fencing        100  ★ Skill di Classe
 Tactics        100
 Anatomy        100
 Hiding         100
 Stealth        100
-Poisoning      100
-Ninjitsu       100
+Poisoning      100  ★ Skill di Classe
+Ninjitsu       100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```
@@ -42,7 +52,7 @@ Totale:        700
 
 ## ⚔️ Stile di Gioco
 
-L'Assassino d'Ombra non combatte mai a viso aperto se puo evitarlo. Il tuo ciclo di combattimento e: Hiding → Stealth → avvicinamento → colpo avvelenato → Ninjitsu ability → sparisci di nuovo. Ripeti fino a quando il nemico cade.
+L'Assassino non combatte mai a viso aperto se puo evitarlo. Il tuo ciclo di combattimento e: Hiding → Stealth → avvicinamento → colpo avvelenato → Ninjitsu ability → sparisci di nuovo. Ripeti fino a quando il nemico cade.
 
 Il primo colpo da Hiding e fondamentale. Con un'arma avvelenata (Deadly o Lethal Poison), il nemico inizia il combattimento gia in svantaggio. Fencing offre armi veloci come il Kryss e la Dagger, perfette per applicare veleno rapidamente. La velocita d'attacco alta (grazie alla DEX elevata) significa che il veleno viene riapplicato costantemente.
 

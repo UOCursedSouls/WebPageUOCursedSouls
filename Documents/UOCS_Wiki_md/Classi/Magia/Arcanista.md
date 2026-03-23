@@ -7,6 +7,16 @@
 
 L'Arcanista e il caster puro per eccellenza: una macchina da guerra magica capace di devastare i nemici con incantesimi potenti e di supportare gli alleati con cure. Questa build punta tutto sull'Intelligenza, massimizzando il mana disponibile e la potenza delle spell. Con Inscription puoi creare i tuoi scroll e potenziare le spell difensive, mentre Anatomy e Healing ti garantiscono la sopravvivenza nei momenti critici. Fragile in mischia, ma letale a distanza.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono l'Arcanista. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Magery** | Incantesimi offensivi e di utility |
+| **Eval Int** | Potenzia danno magico e identifica |
+| **Meditation** | Rigenerazione mana e concentrazione |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -18,9 +28,9 @@ L'Arcanista e il caster puro per eccellenza: una macchina da guerra magica capac
 ## 📊 Template Skill
 
 ```
-Magery         100
-Eval Int       100
-Meditation     100
+Magery         100  ★ Skill di Classe
+Eval Int       100  ★ Skill di Classe
+Meditation     100  ★ Skill di Classe
 Magic Resist   100
 Inscription    100
 Anatomy        100

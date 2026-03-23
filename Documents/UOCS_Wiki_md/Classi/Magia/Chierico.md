@@ -7,6 +7,16 @@
 
 Il Chierico e il pilastro di ogni gruppo: un guaritore puro capace di mantenere in vita l'intero party anche nelle situazioni piu disperate. Questa build combina Healing e Anatomy per le cure con bende, Magery per le cure magiche e le resurrezioni, Spirit Speak per la comunicazione con gli spiriti e il recupero HP, e Chivalry per i buff difensivi sacri. Non sei un combattente — sei quello che impedisce ai combattenti di morire. In un gruppo, un buon Chierico vale piu di due DPS.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Chierico. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Healing** | Cure con bende e primo soccorso |
+| **Chivalry** | Buff sacri e resurrezione divina |
+| **Spirit Speak** | Comunicazione con gli spiriti e recupero HP |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,11 +27,11 @@ Il Chierico e il pilastro di ogni gruppo: un guaritore puro capace di mantenere 
 ## 📊 Template Skill
 
 ```
-Healing        100
+Healing        100  ★ Skill di Classe
 Anatomy        100
 Magery         100
-Spirit Speak   100
-Chivalry       100
+Spirit Speak   100  ★ Skill di Classe
+Chivalry       100  ★ Skill di Classe
 Magic Resist   100
 Meditation     100
 ────────────────────

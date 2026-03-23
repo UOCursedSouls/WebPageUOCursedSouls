@@ -7,6 +7,16 @@
 
 Lo Spadaccino e il maestro del combattimento di precisione: un duellante agile e letale che colpisce nei punti deboli dell'avversario con velocita fulminea. Questa build si concentra su Fencing per le armi da punta, combinato con Poisoning per applicare veleni ad ogni colpo. La DEX alta garantisce attacchi rapidi e frequenti, mentre Tactics e Anatomy massimizzano il danno per colpo. Parrying ti protegge in mischia, e Healing ti mantiene in vita. A differenza del Guerriero che schiaccia con la forza bruta, lo Spadaccino smonta il nemico pezzo per pezzo con precisione chirurgica.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono lo Spadaccino. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Fencing** | Maestria nelle armi da punta |
+| **Tactics** | Strategie di combattimento e bonus al danno |
+| **Poisoning** | Veleni applicati su armi per danno persistente |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,13 +27,13 @@ Lo Spadaccino e il maestro del combattimento di precisione: un duellante agile e
 ## 📊 Template Skill
 
 ```
-Fencing        100
-Tactics        100
+Fencing        100  ★ Skill di Classe
+Tactics        100  ★ Skill di Classe
 Anatomy        100
 Healing        100
 Parrying       100
 Magic Resist   100
-Poisoning      100
+Poisoning      100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```

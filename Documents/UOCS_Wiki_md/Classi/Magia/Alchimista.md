@@ -7,6 +7,16 @@
 
 L'Alchimista e il maestro delle sostanze: un artigiano letale che trasforma erbe e reagenti in pozioni devastanti e veleni mortali. Questa build combina Alchemy per la creazione di pozioni potenti, Poisoning per avvelenare armi e nemici, e Magery con Eval Int per il supporto magico offensivo. Inscription ti permette di creare scroll e potenziare le spell difensive, mentre Taste ID ti protegge dai veleni altrui. In PvP sei un incubo — explosion potion seguite da veleni letali non lasciano scampo. In PvE sei autosufficiente, con pozioni per ogni situazione.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono l'Alchimista. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Alchemy** | Creazione pozioni potenti e superiori |
+| **Poisoning** | Veleni letali su armi e bersagli |
+| **Taste ID** | Identificazione e resistenza ai veleni |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,11 +27,11 @@ L'Alchimista e il maestro delle sostanze: un artigiano letale che trasforma erbe
 ## 📊 Template Skill
 
 ```
-Alchemy        100
-Poisoning      100
+Alchemy        100  ★ Skill di Classe
+Poisoning      100  ★ Skill di Classe
 Magery         100
 Eval Int       100
-Taste ID       100
+Taste ID       100  ★ Skill di Classe
 Inscription    100
 Meditation     100
 ────────────────────

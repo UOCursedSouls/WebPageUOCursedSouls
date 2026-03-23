@@ -7,6 +7,16 @@
 
 Il Mazziere e il maestro delle armi contundenti: un combattente brutale che fracassa armature e ossa con colpi devastanti. Questa build si concentra su Mace Fighting per sfruttare le armi pesanti come War Hammer, Maul e War Mace. La Forza alta massimizza il danno di ogni colpo — le maces scalano meglio di qualsiasi altra arma con la STR. Wrestling ti fornisce una difesa aggiuntiva quando sei disarmato e abilita speciali di lotta. Tactics e Anatomy amplificano il danno, Parrying e Healing garantiscono la sopravvivenza. Ogni colpo stordisce, ogni impatto fracassa.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Mazziere. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Mace Fighting** | Maestria nelle armi contundenti |
+| **Tactics** | Strategie di combattimento e bonus al danno |
+| **Wrestling** | Difesa a mani nude e abilita di lotta |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -18,13 +28,13 @@ Il Mazziere e il maestro delle armi contundenti: un combattente brutale che frac
 ## 📊 Template Skill
 
 ```
-Mace Fighting  100
-Tactics        100
+Mace Fighting  100  ★ Skill di Classe
+Tactics        100  ★ Skill di Classe
 Anatomy        100
 Healing        100
 Parrying       100
 Magic Resist   100
-Wrestling      100
+Wrestling      100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```

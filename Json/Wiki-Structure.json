@@ -16,26 +16,50 @@
     ]
   },
   "Classi": {
-    "items": [
-      "Alchimista",
-      "Arcanista",
-      "Arciere",
-      "Assassino d'Ombra",
-      "Bardo",
-      "Chierico",
-      "Esploratore",
-      "Guerriero",
-      "Ladro",
-      "Mazziere",
-      "Minatore Combattente",
-      "Necromante",
-      "Ninja",
-      "Ranger",
-      "Sciamano",
-      "Spadaccino",
-      "Tamer",
-      "Templare"
-    ]
+    "subcategories": {
+      "Combattimento": {
+        "items": [
+          "Guerriero",
+          "Mazziere",
+          "Spadaccino",
+          "Arciere",
+          "Templare",
+          "Minatore Combattente"
+        ]
+      },
+      "Magia": {
+        "items": [
+          "Arcanista",
+          "Necromante",
+          "Alchimista",
+          "Chierico",
+          "Sciamano"
+        ]
+      },
+      "Supporto": {
+        "items": [
+          "Bardo"
+        ]
+      },
+      "Furtivita": {
+        "items": [
+          "Ladro",
+          "Assassino",
+          "Ninja"
+        ]
+      },
+      "Natura": {
+        "items": [
+          "Tamer",
+          "Ranger"
+        ]
+      },
+      "Esplorazione": {
+        "items": [
+          "Esploratore"
+        ]
+      }
+    }
   },
   "Razze": {
     "items": [

@@ -7,6 +7,16 @@
 
 Il Guerriero e la potenza pura in forma umana: un combattente corpo a corpo che non ha bisogno di magia per distruggere i nemici. Questa build punta tutto sulla Forza e sul danno fisico massimo. Swordsmanship con Lumberjacking crea la combinazione piu devastante del gioco — le asce beneficiano del bonus di danno di Lumberjacking, trasformando ogni colpo in un impatto demolente. Tactics e Anatomy massimizzano il danno e la precisione, Healing e Parrying ti mantengono in vita, e Magic Resist ti protegge dai caster. Niente trucchi, niente magia — solo acciaio e muscoli.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Guerriero. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Swordsmanship** | Maestria nelle armi da taglio e nelle asce |
+| **Tactics** | Strategie di combattimento e bonus al danno |
+| **Lumberjacking** | Bonus danno devastante con le asce |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -18,13 +28,13 @@ Il Guerriero e la potenza pura in forma umana: un combattente corpo a corpo che 
 ## 📊 Template Skill
 
 ```
-Swordsmanship  100
-Tactics        100
+Swordsmanship  100  ★ Skill di Classe
+Tactics        100  ★ Skill di Classe
 Anatomy        100
 Healing        100
 Parrying       100
 Magic Resist   100
-Lumberjacking  100
+Lumberjacking  100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```

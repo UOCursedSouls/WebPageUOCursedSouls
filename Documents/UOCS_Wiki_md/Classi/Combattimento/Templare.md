@@ -7,6 +7,16 @@
 
 Il Templare e il guerriero sacro: un combattente in prima linea che unisce la potenza della spada alla magia della Chivalry. Questa build e progettata per resistere ai danni, curare se stesso e infliggere danni costanti in mischia. Con Parrying e Magic Resist diventi estremamente difficile da abbattere, mentre Chivalry ti da accesso a spell offensive e difensive senza bisogno di alta INT. Il Templare e la roccia su cui si infrange l'assalto nemico.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Templare. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Swordsmanship** | Maestria nelle armi da taglio |
+| **Chivalry** | Magia sacra offensiva e difensiva |
+| **Parrying** | Difesa con scudo e parata colpi |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -18,13 +28,13 @@ Il Templare e il guerriero sacro: un combattente in prima linea che unisce la po
 ## 📊 Template Skill
 
 ```
-Swordsmanship  100
+Swordsmanship  100  ★ Skill di Classe
 Tactics        100
 Anatomy        100
 Healing        100
-Chivalry       100
+Chivalry       100  ★ Skill di Classe
 Magic Resist   100
-Parrying       100
+Parrying       100  ★ Skill di Classe
 ────────────────────
 Totale:        700
 ```

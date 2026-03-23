@@ -7,6 +7,16 @@
 
 Il Bardo e il maestro del caos controllato: un musicista che manipola il campo di battaglia senza mai alzare una spada. Con Provocation puoi far combattere i mostri tra di loro, con Peacemaking li calmi, e con Discordance ne riduci le stats e le resistenze. Aggiungi Magery per danno diretto e utility, e il Bardo diventa il personaggio piu versatile del gioco. Non e il piu forte in nessuna categoria, ma e l'unico che puo controllare qualsiasi situazione.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Bardo. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Musicianship** | Maestria musicale, base per tutte le abilita bardiche |
+| **Provocation** | Provoca mostri a combattersi tra loro |
+| **Discordance** | Debuff stats e resistenze del bersaglio |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,10 +27,10 @@ Il Bardo e il maestro del caos controllato: un musicista che manipola il campo d
 ## 📊 Template Skill
 
 ```
-Musicianship   100
-Provocation    100
+Musicianship   100  ★ Skill di Classe
+Provocation    100  ★ Skill di Classe
 Peacemaking    100
-Discordance    100
+Discordance    100  ★ Skill di Classe
 Magery         100
 Eval Int       100
 Meditation     100

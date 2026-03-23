@@ -7,6 +7,16 @@
 
 Lo Sciamano e il ponte tra il mondo degli spiriti e quello dei viventi: un mistico che comunica con gli spiriti della natura e comanda le bestie selvagge. Questa build fonde Spirit Speak con Animal Taming per creare un ibrido unico — meta caster, meta domatore, completamente diverso da entrambi. Magery fornisce le spell offensive e curative, Meditation garantisce il mana, e Veterinary e Animal Lore ti permettono di gestire i tuoi compagni animali. Non sei un Tamer puro e non sei un Mago puro — sei qualcosa di piu profondo, connesso alla natura e agli spiriti.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono lo Sciamano. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Spirit Speak** | Comunicazione con gli spiriti della natura |
+| **Animal Taming** | Dominio sulle creature selvagge |
+| **Magery** | Incantesimi di supporto e offensivi |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,13 +27,13 @@ Lo Sciamano e il ponte tra il mondo degli spiriti e quello dei viventi: un misti
 ## 📊 Template Skill
 
 ```
-Spirit Speak    100
+Spirit Speak    100  ★ Skill di Classe
 Animal Lore     100
-Magery          100
+Magery          100  ★ Skill di Classe
 Meditation      100
 Magic Resist    100
 Veterinary      100
-Animal Taming   100
+Animal Taming   100  ★ Skill di Classe
 ────────────────────
 Totale:         700
 ```

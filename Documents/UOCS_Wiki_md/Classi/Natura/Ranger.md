@@ -7,6 +7,16 @@
 
 Il Ranger e il signore della natura: un arciere letale accompagnato da animali fedeli che combattono al suo fianco. Questa build combina il danno a distanza di Archery con il supporto di un pet tamato, creando un duo formidabile in PvE e PvP. Animal Taming e Animal Lore ti permettono di controllare creature potenti, mentre Veterinary mantiene il tuo compagno in vita. Con Healing puoi curarti da solo, rendendo il Ranger una delle build piu autosufficienti del gioco.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Ranger. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Archery** | Combattimento a distanza con l'arco |
+| **Animal Taming** | Domare creature come compagni di battaglia |
+| **Animal Lore** | Conoscenza e gestione delle creature |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,11 +27,11 @@ Il Ranger e il signore della natura: un arciere letale accompagnato da animali f
 ## 📊 Template Skill
 
 ```
-Archery        100
+Archery        100  ★ Skill di Classe
 Tactics        100
 Anatomy        100
-Animal Taming  100
-Animal Lore    100
+Animal Taming  100  ★ Skill di Classe
+Animal Lore    100  ★ Skill di Classe
 Veterinary     100
 Healing        100
 ────────────────────

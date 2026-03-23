@@ -7,6 +7,16 @@
 
 Il Necromante e il signore oscuro: un caster che manipola le forze della morte per distruggere, drenare e corrompere. Questa build combina Necromancy e Magery per avere accesso a due scuole di magia complementari — le spell necromantiche per debuff, drain e summon, e la Magery per danno diretto e utility. Poisoning aggiunge un'altra dimensione letale, permettendo di avvelenare i nemici anche attraverso la magia. Il Necromante e il caster piu aggressivo e sinistro del gioco.
 
+## 🎯 Skill di Classe
+
+Le tre skill che definiscono il Necromante. Devono progredire insieme: tutte a 60 per sbloccare 80, tutte a 80 per sbloccare 100. Se una scende sotto la soglia, le altre calano di 0.1 al minuto fino a riallinearsi.
+
+| Skill di Classe | Ruolo |
+|-----------------|-------|
+| **Necromancy** | Magia oscura: summon, drain e debuff |
+| **Spirit Speak** | Comunicazione con gli spiriti e recupero HP |
+| **Magery** | Incantesimi offensivi e utility di supporto |
+
 ## 🏆 Razze Consigliate
 
 | Razza | Perche |
@@ -17,9 +27,9 @@ Il Necromante e il signore oscuro: un caster che manipola le forze della morte p
 ## 📊 Template Skill
 
 ```
-Necromancy     100
-Spirit Speak   100
-Magery         100
+Necromancy     100  ★ Skill di Classe
+Spirit Speak   100  ★ Skill di Classe
+Magery         100  ★ Skill di Classe
 Eval Int       100
 Meditation     100
 Magic Resist   100
