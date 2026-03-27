@@ -3,8 +3,8 @@
 /*===============================*/
 
 /**
- * Marked.js serve per convertire Markdown → HTML
- * Viene caricato via CDN nell'index.html
+ * Marked.js serve per convertire Markdown -> HTML
+ * Viene caricato via ESM import (unica fonte, no CDN duplicato)
  */
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
@@ -36,6 +36,8 @@ export default class WikiManager {
         this.wikiHomeBtn = null;
 
         this.initialized = false;
+        this._toggleHandler = null;     // Stored reference for cleanup
+        this._navDelegateHandler = null; // Event delegation handler
     }
 
     /* =====================================================
@@ -43,15 +45,14 @@ export default class WikiManager {
     ===================================================== */
     async init() {
         if (this.initialized) {
-            console.warn('⚠️ WikiManager già inizializzato, init saltata');
+            console.warn('WikiManager already initialized, skipping');
             return;
         }
         try {
             await this.setup();
             this.initialized = true;
-            console.log('✅ WikiManager initialized');
         } catch (err) {
-            console.error('❌ WikiManager init error:', err);
+            console.error('WikiManager init error:', err);
         }
     }
 
@@ -62,12 +63,12 @@ export default class WikiManager {
     async setup() {
         /* Cache DOM */
         this.sidebar = document.getElementById('wiki-sidebar');
-        this.toggleBtn = document.getElementById('wiki-toggle-btn'); // bug liveservice(locale) ma funziona html non caricato
-        this.menuIcon = document.getElementById('wiki-menu-icon'); // bug liveservice(locale) ma funziona html non caricato
-        this.closeIcon = document.getElementById('wiki-close-icon'); // bug liveservice(locale) ma funziona html non caricato
-        this.pageTitle = document.getElementById('wiki-page-title'); // bug liveservice(locale) ma funziona html non caricato
-        this.content = document.getElementById('wiki-content'); // bug liveservice(locale) ma funziona html non caricato
-        this.loading = document.getElementById('wiki-loading'); // bug liveservice(locale) ma funziona html non caricato
+        this.toggleBtn = document.getElementById('wiki-toggle-btn');
+        this.menuIcon = document.getElementById('wiki-menu-icon');
+        this.closeIcon = document.getElementById('wiki-close-icon');
+        this.pageTitle = document.getElementById('wiki-page-title');
+        this.content = document.getElementById('wiki-content');
+        this.loading = document.getElementById('wiki-loading');
         this.navContent = document.getElementById('wiki-nav-content');
         this.contentWrapper = document.querySelector('.wiki-content-wrapper');
 
@@ -77,7 +78,7 @@ export default class WikiManager {
 
         // Load wiki structure
         await this.loadWikiStructure();
-        // Setup event listeners
+        // Setup event listeners (with delegation)
         this.setupEventListeners();
         // Render navigation
         this.renderNavigation();
@@ -95,19 +96,18 @@ export default class WikiManager {
             toggleBtn: this.toggleBtn,
             menuIcon: this.menuIcon,
             closeIcon: this.closeIcon,
-            // pageTitle: this.pageTitle, // Questo va abilitato se si vuole HEADER di WIKI 
             content: this.content,
             loading: this.loading,
             navContent: this.navContent
         };
-        
+
         for (const [name, element] of Object.entries(requiredElements)) {
             if (!element) {
                 console.error(`Missing DOM element: ${name}`);
                 return false;
             }
         }
-        
+
         return true;
     }
 
@@ -118,36 +118,58 @@ export default class WikiManager {
     async loadWikiStructure() {
         try {
             const response = await fetch('./Json/Wiki-Structure.json');
-            if (!response.ok) throw new Error('Failed to load wiki structure');
-            
+            if (!response.ok) {
+                throw new Error('Failed to load wiki structure');
+            }
+
             this.wikiStructure = await response.json();
-            console.log('📚 Wiki structure loaded');
         } catch (error) {
             console.error('Error loading wiki structure:', error);
-            // Fallback a struttura vuota
             this.wikiStructure = {};
-            console.warn('⚠️ Wiki structure missing');
         }
     }
 
     /* =====================================================
-       EVENTI
+       EVENTI (Event Delegation — no memory leaks)
     ===================================================== */
 
     setupEventListeners() {
-        if (this.listenersAttached) return;
-        this.listenersAttached = true;
-        if (this.toggleBtn) {
-            this.toggleBtn.addEventListener('click', () => this.toggleSidebar());
+        // Toggle sidebar button
+        if (this.toggleBtn && !this._toggleHandler) {
+            this._toggleHandler = () => this.toggleSidebar();
+            this.toggleBtn.addEventListener('click', this._toggleHandler);
+        }
+
+        // Event delegation on nav container — handles ALL nav clicks
+        if (this.navContent && !this._navDelegateHandler) {
+            this._navDelegateHandler = (e) => this.handleNavClick(e);
+            this.navContent.addEventListener('click', this._navDelegateHandler);
+        }
+    }
+
+    handleNavClick(e) {
+        const btn = e.target.closest('button.wiki-nav-item');
+        if (!btn) {
+            return;
+        }
+
+        const path = btn.dataset.path;
+        if (!path) {
+            return;
+        }
+
+        if (btn.classList.contains('wiki-nav-category')) {
+            // Category toggle
+            this.expandedSections[path] = !this.expandedSections[path];
+            this.renderNavigation();
         } else {
-            console.warn('⚠️ Wiki toggle button not found (this.toggleBtn), event listener not attached');
+            // Item click — load page
+            this.loadPage(path);
         }
     }
 
     toggleSidebar() {
         this.sidebarOpen = !this.sidebarOpen;
-        console.log(`Wiki sidebar ${this.sidebarOpen ? 'opened' : 'closed'}`);
-        // console.trace('toggleSidebar called');
         document.body.classList.toggle('wiki-open', this.sidebarOpen);
     }
 
@@ -155,69 +177,50 @@ export default class WikiManager {
        NAVIGAZIONE
     ===================================================== */
 
-    async renderNavigation() {
-        // Verifica che entrambe le proprietà esistano
+    renderNavigation() {
         if (!this.wikiStructure || !this.navContent) {
             return;
         }
-        
-        // Pulisce il contenuto esistente
+
+        // Clear existing content (event delegation means no listener leak)
         this.navContent.innerHTML = '';
-        
-        // Itera attraverso le voci dell'oggetto usando for...of
+
         const structureEntries = Object.entries(this.wikiStructure);
-        
+
         for (const [key, value] of structureEntries) {
-            // Crea l'elemento di navigazione
             const navElement = this.renderNavItem(key, value, '');
-            
-            // Aggiunge l'elemento al contenitore
             this.navContent.appendChild(navElement);
         }
     }
 
     renderNavItem(name, data, path) {
-        // Calcola il percorso corrente
         const currentPath = path ? `${path}/${name}` : name;
-        
-        // Crea il contenitore principale
         const container = document.createElement('div');
-        
-        // Gestisce i diversi tipi di contenuto
+
         if (data.items) {
             this.renderCategoryWithItems(name, data, currentPath, container);
         } else if (data.subcategories) {
             this.renderCategoryWithSubcategories(name, data, currentPath, container);
         }
-        
+
         return container;
     }
 
     renderCategoryWithItems(name, data, currentPath, container) {
-        // Crea il pulsante della categoria
         const categoryButton = this.createCategoryButton(name, currentPath);
         container.appendChild(categoryButton);
-        
-        // Crea il contenitore per gli elementi
+
         const itemsContainer = this.createItemsContainer(currentPath);
-        
-        // Aggiunge tutti gli elementi
         this.addItemsToContainer(data.items, currentPath, itemsContainer);
-        
         container.appendChild(itemsContainer);
     }
 
     renderCategoryWithSubcategories(name, data, currentPath, container) {
-        // Crea il pulsante della categoria
         const categoryButton = this.createCategoryButton(name, currentPath);
         container.appendChild(categoryButton);
-        
-        // Crea il contenitore per le sottocategorie
+
         const subcategoryContainer = this.createSubcategoryContainer(currentPath);
-        
-        // Aggiunge tutte le sottocategorie
         this.addSubcategoriesToContainer(data.subcategories, currentPath, subcategoryContainer);
-        
         container.appendChild(subcategoryContainer);
     }
 
@@ -246,7 +249,7 @@ export default class WikiManager {
 
     addSubcategoriesToContainer(subcategories, currentPath, container) {
         const subcategoryNames = Object.keys(subcategories);
-        
+
         for (let i = 0; i < subcategoryNames.length; i++) {
             const subName = subcategoryNames[i];
             const subData = subcategories[subName];
@@ -255,10 +258,14 @@ export default class WikiManager {
         }
     }
 
-    //* =====================================================
+    /* =====================================================
+       Button creation (no addEventListener — uses data-path + delegation)
+    ===================================================== */
+
     createCategoryButton(name, path) {
         const btn = document.createElement('button');
         btn.className = 'wiki-nav-item wiki-nav-category';
+        btn.dataset.path = path;
 
         btn.innerHTML = `
             <svg class="wiki-nav-category-icon ${this.expandedSections[path] ? 'expanded' : ''}"
@@ -271,21 +278,14 @@ export default class WikiManager {
             <span class="wiki-nav-category-text">${name}</span>
         `;
 
-        btn.addEventListener('click', () => {
-            this.expandedSections[path] = !this.expandedSections[path];
-            this.renderNavigation();
-        });
-
         return btn;
     }
-
 
     createItemButton(name, path) {
         const btn = document.createElement('button');
         btn.className = 'wiki-nav-item';
         btn.textContent = name;
-
-        btn.addEventListener('click', () => this.loadPage(path));
+        btn.dataset.path = path;
         return btn;
     }
 
@@ -294,32 +294,27 @@ export default class WikiManager {
     ===================================================== */
 
     async loadPage(path) {
-        console.log(`Loading wiki page: ${path}`);
-        // if (!this.initialized) {
-        //     console.warn('WikiManager not initialized yet');
-        //     return;
-        // }
         this.currentPage = path;
 
-        // blocco altezza per evitare salti layout
+        // Lock height to prevent layout jumps
         if (this.contentWrapper) {
             this.contentWrapper.style.minHeight =
                 `${this.contentWrapper.offsetHeight || 500}px`;
         }
+
         // Show loading
-        this.loading.classList.remove('hidden');
-        this.content.classList.add('hidden');
+        this.loading?.classList.remove('hidden');
+        this.content?.classList.add('hidden');
 
         try {
-            console.log(`📄 Wiki page loaded: ${path}`);
             const md = await this.loadMarkdownFile(path);
             this.renderContentByMarkedJS(md);
         } catch (error) {
             console.error('Error loading page:', error);
             this.renderContentByMarkedJS('# Errore\nPagina non trovata.');
         } finally {
-            this.loading.classList.add('hidden');
-            this.content.classList.remove('hidden');
+            this.loading?.classList.add('hidden');
+            this.content?.classList.remove('hidden');
 
             setTimeout(() => {
                 if (this.contentWrapper) {
@@ -334,36 +329,37 @@ export default class WikiManager {
     ===================================================== */
 
     async loadMarkdownFile(path) {
-        // If it's home, load default content
-        console.log(`Loading markdown for path: ${path}`);
         if (path === 'home') {
             return this.getHomeContent();
         }
-        
-        // Try to load the .md file
-        try { 
-            const url = `./Documents/UOCS_Wiki_md/${path}.md`;
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('File MD not found');
 
+        const url = `./Documents/UOCS_Wiki_md/${path}.md`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('File MD not found');
+            }
             return await response.text();
         } catch (error) {
-            throw new Error(`Error loading markdown file for url "${url}": ${error.message}, using mock content`);
-            // return this.getMockContent(path);
+            throw new Error(`Error loading markdown file "${url}": ${error.message}`);
         }
     }
 
     /* =====================================================
-       MARKDOWN RENDER + LINK WIKI
+       MARKDOWN RENDER + LINK WIKI (with error handling)
     ===================================================== */
 
     renderContentByMarkedJS(markdown) {
-        this.content.innerHTML = marked.parse(markdown);
+        try {
+            this.content.innerHTML = marked.parse(markdown);
+        } catch (error) {
+            console.error('Markdown parsing error:', error);
+            this.content.innerHTML = '<h1>Rendering Error</h1><p>Could not parse the page content.</p>';
+            return;
+        }
 
-        /**
-         * 🔗 Intercetta link del tipo:
-         * [Leatherworking](#sectionWiki/Skills/Leatherworking)
-         */
+        // Intercept wiki links: [Text](#sectionWiki/Path/To/Page)
         const wikiLinks = this.content.querySelectorAll('a[href^="#sectionWiki/"]');
 
         wikiLinks.forEach(link => {
@@ -374,10 +370,9 @@ export default class WikiManager {
                     .getAttribute('href')
                     .replace('#sectionWiki/', '');
 
-                // Supporta Troll-Leather → Troll Leather
                 const normalizedPath = route
                     .split('/')
-                    .map(p => p.replace(/-/g, ' '))
+                    .map(p => decodeURIComponent(p).replace(/-/g, ' '))
                     .join('/');
 
                 this.loadPage(normalizedPath);
@@ -389,7 +384,7 @@ export default class WikiManager {
        CONTENUTI DEFAULT
     ===================================================== */
 
-getHomeContent() {
+    getHomeContent() {
         return `# UOCS Wiki
 
 Welcome to the official Wiki of our Ultima Online shard!
@@ -412,57 +407,21 @@ Use the sidebar menu to explore the different sections. Click on a category to e
 The wiki is constantly updated with new information about the world of UOCS. Check back often to discover what's new!`;
     }
 
-    getMockContent(path) {
-        const pageName = path.split('/').pop();
-        const category = path.split('/')[0];
-
-        return `# ${pageName}
-
-## Description
-
-This is the wiki page for **${pageName}**. Here you will find all the detailed information about this game element.
-
-## Main characteristics
-
-- **Level Requirement**: 25
-- **Category**: ${category}
-- **Rarity**: Common/Rare/Epic
-- **Usage**: Main usage description
-
-## Statistics
-
-| Attribute | Value |
-|-----------|-------|
-| Difficulty | Medium |
-| Cost | 1000 GP |
-| Weight | 5 Stone |
-
-## Details
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. This element is fundamental for your character and offers unique advantages in the world of UOCS.
-
-### How to obtain
-
-You can obtain this element through:
-- Crafting with the appropriate skills
-- Drops from specific creatures
-- Purchasing from NPC merchants
-- Trading with other players
-
-## Additional notes
-
-Extra information and useful tips to make the most of this element in your gameplay.
-
-## See also
-
-- Related elements
-- Related guides`;
-    }
     /* =====================================================
-       CLEANUP
+       CLEANUP (proper listener removal)
     ===================================================== */
 
     destroy() {
+        if (this.toggleBtn && this._toggleHandler) {
+            this.toggleBtn.removeEventListener('click', this._toggleHandler);
+            this._toggleHandler = null;
+        }
+
+        if (this.navContent && this._navDelegateHandler) {
+            this.navContent.removeEventListener('click', this._navDelegateHandler);
+            this._navDelegateHandler = null;
+        }
+
         this.sidebar = null;
         this.toggleBtn = null;
         this.content = null;

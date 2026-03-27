@@ -15,7 +15,7 @@ export default class HtmlBuilder {
     /**
      * Metodo principale per la sostituzione dei dati nella stringa template.
      */
-    static async RepalceKeysDataInfoOnString(string, jsonDataInfo) {
+    static async ReplaceKeysDataInfoOnString(string, jsonDataInfo) {
         let keysMap = [
             { key: "title", value: jsonDataInfo.title },
             { key: "footerText", value: jsonDataInfo.footerText },
@@ -99,7 +99,7 @@ export default class HtmlBuilder {
         return string;
     }
 
-    static async RepalceKeysDataInfoOfBachecaMessage(string, jsonDataInfoBachecaMessage) {
+    static async ReplaceKeysDataInfoOfBachecaMessage(string, jsonDataInfoBachecaMessage) {
         string = HtmlBuilder.RepleaceAllKey(string, "fa_icon", jsonDataInfoBachecaMessage.fa_icon);
         string = HtmlBuilder.RepleaceAllKey(string, "bachecaMsg", jsonDataInfoBachecaMessage.bachecaMsg);
         return string;

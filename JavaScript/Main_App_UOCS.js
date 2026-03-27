@@ -3,7 +3,6 @@
 /*===============================*/
 
 // Import modules
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 import UtilityClass from "./UtilityClass.js";
 import HtmlBuilder from "./HtmlBuilder.js";
 import IndexManager from "./IndexManager.js";
@@ -71,7 +70,7 @@ class Main_App_UOCS {
 
         // Wait DOM ready
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.setup());
+            document.addEventListener('DOMContentLoaded', async () => await this.setup());
         } else {
             await this.setup();
             this.ShowToast(
@@ -142,12 +141,12 @@ class Main_App_UOCS {
     async BuildPage() {
         // Navbar
         let htmlNavbar = await this.htmlBuilder.GetStringView('Navbar.html');
-        htmlNavbar = await HtmlBuilder.RepalceKeysDataInfoOnString(htmlNavbar, this.jsonDataInfo);
+        htmlNavbar = await HtmlBuilder.ReplaceKeysDataInfoOnString(htmlNavbar, this.jsonDataInfo);
         IndexManager.ReplaceHtmlContent("navbar", htmlNavbar);
 
         // Footer
         let htmlFooter = await this.htmlBuilder.GetStringView('Footer.html');
-        htmlFooter = await HtmlBuilder.RepalceKeysDataInfoOnString(htmlFooter, this.jsonDataInfo);
+        htmlFooter = await HtmlBuilder.ReplaceKeysDataInfoOnString(htmlFooter, this.jsonDataInfo);
         IndexManager.ReplaceHtmlContent("footer", htmlFooter);
 
         // Sections
@@ -163,7 +162,7 @@ class Main_App_UOCS {
 
         for (const section of sections) {
             let html = await this.htmlBuilder.GetStringView(`ViewSections/${section}.html`);
-            html = await HtmlBuilder.RepalceKeysDataInfoOnString(html, this.jsonDataInfo);
+            html = await HtmlBuilder.ReplaceKeysDataInfoOnString(html, this.jsonDataInfo);
             if (section === "Status") {
                 // Roadmap items
                 let htmlElementRoadmap_item = await this.htmlBuilder.GetStringView("ViewElements/Roadmap_Item.html");
@@ -347,17 +346,31 @@ class Main_App_UOCS {
     /*        TOAST HELPER           */
     /*===============================*/
     ShowToast(title, message, type = "") {
+        if (!this.toastLiveNotification) {
+            return;
+        }
+
         this.toastLiveNotification.classList.remove(
             "toast-success",
             "toast-error",
             "toast-warning"
         );
 
-        if (type) this.toastLiveNotification.classList.add(`toast-${type}`);
+        if (type) {
+            this.toastLiveNotification.classList.add(`toast-${type}`);
+        }
 
-        this.toastLiveNotificationTitle.innerText = title;
-        this.toastLiveNotificationMSG.innerText = message;
-        this.toastLiveNotificationTimer.innerText = "now";
+        if (this.toastLiveNotificationTitle) {
+            this.toastLiveNotificationTitle.innerText = title;
+        }
+
+        if (this.toastLiveNotificationMSG) {
+            this.toastLiveNotificationMSG.innerText = message;
+        }
+
+        if (this.toastLiveNotificationTimer) {
+            this.toastLiveNotificationTimer.innerText = "now";
+        }
 
         new bootstrap.Toast(this.toastLiveNotification, { delay: 4000 }).show();
     }
@@ -384,44 +397,46 @@ class Main_App_UOCS {
 
             if (!isOnline) throw new Error("Server offline");
 
-            this.elStatusServerOffline.classList.add("hidden");
-            this.elStatusServerOnline.classList.remove("hidden");
+            this.elStatusServerOffline?.classList.add("hidden");
+            this.elStatusServerOnline?.classList.remove("hidden");
 
             const count = Array.isArray(this.playersData)
                 ? this.playersData.length
                 : 0;
 
-            this.elPlayerLabelCountNumber.innerText = count;
+            if (this.elPlayerLabelCountNumber) {
+                this.elPlayerLabelCountNumber.innerText = count;
+            }
 
-            this.elPlayerLabelRealUnreachable.classList.add("hidden");
-            this.elPlayerLabelCountNumber.classList.remove("hidden");
-            this.elPlayerLabelPlayers.classList.remove("hidden");
+            this.elPlayerLabelRealUnreachable?.classList.add("hidden");
+            this.elPlayerLabelCountNumber?.classList.remove("hidden");
+            this.elPlayerLabelPlayers?.classList.remove("hidden");
         } catch {
             this.setServerOfflineUI();
         }
     }
 
     setServerOfflineUI() {
-        this.elStatusServerChecking.classList.add("hidden");
-        this.elStatusServerOnline.classList.add("hidden");
-        this.elStatusServerOffline.classList.remove("hidden");
+        this.elStatusServerChecking?.classList.add("hidden");
+        this.elStatusServerOnline?.classList.add("hidden");
+        this.elStatusServerOffline?.classList.remove("hidden");
 
-        this.elPlayerLabelPlayersChecking.classList.add("hidden");
-        this.elPlayerLabelCountNumber.classList.add("hidden");
-        this.elPlayerLabelPlayers.classList.add("hidden");
-        this.elPlayerLabelRealUnreachable.classList.remove("hidden");
+        this.elPlayerLabelPlayersChecking?.classList.add("hidden");
+        this.elPlayerLabelCountNumber?.classList.add("hidden");
+        this.elPlayerLabelPlayers?.classList.add("hidden");
+        this.elPlayerLabelRealUnreachable?.classList.remove("hidden");
     }
 
     setServerCheckingUI() {
-        this.elStatusServerOnline.classList.add("hidden");
-        this.elStatusServerOffline.classList.add("hidden");
+        this.elStatusServerOnline?.classList.add("hidden");
+        this.elStatusServerOffline?.classList.add("hidden");
 
-        this.elPlayerLabelCountNumber.classList.add("hidden");
-        this.elPlayerLabelPlayers.classList.add("hidden");
-        this.elPlayerLabelRealUnreachable.classList.add("hidden");
+        this.elPlayerLabelCountNumber?.classList.add("hidden");
+        this.elPlayerLabelPlayers?.classList.add("hidden");
+        this.elPlayerLabelRealUnreachable?.classList.add("hidden");
 
-        this.elStatusServerChecking.classList.remove("hidden");
-        this.elPlayerLabelPlayersChecking.classList.remove("hidden");
+        this.elStatusServerChecking?.classList.remove("hidden");
+        this.elPlayerLabelPlayersChecking?.classList.remove("hidden");
     }
 }
 

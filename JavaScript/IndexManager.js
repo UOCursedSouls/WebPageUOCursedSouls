@@ -1,44 +1,35 @@
-export default class IndexManager
-{
-    // constructor(value) 
-    // {
-    //     this.value = value
-    // }
+export default class IndexManager {
 
-    static InjecHtmlContentToTheEnd(elementId, content) 
-    { // Add content to the end
+    static InjecHtmlContentToTheEnd(elementId, content) {
         let retBool = true;
-        if(document.getElementById(elementId))
-        {
+        const el = document.getElementById(elementId);
+
+        if (el) {
             try {
-                document.getElementById(elementId).innerHTML += content;
+                el.innerHTML += content;
             } catch (error) {
                 retBool = false;
                 console.error(error);
             }
         }
-        return retBool
+
+        return retBool;
     }
 
-    static InjecMarkdown(insideIn, markdownStr) 
-    {
-        let retBool = false
-        return retBool
-    }
-
-    static ReplaceHtmlContent(elementId, content) 
-    {
+    static ReplaceHtmlContent(elementId, content) {
         let retBool = true;
-        if(document.getElementById(elementId))
-        {
+        const el = document.getElementById(elementId);
+
+        if (el) {
             try {
-                document.getElementById(elementId).innerHTML = content;
+                el.innerHTML = content;
             } catch (error) {
                 retBool = false;
                 console.error(error);
             }
         }
-        return retBool
+
+        return retBool;
     }
 
     static FindTabByElement(tabs, el) {
@@ -47,17 +38,7 @@ export default class IndexManager
                 return tabs[i];
             }
         }
+
         return null;
     }
-
-    static GetValuesFromNewPostDetail() 
-    {
-        document.getElementById(elementId).innerHTML =content;
-    }
-    
-    static GetValuesFromNewComment() 
-    {
-
-    }
 }
-
