@@ -12,7 +12,8 @@
       "Magery",
       "Mining",
       "Swordsmanship",
-      "Tailoring"
+      "Tailoring",
+      "Architecture"
     ]
   },
   "Classi": {
@@ -84,7 +85,8 @@
       "Guild Territory Stone",
       "Crystal Mana Sphere",
       "Guild Accountant",
-      "StatCap Progression"
+      "StatCap Progression",
+      "Building System"
     ]
   },
   "Items": {
