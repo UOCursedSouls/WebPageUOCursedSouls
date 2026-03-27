@@ -77,7 +77,12 @@
   },
   "Meccaniche": {
     "items": [
-      "Sistema di Casting"
+      "Sistema di Casting",
+      "Armor System",
+      "Armor Materials - Minerals",
+      "Armor Materials - Leathers",
+      "Dragon Scale Armor",
+      "Exceptional Quality"
     ]
   },
   "Guild System": {
