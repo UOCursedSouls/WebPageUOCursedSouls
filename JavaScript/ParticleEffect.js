@@ -20,6 +20,16 @@ export default class ParticleEffect {
         this.resizeBound = () => this.resizeCanvas();
         window.addEventListener("resize", this.resizeBound);
 
+        // Pause/resume on tab visibility change to save GPU
+        this._visibilityHandler = () => {
+            if (document.hidden) {
+                this.stop();
+            } else {
+                if (!this.animationId) this.animate();
+            }
+        };
+        document.addEventListener('visibilitychange', this._visibilityHandler);
+
         // Ferma qualsiasi animazione esistente
         this.stop();
 
@@ -187,6 +197,9 @@ export default class ParticleEffect {
     destroy() {
         this.stop();
         window.removeEventListener("resize", this.resizeBound);
+        if (this._visibilityHandler) {
+            document.removeEventListener('visibilitychange', this._visibilityHandler);
+        }
         this.particles = [];
     }
 }

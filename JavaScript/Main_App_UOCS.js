@@ -131,8 +131,10 @@ class Main_App_UOCS {
         // Ambient particle effect
         this.particleEffect = new ParticleEffect('fx', 'ambient', 60);
 
-        // UO Shard API instance (IP, Porta, [User], [Pass])
-        this.uoShardApi = new UOServerApi('127.0.0.1', '2593');
+        // UO Shard API instance — reads IP/port from DataInfo.json
+        const serverIp   = this.jsonDataInfo.serverIp   || '127.0.0.1';
+        const serverPort = this.jsonDataInfo.serverPort || '2593';
+        this.uoShardApi = new UOServerApi(serverIp, serverPort);
     }
 
     /*===============================*/

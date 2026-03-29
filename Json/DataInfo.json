@@ -1,5 +1,7 @@
 {
     "title": "Ultima Online Cursed Souls",
+    "serverIp": "127.0.0.1",
+    "serverPort": "2593",
     "homeText": "",
     "footerText": "© 2025 Ultima Online Shard — All rights reserved. Any unauthorized reproduction is prohibited.",
     "phone": "+",
@@ -28,7 +30,7 @@
                 "date_start": "2025-12-15",
                 "date_end": "2026-03-02",
                 "title": "Custom Map Creation",
-                "image_url": "https://example.com/hide_types.jpg",
+                "image_url": "",
                 "description": "Designing and building a unique world map, featuring custom dungeons, cities, and wilderness areas."
             },
             {
@@ -36,7 +38,7 @@
                 "date_start": "2026-06-01",
                 "date_end": "2026-07-13",
                 "title": "New Custom Hide Types",
-                "image_url": "https://example.com/hide_types.jpg",
+                "image_url": "",
                 "description": "Introduction of rare and exotic leather types harvested from unique creatures to enhance the crafting system."
             },
             {
@@ -44,7 +46,7 @@
                 "date_start": "2026-07-15",
                 "date_end": "2026-08-13",
                 "title": "New Hide Armor Sets",
-                "image_url": "https://example.com/hide_types.jpg",
+                "image_url": "",
                 "description": "Designing and implementing exclusive armor sets crafted from custom hides, offering unique bonuses and aesthetics."
             }
         ]

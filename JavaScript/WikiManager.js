@@ -38,6 +38,9 @@ export default class WikiManager {
         this.initialized = false;
         this._toggleHandler = null;     // Stored reference for cleanup
         this._navDelegateHandler = null; // Event delegation handler
+        this._searchHandler = null;     // Search input handler
+        this.searchInput = null;
+        this.breadcrumb = null;
     }
 
     /* =====================================================
@@ -71,6 +74,8 @@ export default class WikiManager {
         this.loading = document.getElementById('wiki-loading');
         this.navContent = document.getElementById('wiki-nav-content');
         this.contentWrapper = document.querySelector('.wiki-content-wrapper');
+        this.searchInput = document.getElementById('wiki-search');
+        this.breadcrumb = document.getElementById('wiki-breadcrumb');
 
         if (!this.validateDOMElements()) {
             throw new Error("Required DOM elements not found");
@@ -145,6 +150,12 @@ export default class WikiManager {
             this._navDelegateHandler = (e) => this.handleNavClick(e);
             this.navContent.addEventListener('click', this._navDelegateHandler);
         }
+
+        // Wiki search — live filter
+        if (this.searchInput && !this._searchHandler) {
+            this._searchHandler = () => this.filterNavigation(this.searchInput.value);
+            this.searchInput.addEventListener('input', this._searchHandler);
+        }
     }
 
     handleNavClick(e) {
@@ -163,8 +174,15 @@ export default class WikiManager {
             this.expandedSections[path] = !this.expandedSections[path];
             this.renderNavigation();
         } else {
-            // Item click — load page
+            // Item click — load page + highlight active
             this.loadPage(path);
+            this.navContent.querySelectorAll('.wiki-nav-item:not(.wiki-nav-category)').forEach(
+                el => el.classList.toggle('active', el.dataset.path === path)
+            );
+            // Close sidebar on mobile after selection
+            if (this.sidebarOpen && window.innerWidth < 992) {
+                this.toggleSidebar();
+            }
         }
     }
 
@@ -295,6 +313,7 @@ export default class WikiManager {
 
     async loadPage(path) {
         this.currentPage = path;
+        this.updateBreadcrumb(path);
 
         // Lock height to prevent layout jumps
         if (this.contentWrapper) {
@@ -408,6 +427,71 @@ The wiki is constantly updated with new information about the world of UOCS. Che
     }
 
     /* =====================================================
+       WIKI SEARCH (live filter)
+    ===================================================== */
+
+    filterNavigation(query) {
+        const q = query.toLowerCase().trim();
+        const items = this.navContent.querySelectorAll('.wiki-nav-item:not(.wiki-nav-category)');
+        const categories = this.navContent.querySelectorAll('.wiki-nav-items, .wiki-nav-subcategory');
+
+        if (!q) {
+            // Reset: show all, restore collapsed state
+            items.forEach(el => el.style.display = '');
+            categories.forEach(el => {
+                const path = el.previousElementSibling?.dataset?.path;
+                el.style.display = (path && this.expandedSections[path]) ? 'block' : 'none';
+            });
+            return;
+        }
+
+        // Show all containers during search
+        categories.forEach(el => el.style.display = 'block');
+
+        // Filter items
+        items.forEach(el => {
+            const text = el.textContent.toLowerCase();
+            el.style.display = text.includes(q) ? '' : 'none';
+        });
+    }
+
+    /* =====================================================
+       BREADCRUMB
+    ===================================================== */
+
+    updateBreadcrumb(path) {
+        if (!this.breadcrumb) return;
+
+        if (path === 'Home' || path === 'home') {
+            this.breadcrumb.innerHTML = '<span class="breadcrumb-item">Wiki</span>';
+            return;
+        }
+
+        const parts = path.split('/');
+        let html = '<a class="breadcrumb-link" data-bc-home>Wiki</a>';
+
+        for (let i = 0; i < parts.length; i++) {
+            html += '<span class="breadcrumb-sep">›</span>';
+            if (i < parts.length - 1) {
+                html += `<span class="breadcrumb-item">${parts[i]}</span>`;
+            } else {
+                html += `<span class="breadcrumb-item breadcrumb-current">${parts[i]}</span>`;
+            }
+        }
+
+        this.breadcrumb.innerHTML = html;
+
+        // Wire up the Wiki home link
+        const homeLink = this.breadcrumb.querySelector('[data-bc-home]');
+        if (homeLink) {
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.loadPage('Home');
+            });
+        }
+    }
+
+    /* =====================================================
        CLEANUP (proper listener removal)
     ===================================================== */
 
@@ -422,10 +506,17 @@ The wiki is constantly updated with new information about the world of UOCS. Che
             this._navDelegateHandler = null;
         }
 
+        if (this.searchInput && this._searchHandler) {
+            this.searchInput.removeEventListener('input', this._searchHandler);
+            this._searchHandler = null;
+        }
+
         this.sidebar = null;
         this.toggleBtn = null;
         this.content = null;
         this.navContent = null;
+        this.searchInput = null;
+        this.breadcrumb = null;
         this.initialized = false;
     }
 }

@@ -9,6 +9,10 @@
             <h2 class="wiki-sidebar-title">Wiki Index</h2>
         </div>
         
+        <div class="wiki-search-wrap">
+            <input type="text" id="wiki-search" class="wiki-search-input" placeholder="Search wiki..." autocomplete="off" />
+        </div>
+
         <nav class="wiki-nav">
             <!-- Navigation will be loaded by JavaScript -->
             <div id="wiki-nav-content"></div>
@@ -47,6 +51,8 @@
                 </svg>
             </button>
             
+            <nav id="wiki-breadcrumb" class="wiki-breadcrumb" aria-label="Breadcrumb"></nav>
+
             <article id="wiki-content" class="wiki-content">
                 <!-- Content will be loaded here -->
             </article>
