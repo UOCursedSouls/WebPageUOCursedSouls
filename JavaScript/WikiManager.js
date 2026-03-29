@@ -378,6 +378,12 @@ export default class WikiManager {
             return;
         }
 
+        // Highlight search terms if coming from search
+        if (this._pendingHighlight) {
+            this.highlightText(this._pendingHighlight);
+            this._pendingHighlight = null;
+        }
+
         // Intercept wiki links: [Text](#sectionWiki/Path/To/Page)
         const wikiLinks = this.content.querySelectorAll('a[href^="#sectionWiki/"]');
 
@@ -427,32 +433,157 @@ The wiki is constantly updated with new information about the world of UOCS. Che
     }
 
     /* =====================================================
-       WIKI SEARCH (live filter)
+       WIKI SEARCH (full-text with results dropdown)
     ===================================================== */
+
+    // Build flat index of all wiki pages from the structure tree
+    buildSearchIndex(obj, parentPath) {
+        const results = [];
+        for (const [key, val] of Object.entries(obj)) {
+            const path = parentPath ? `${parentPath}/${key}` : key;
+            if (val.items) {
+                // category label
+                for (const item of val.items) {
+                    results.push({ name: item, path: `${path}/${item}`, category: key });
+                }
+            }
+            if (val.subcategories) {
+                results.push(...this.buildSearchIndex(val.subcategories, path));
+            }
+        }
+        return results;
+    }
 
     filterNavigation(query) {
         const q = query.toLowerCase().trim();
-        const items = this.navContent.querySelectorAll('.wiki-nav-item:not(.wiki-nav-category)');
-        const categories = this.navContent.querySelectorAll('.wiki-nav-items, .wiki-nav-subcategory');
+
+        // Get or create results dropdown
+        let dropdown = document.getElementById('wiki-search-results');
+        if (!dropdown) {
+            dropdown = document.createElement('div');
+            dropdown.id = 'wiki-search-results';
+            dropdown.className = 'wiki-search-results';
+            this.searchInput.parentNode.appendChild(dropdown);
+        }
 
         if (!q) {
-            // Reset: show all, restore collapsed state
-            items.forEach(el => el.style.display = '');
-            categories.forEach(el => {
-                const path = el.previousElementSibling?.dataset?.path;
-                el.style.display = (path && this.expandedSections[path]) ? 'block' : 'none';
-            });
+            dropdown.innerHTML = '';
+            dropdown.style.display = 'none';
+            this._pendingHighlight = null;
             return;
         }
 
-        // Show all containers during search
-        categories.forEach(el => el.style.display = 'block');
+        // Build index on first search
+        if (!this._searchIndex) {
+            this._searchIndex = this.buildSearchIndex(this.wikiStructure, '');
+        }
 
-        // Filter items
-        items.forEach(el => {
-            const text = el.textContent.toLowerCase();
-            el.style.display = text.includes(q) ? '' : 'none';
+        // Filter matching items
+        const matches = this._searchIndex.filter(item =>
+            item.name.toLowerCase().includes(q)
+        ).slice(0, 12); // max 12 results
+
+        if (matches.length === 0) {
+            dropdown.innerHTML = '<div class="wiki-search-empty">No results found</div>';
+            dropdown.style.display = 'block';
+            return;
+        }
+
+        dropdown.innerHTML = matches.map(m => {
+            // Highlight the matched portion in the name
+            const idx = m.name.toLowerCase().indexOf(q);
+            const before = m.name.slice(0, idx);
+            const match = m.name.slice(idx, idx + q.length);
+            const after = m.name.slice(idx + q.length);
+            return `<button class="wiki-search-item" data-path="${m.path}" data-query="${q}">
+                <span class="wiki-search-name">${before}<mark>${match}</mark>${after}</span>
+                <span class="wiki-search-cat">${m.category}</span>
+            </button>`;
+        }).join('');
+
+        dropdown.style.display = 'block';
+
+        // Wire up click handlers
+        dropdown.querySelectorAll('.wiki-search-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const path = btn.dataset.path;
+                const searchQuery = btn.dataset.query;
+                this._pendingHighlight = searchQuery;
+                this.loadPage(path);
+
+                // Highlight active in sidebar
+                this.navContent.querySelectorAll('.wiki-nav-item:not(.wiki-nav-category)').forEach(
+                    el => el.classList.toggle('active', el.dataset.path === path)
+                );
+
+                // Clear search
+                this.searchInput.value = '';
+                dropdown.innerHTML = '';
+                dropdown.style.display = 'none';
+
+                // Close sidebar on mobile
+                if (this.sidebarOpen && window.innerWidth < 992) {
+                    this.toggleSidebar();
+                }
+            });
         });
+    }
+
+    /* =====================================================
+       TEXT HIGHLIGHT (search result)
+    ===================================================== */
+
+    highlightText(query) {
+        if (!this.content || !query) return;
+        const q = query.toLowerCase();
+
+        // Walk all text nodes in the content
+        const walker = document.createTreeWalker(
+            this.content, NodeFilter.SHOW_TEXT, null
+        );
+
+        const matches = [];
+        let node;
+        while (node = walker.nextNode()) {
+            if (node.nodeValue.toLowerCase().includes(q)) {
+                matches.push(node);
+            }
+        }
+
+        // Replace text nodes with highlighted spans
+        for (const textNode of matches) {
+            const text = textNode.nodeValue;
+            const lower = text.toLowerCase();
+            const frag = document.createDocumentFragment();
+            let lastIndex = 0;
+            let idx;
+
+            while ((idx = lower.indexOf(q, lastIndex)) !== -1) {
+                // Text before match
+                if (idx > lastIndex) {
+                    frag.appendChild(document.createTextNode(text.slice(lastIndex, idx)));
+                }
+                // Highlighted match
+                const mark = document.createElement('mark');
+                mark.className = 'wiki-highlight';
+                mark.textContent = text.slice(idx, idx + q.length);
+                frag.appendChild(mark);
+                lastIndex = idx + q.length;
+            }
+
+            // Remaining text
+            if (lastIndex < text.length) {
+                frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+            }
+
+            textNode.parentNode.replaceChild(frag, textNode);
+        }
+
+        // Scroll to first highlight
+        const firstMark = this.content.querySelector('.wiki-highlight');
+        if (firstMark) {
+            firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     /* =====================================================
