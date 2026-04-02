@@ -155,10 +155,9 @@ Fai doppio click sul tool (deve essere nel backpack) per aprire il menu:
 
 ### Note importanti:
 
-- Ogni azione **consuma 1 uso** dal tool
-- Ogni utilizzo da una **possibilita di aumentare Architecture**
+- Place, Pick Up, Rotate e Lock/Unlock **consumano 1 uso** dal tool e danno possibilita di aumentare Architecture
+- **Attack non consuma usi** dal tool e non richiede alcun permesso — chiunque puo farlo!
 - Per piazzare, spostare, ruotare e bloccare serve il **permesso building**
-- Per **attaccare** non serve alcun permesso — chiunque puo farlo!
 - Non puoi prendere uno statico **bloccato** — sbloccalo prima
 
 ---
@@ -333,7 +332,8 @@ Quando una [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory
 | Parametro | Valore |
 |-----------|--------|
 | **Velocita decay** | ~1 HP ogni 22 ore |
-| **Tempo totale** | Circa **1 mese** per distruggere uno statico a durabilita piena |
+| **Tempo totale (legno)** | Circa **3 mesi** (100 HP base) |
+| **Tempo totale (metallo exc.)** | Circa **7 mesi** (225 HP) |
 
 Quando la stone viene distrutta:
 1. Tutti gli statici collegati diventano **orfani**
@@ -401,5 +401,5 @@ R: Usa le guardie del territorio, le barriere magiche, e posiziona gli statici i
 
 ---
 
-*Ultimo aggiornamento: Marzo 2026*
+*Ultimo aggiornamento: Aprile 2026*
 *Vedi anche: [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) | [Crystal Mana Sphere](#sectionWiki/Guild%20System/Crystal%20Mana%20Sphere)*

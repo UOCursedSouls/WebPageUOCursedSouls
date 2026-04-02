@@ -11,13 +11,14 @@
 - [Come Aumentare le Skill](#come-aumentare-le-skill)
 - [Lista Skill](#lista-skill)
 - [Builds Consigliate](#builds-consigliate)
+- [Sistema Classi](#sistema-classi)
 - [FAQ](#faq)
 
 ---
 
 ## 📜 Panoramica
 
-Su Cursed Souls il sistema skill segue il modello classico di Ultima Online: le skill aumentano **usandole**. Piu usi la spada, piu diventi bravo con la spada. Non ci sono classi — sei libero di combinare qualsiasi skill.
+Su Cursed Souls il sistema skill segue il modello classico di Ultima Online: le skill aumentano **usandole**. Piu usi la spada, piu diventi bravo con la spada. Sei libero di combinare qualsiasi skill, ma le **skill di classe** hanno una progressione a tier che richiede di svilupparle insieme (vedi [Sistema Classi](#sistema-classi) sotto).
 
 La differenza principale rispetto ad altri server: su Cursed Souls, un **Grand Master** (100.0) e **piu potente** di un GM su un server vanilla. Le tue skill funzionano come se fossero il 20% piu efficaci.
 
@@ -29,19 +30,19 @@ La differenza principale rispetto ad altri server: su Cursed Souls, un **Grand M
 
 | Razza | Skill Cap Totale | Numero di skill GM |
 |-------|-----------------|-------------------|
-| Tutte le razze (tranne Human) | **700.0** | 7 skill a 100.0 |
-| **Human** (passiva Versatility) | **750.0** | 7.5 skill a 100.0 |
+| Tutte le razze (tranne Human) | **700.0** | 7 skill a 100.0 (cap 100 per skill) |
+| **Human** (passiva Versatility) | **750.0** | 7 skill a 105.0 + extra (cap **105** per skill) |
 
 Il cap totale e la somma di TUTTE le tue skill. Con 700.0 puoi avere 7 skill a Grand Master, oppure distribuire i punti come preferisci (es: 5 skill a 100.0 + 4 skill a 50.0).
 
 ### Cap Individuale
 
-| Parametro | Valore |
-|-----------|--------|
-| **Massimo per skill** | 100.0 (Grand Master) |
-| **PowerScroll** | Non disponibili su Cursed Souls |
+| Razza | Massimo per skill |
+|-------|------------------|
+| Tutte (tranne Human) | **100.0** (Grand Master) |
+| **Human** | **105.0** (Legendary) |
 
-Su Cursed Souls **non esistono PowerScroll**. Il massimo per ogni singola skill e **100.0**. Non serve farmarne nessuna — raggiungi il massimo con il training normale.
+Su Cursed Souls **non esistono PowerScroll**. Gli **Human** possono portare ogni singola skill fino a **105.0** grazie alla passiva Versatility, tutte le altre razze fino a **100.0**.
 
 ### Skill Lock
 
@@ -261,7 +262,65 @@ Carpentry      100.0
 Lumberjacking  100.0
 ```
 
-> 💡 **Human Crafter**: Con il bonus Versatility (+50 skill cap), un Human crafter puo avere 7 craft skill a 100.0 + una skill extra a 50.0 per utilita (es: Magery per recall).
+> 💡 **Human Crafter**: Con il bonus Versatility (+50 skill cap e cap 105 per skill), un Human crafter puo avere 7 craft skill a 105.0 + punti extra per utilita.
+
+---
+
+## ⚔️ Sistema Classi
+
+Cursed Souls ha **18 classi di gioco**, ognuna definita da **3 skill**. Le skill di classe hanno una **progressione a tier** che richiede di svilupparle insieme.
+
+### Come funziona
+
+Le skill di classe non possono salire liberamente fino a 100 — devono progredire a **3 tier**:
+
+| Tier | Requisito | Cap skill di classe |
+|------|-----------|-------------------|
+| **Tier 1** | — | 60.0 |
+| **Tier 2** | Tutte e 3 le skill a 60.0 | 80.0 |
+| **Tier 3** | Tutte e 3 le skill a 80.0 | 100.0 |
+
+### Esempio: Classe Guerriero (Swords + Tactics + Lumberjacking)
+
+1. Inizi a trainare Swords — sale liberamente fino a 60.0
+2. Per superare 60.0, **anche Tactics e Lumberjacking** devono essere a 60.0
+3. Quando tutte e 3 sono a 60.0, possono salire fino a 80.0
+4. Quando tutte e 3 sono a 80.0, possono salire fino a 100.0
+
+### Decay
+
+Se una skill di classe scende sotto la soglia del tier (es. Tactics scende sotto 60.0), le altre skill della classe **decadono di 0.1 al minuto** fino a riallinearsi. Il decay avviene sia online che offline (massimo 24 ore di recupero al login).
+
+### Skill condivise
+
+Alcune skill appartengono a piu classi (es. Tactics e in Guerriero, Mazziere, Spadaccino e Arciere). In questo caso, il **tier piu alto** tra tutte le classi applicabili viene usato come cap.
+
+### Le 18 Classi
+
+| Categoria | Classe | Skill 1 | Skill 2 | Skill 3 |
+|-----------|--------|---------|---------|---------|
+| **Combattimento** | Guerriero | Swords | Tactics | Lumberjacking |
+| | Mazziere | Macing | Tactics | Wrestling |
+| | Spadaccino | Fencing | Tactics | Poisoning |
+| | Arciere | Archery | Tactics | Chivalry |
+| | Templare | Swords | Chivalry | Parrying |
+| | Minatore Comb. | Mining | Blacksmithy | Arms Lore |
+| **Magia** | Arcanista | Magery | Eval Int | Meditation |
+| | Necromante | Necromancy | Spirit Speak | Magery |
+| | Alchimista | Alchemy | Poisoning | Taste ID |
+| | Chierico | Healing | Chivalry | Spirit Speak |
+| | Sciamano | Spirit Speak | Animal Taming | Magery |
+| **Supporto** | Bardo | Musicianship | Provocation | Discordance |
+| **Furtivita** | Ladro | Stealing | Snooping | Hiding |
+| | Assassino | Fencing | Poisoning | Ninjitsu |
+| | Ninja | Ninjitsu | Hiding | Stealth |
+| **Natura** | Tamer | Animal Taming | Animal Lore | Veterinary |
+| | Ranger | Archery | Animal Taming | Animal Lore |
+| **Esplorazione** | Esploratore | Cartography | Lockpicking | Detect Hidden |
+
+> 💡 Le skill che **non appartengono a nessuna classe** (es. Magic Resist, Healing da sola, Mining da sola) non hanno limiti di tier — salgono liberamente fino a 100.0.
+
+> ⚠️ Lo staff (GM e superiori) bypassa tutti i limiti di classe.
 
 ---
 
@@ -287,5 +346,5 @@ R: Si! La passiva razziale Mastersmith da +10% chance exceptional in aggiunta al
 
 ---
 
-*Ultimo aggiornamento: Marzo 2026*
+*Ultimo aggiornamento: Aprile 2026*
 *Vedi anche: [Razze](#sectionWiki/Razze/Races) | [StatCap Progression](#sectionWiki/Guild%20System/StatCap%20Progression)*

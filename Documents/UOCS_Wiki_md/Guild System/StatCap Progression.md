@@ -162,7 +162,7 @@ R: No. La chance di drop e del 10% per i 5 artefatti tematici. La Scroll dell'Ha
 R: Si! Il tracking e per personaggio, non per account.
 
 **D: Cosa succede se cambio razza? Perdo i bonus StatCap?**
-R: No. Il StatCap resta. Il cambio razza resetta solo le stats base e il colore, non il StatCap.
+R: No! Il tuo StatCap resta invariato. Il cambio razza resetta solo le stats base (STR/DEX/INT) e l'aspetto, non il StatCap ne i bonus ottenuti dagli artefatti.
 
 **D: Il Veteran Reward e automatico?**
 R: Si. Dopo 15 giorni dalla creazione dell'account, ricevi +5 StatCap al prossimo login. Non serve fare nulla.
@@ -172,5 +172,5 @@ R: Quando provi a usare un artefatto gia usato, riceverai il messaggio: *"You ha
 
 ---
 
-*Ultimo aggiornamento: Marzo 2026*
+*Ultimo aggiornamento: Aprile 2026*
 *Vedi anche: [Razze](#sectionWiki/Razze/Races) | [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone)*

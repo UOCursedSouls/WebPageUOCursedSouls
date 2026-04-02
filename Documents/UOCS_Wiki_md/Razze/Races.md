@@ -44,7 +44,7 @@ Ogni razza ha **cap individuali per stat** — non puoi superare il cap della tu
 
 | Razza | Passiva | Condizione | Effetto |
 |-------|---------|-----------|---------|
-| 🧑 **Human** | *Versatility* | Sempre attiva | Skill cap 105 (750 totali) invece di 100 (700) |
+| 🧑 **Human** | *Versatility* | Sempre attiva | Skill cap **105** per skill (750 totali) invece di 100 (700) |
 | 🧝 **Elf** | *Elven Meditation* | Mana < 30% | Mana Regeneration +3 |
 | 🗿 **Gargoyle** | *Stone Skin* | HP < 40% | Physical Resist +15 |
 | 🌙 **Dark Elf** | *Arcane Mastery* | INT >= 170 | Faster Casting +2 |
@@ -84,7 +84,7 @@ Ogni razza ha **cap individuali per stat** — non puoi superare il cap della tu
 
 | Razza | STR cap | DEX cap | INT cap | HP max | Mana max | Stam max | Passiva |
 |-------|---------|---------|---------|--------|----------|----------|---------|
-| 🧑 [**Human**](#sectionWiki/Razze/Human) | 115 | 115 | 115 | 127 | 115 | 115 | Skill cap +5 |
+| 🧑 [**Human**](#sectionWiki/Razze/Human) | 115 | 115 | 115 | 127 | 115 | 115 | Skill cap 105 (+50 totali) |
 | 🧝 [**Elf**](#sectionWiki/Razze/Elf) | 85 | 140 | 130 | 112 | 130 | 140 | Mana regen basso mana |
 | 🗿 [**Gargoyle**](#sectionWiki/Razze/Gargoyle) | 135 | 105 | 95 | 137 | 95 | 105 | Resist quando ferito |
 | 🌙 [**Dark Elf**](#sectionWiki/Razze/Dark%20Elf) | 95 | 70 | 160 | 117 | 160 | 70 | FastCast +2 |
@@ -149,12 +149,11 @@ Per cambiare razza devi usare il **Races Pad**:
 
 1. Il tuo personaggio deve essere un **ghost** (morto)
 2. Cammina sopra il **Races Pad**
-3. Seleziona la nuova razza
-4. Dopo 2.5 secondi di trasformazione, la razza viene applicata
-5. Le tue stats vengono resettate ai valori iniziali della nuova razza
-6. Il tuo **Stat Cap** viene settato a **285**
+3. Dopo circa 10 secondi di trasformazione, la razza viene applicata
+4. Le tue stats vengono resettate ai valori iniziali della nuova razza
+5. Il tuo **Stat Cap resta invariato** — i bonus ottenuti dalla [Progressione StatCap](#sectionWiki/Guild%20System/StatCap%20Progression) non vengono persi
 
-> ⚠️ **Attenzione**: Cambiare razza resetta le tue stats! Dovrai riallenarle.
+> ⚠️ **Attenzione**: Cambiare razza resetta le tue stats base! Dovrai riallenarle. Il Stat Cap e i bonus progressione invece restano.
 
 ---
 
@@ -173,10 +172,10 @@ R: No. Puoi mangiare solo se Hunger < 20 e bere solo se Thirst < 20. Quando sei 
 R: Si. Solo con il nome rosso i mostri ti ignorano. Se non sei murderer, la passiva non funziona.
 
 **D: L'Human e debole perche non ha estremi?**
-R: L'Human ha lo skill cap piu alto (750 vs 700) — puo imparare 5 punti skill in piu di qualsiasi altra razza. Questo permette build piu versatili.
+R: L'Human ha lo skill cap piu alto (750 vs 700) e ogni skill puo arrivare a **105.0** invece di 100.0. Questo permette build piu versatili e potenti in ogni singola skill.
 
 **D: Le stats iniziali sono fisse?**
-R: Si. Quando cambi razza tramite il Races Pad, le stats vengono resettate ai valori iniziali della razza. Dovrai poi allenarle fino ai cap.
+R: Si. Quando cambi razza tramite il Races Pad, le stats vengono resettate ai valori iniziali della razza. Dovrai poi allenarle fino ai cap. Il tuo **Stat Cap** resta invariato.
 
 ---
 
@@ -190,4 +189,4 @@ R: Si. Quando cambi razza tramite il Races Pad, le stats vengono resettate ai va
 
 ---
 
-*Ultimo aggiornamento: Marzo 2026*
+*Ultimo aggiornamento: Aprile 2026*
