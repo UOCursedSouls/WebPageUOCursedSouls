@@ -155,9 +155,11 @@ Fai doppio click sul tool (deve essere nel backpack) per aprire il menu:
 
 ### Note importanti:
 
-- Place, Pick Up, Rotate e Lock/Unlock **consumano 1 uso** dal tool e danno possibilita di aumentare Architecture
-- **Attack non consuma usi** dal tool e non richiede alcun permesso — chiunque puo farlo!
+- Ogni azione **consuma 1 uso** dal tool
+- Place, Pick Up, Rotate e Lock/Unlock danno possibilita di aumentare Architecture
 - Per piazzare, spostare, ruotare e bloccare serve il **permesso building**
+- Per **attaccare** non serve alcun permesso — chiunque con un tool puo farlo!
+- C'e un **cooldown di 2 secondi** tra un attacco e l'altro
 - Non puoi prendere uno statico **bloccato** — sbloccalo prima
 
 ---
