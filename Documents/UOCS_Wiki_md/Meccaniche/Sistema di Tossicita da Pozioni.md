@@ -70,6 +70,8 @@ Al cambio di fascia ricevi un **messaggio overhead** (*"Ti senti un po' nauseato
 
 Quando superi una soglia, il sistema tira un **side effect** tra quelli compatibili con i tag attivi. Tra un effetto e l'altro c'è un **gap minimo di 4 secondi** per evitare spam. Mentre sei in fascia negativa, ogni ~10 secondi il sistema rolla di nuovo.
 
+> **Grazia alla prima bevuta:** il drink che ti fa **entrare** in una fascia negativa dà solo il messaggio overhead, **nessun side effect immediato**. I roll al drink partono solo se eri già ≥ Mild prima della bevuta — la prima goccia non ti punisce, le successive sì.
+
 ### Fascia Mild (26 – 50)
 
 | Effetto | Condizione Tag | Cosa Fa |
@@ -165,7 +167,7 @@ R: Non c'è una barra numerica. Ti affidi alla **BuffIcon** (Weaken/Mindrot/Spel
 R: Sì. Se fai logout con tossicità 80 e rientri dopo 2 minuti (120 secondi), la trovi a 0 grazie al decay di 1 punto al secondo.
 
 **D: Il salvataggio del server mi conserva lo stato?**
-R: Sì. Tossicità, tag attivi e timer di side effects sono serializzati con il mondo. Un riavvio del server non ti "cura" magicamente.
+R: Sì, tutto. Tossicità, tag attivi, **effetti DoT in corso** (Sanguinamento, Allucinazioni, Vista Annebbiata) sono serializzati con il mondo. Un riavvio del server non ti "cura" magicamente: la catena di danno/effetti riparte da dove era. Anche il **decay offline durante un downtime del server** viene recuperato al caricamento (se il server è giù 5 minuti, al reboot la tua tossicità risulta già scesa di 300 punti).
 
 **D: Le pozioni lanciabili (Explosion, Conflagration, Confusion Blast) contribuiscono?**
 R: No. Quelle hanno sempre avuto un sistema di cooldown tattico (30s/60s) e resta invariato. Solo le pozioni **bevute** alimentano la tossicità.
@@ -176,15 +178,27 @@ R: Sì, la seconda bevuta rinfresca la durata dello StatMod esistente (non lo im
 **D: Come si riduce la tossicità velocemente?**
 R: **Vomito** automatico (taglia -40% quando scatta in Moderate) e **Collasso tossico** (dimezza a 100+) sono gli unici "trick". Per il resto, decay naturale: devi aspettare.
 
-**D: Un pet che spamma Heal potion si suicida?**
-R: Ad oggi, l'AI dei mob/pet non controlla la sua tossicità prima di bere. È un punto aperto — potrebbe essere bilanciato in futuro. In pratica, i pet healer spesso si auto-sabotano, e tu puoi sfruttarlo.
-
 **D: Il buff della pozione (es. +10 Str dell'Agility) si applica anche se vengo già vomitato dopo?**
 R: Sì. La pozione fa il suo effetto (heal, stat, cure…) **prima** di aggiungere tossicità. Il side effect scatta dopo, ma non annulla il buff appena ricevuto.
+
+**D: In un duello (arena) la tossicità conta?**
+R: **No.** Dentro un duello le pozioni non vengono consumate (già così in UO classico) e la tossicità **non si accumula**. Puoi bere quanto ti pare senza rischio di overdose durante l'incontro — il duello resta una prova di skill, non di resistenza al veleno. Fuori dal duello (PvE/PvP libero) torna tutto normale.
+
+**D: I GM/Admin subiscono la tossicità?**
+R: No. Gli staff con AccessLevel superiore a Player non accumulano tossicità — utile per testing e bilanciamento. Vale solo per il sistema di tossicità: gli altri effetti delle pozioni (heal, cure, stat buff) funzionano normalmente.
+
+**D: Se bevo tante Heal di fila, il Sanguinamento interno si raddoppia?**
+R: No. Se il Sanguinamento è già attivo e il sistema lo riattiverebbe, l'effetto **estende semplicemente la durata** invece di partire una seconda catena parallela. Niente "doppio danno" da trigger ripetuti.
+
+**D: Se combino Nightsight e pozioni che triggerano Vista Annebbiata, che succede?**
+R: Attenzione: la Vista Annebbiata azzera il `LightLevel` quando scade. Se hai una Nightsight ancora attiva, la perdi prematuramente — l'effetto blur "pulisce" la tua vista resettandola. Se vuoi mantenere la Nightsight, evita di entrare in fascia Mild con tag Night o Cure attivi.
+
+**D: Un pet che spamma Heal potion si suicida?**
+R: Ad oggi, l'AI dei mob/pet non controlla la sua tossicità prima di bere. È un punto aperto — potrebbe essere bilanciato in futuro. In pratica, i pet healer spesso si auto-sabotano, e tu puoi sfruttarlo.
 
 **D: Ho dimenticato che tossicità ho e non ho la buff icon. Come faccio?**
 R: Se non vedi nessuna icona, sei in **Safe** (0-25). Puoi bere tranquillamente.
 
 ---
 
-*Ultimo aggiornamento: Aprile 2026*
+*Ultimo aggiornamento: Aprile 2026 (revisione 2)*
