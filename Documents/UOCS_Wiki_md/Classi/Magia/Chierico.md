@@ -42,11 +42,11 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Gargoyle) |
 |------|-------------------|-------------------------------|
-| STR  | 110               | 135                           |
+| STR  | 120               | 135                           |
 | DEX  | 70                | 105                           |
 | INT  | 95                | 95                            |
 
-**HP**: 125 | **Mana**: 95 | **Stamina**: 70
+**HP**: 130 | **Mana**: 95 | **Stamina**: 70
 
 > Con Human: STR 100, DEX 80, INT 105 — HP 120, Mana 105, Stamina 80
 > Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
