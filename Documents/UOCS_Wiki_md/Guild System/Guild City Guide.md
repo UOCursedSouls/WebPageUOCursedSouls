@@ -190,7 +190,7 @@ Il sistema verifica che tu sia "owner" della foundation (per le guild city, ques
 ### Se il design editor non si apre
 
 Possibili cause:
-- Il tuo client non supporta il design editor (raro — MondainGate lo supporta out-of-box via packets 0xD7/0xD8)
+- Il tuo client non supporta il design editor (raro — il client di UOCS lo supporta out-of-box via packets 0xD7/0xD8)
 - Non sei il "owner" tecnicamente (non in BuildPermissions o non in guild)
 - Sei in combattimento (UO blocca la customizzazione durante il combat)
 
