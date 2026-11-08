@@ -32,7 +32,7 @@ La Guild Territory Stone non si può piazzare vicino a una regione: deve restare
 
 ## 🍂 Oggetti a terra e cadaveri
 
-Gli oggetti lasciati a terra e i cadaveri decadono solo mentre la loro area è caricata perché un giocatore è nelle vicinanze, come in Minecraft. Se nessuno e vicino, il tempo per loro non scorre.
+Gli oggetti lasciati a terra e i cadaveri decadono solo mentre la loro area è caricata perché un giocatore è nelle vicinanze, come in Minecraft. Se nessuno è vicino, il tempo per loro non scorre.
 
 ---
 
