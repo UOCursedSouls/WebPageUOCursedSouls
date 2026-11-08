@@ -44,9 +44,9 @@ Totale:         700
 |------|-------------------|--------------------------|
 | STR  | 120               | 160                      |
 | DEX  | 50                | 95                       |
-| INT  | 115               | 70                       |
+| INT  | 70                | 70                       |
 
-**HP**: 130 | **Mana**: 115 | **Stamina**: 50
+**HP**: 130 | **Mana**: 70 | **Stamina**: 50
 
 > Con Orc: STR 160, DEX 50, INT 55 — HP 150, Mana 55, Stamina 50
 > Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
