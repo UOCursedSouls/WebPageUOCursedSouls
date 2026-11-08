@@ -35,7 +35,7 @@ Guida al crafting: skill, materiali, bonus razziali del Dwarf, selezione SubRes 
 ### [Combat Overview](#sectionWiki/Skills/Combat%20Overview)
 Guida al combattimento: melee, ranged, magia, effetto del moltiplicatore x1.2 e passive razziali in battaglia.
 
-### [Classi](#sectionWiki/Classi/Guerriero)
+### [Classi](#sectionWiki/Classi/Combattimento/Guerriero)
 Le 18 classi build disponibili: Alchimista, Arcanista, Arciere, Assassino d'Ombra, Bardo, Chierico, Esploratore, Guerriero, Ladro, Mazziere, Minatore Combattente, Necromante, Ninja, Ranger, Sciamano, Spadaccino, Tamer, Templare.
 
 ### [Guild System](#sectionWiki/Guild%20System/Guild%20Territory%20Stone)
