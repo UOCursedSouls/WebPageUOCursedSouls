@@ -48,7 +48,7 @@ Totale:        700
 
 **HP**: 97 | **Mana**: 55 | **Stamina**: 135
 
-> Con Vampire: STR 80, DEX 135, INT 55 — HP 112, Mana 55, Stamina 135
+> Con Vampire: STR 80, DEX 135, INT 55 — HP 110, Mana 55, Stamina 135
 > Con Elf: STR 55, DEX 140, INT 90 — HP 97, Mana 90, Stamina 140
 
 ## ⚔️ Stile di Gioco

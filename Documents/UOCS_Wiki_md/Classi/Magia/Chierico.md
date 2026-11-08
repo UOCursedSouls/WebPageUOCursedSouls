@@ -46,9 +46,9 @@ Totale:        700
 | DEX  | 70                | 105                           |
 | INT  | 105               | 95                            |
 
-**HP**: 130 | **Mana**: 105 | **Stamina**: 70
+**HP**: 125 | **Mana**: 105 | **Stamina**: 70
 
-> Con Human: STR 100, DEX 80, INT 105 — HP 125, Mana 105, Stamina 80
+> Con Human: STR 100, DEX 80, INT 105 — HP 120, Mana 105, Stamina 80
 > Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
 
 ## ⚔️ Stile di Gioco

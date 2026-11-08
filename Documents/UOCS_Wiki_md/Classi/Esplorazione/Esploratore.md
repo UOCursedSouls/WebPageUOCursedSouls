@@ -48,7 +48,7 @@ Totale:        700
 
 **HP**: 97 | **Mana**: 130 | **Stamina**: 100
 
-> Con Human: STR 100, DEX 80, INT 105 — HP 125, Mana 105, Stamina 80
+> Con Human: STR 100, DEX 80, INT 105 — HP 120, Mana 105, Stamina 80
 > Con Elf: STR 55, DEX 100, INT 130 — HP 97, Mana 130, Stamina 100
 
 ## ⚔️ Stile di Gioco
