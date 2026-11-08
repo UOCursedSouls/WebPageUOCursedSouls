@@ -21,9 +21,9 @@ Le tre skill che definiscono il Guerriero. Devono progredire insieme: tutte a 60
 
 | Razza | Perche |
 |-------|--------|
-| 🟢 **Orc** | STR cap 180 — il piu alto del gioco. Blood Rage (+15% danni sotto 30% HP) trasforma la disperazione in devastazione. Nato per combattere |
-| 🦇 **Gargoyle** | STR cap 140, resistenze naturali alte. Berserk sotto 25% HP per la sopravvivenza. Solido e robusto |
-| ⛏️ **Dwarf** | STR cap 160, Mining bonus naturale. Stoneform (resistenze +10% stando fermo). Perfetto per tank e combattimento posizionale |
+| 🟢 **Orc** | STR cap 160 — il piu alto del gioco. Blood Rage (+15% danni sotto 30% HP) trasforma la disperazione in devastazione. Nato per combattere |
+| 🦇 **Gargoyle** | STR cap 135, resistenze naturali alte. Berserk sotto 25% HP per la sopravvivenza. Solido e robusto |
+| ⛏️ **Dwarf** | STR cap 145. Stoneform (resistenze +10% stando fermo). Perfetto per tank e combattimento posizionale |
 
 ## 📊 Template Skill
 
@@ -43,15 +43,15 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Orc) |
 |------|-------------------|--------------------------|
-| STR  | 180               | 180                      |
-| DEX  | 70                | 50                       |
-| INT  | 35                | 25                       |
+| STR  | 160               | 160                      |
+| DEX  | 70                | 95                       |
+| INT  | 35                | 70                       |
 
-**HP**: 155 | **Mana**: 35 | **Stamina**: 70
+**HP**: 150 | **Mana**: 35 | **Stamina**: 70
 
-> Con Orc: STR 180, DEX 70, INT 35 — HP 155, Mana 35, Stamina 70
-> Con Gargoyle: STR 140, DEX 70, INT 75 — HP 142, Mana 75, Stamina 70
-> Con Dwarf: STR 160, DEX 60, INT 45 — HP 147, Mana 45, Stamina 60
+> Con Orc: STR 160, DEX 70, INT 35 — HP 150, Mana 35, Stamina 70
+> Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
+> Con Dwarf: STR 145, DEX 60, INT 45 — HP 142, Mana 45, Stamina 60
 
 ## ⚔️ Stile di Gioco
 
@@ -90,10 +90,10 @@ R: Lumberjacking fornisce un bonus di danno passivo con le asce che supera quals
 R: Ascia a due mani per il massimo danno (Executioner's Axe), ascia + scudo per la sopravvivenza (Parrying). Usa l'ascia grande per il farming PvE e ascia + scudo per il PvP o i boss.
 
 **D: Come sopravvivo senza magia?**
-R: Healing + bende + pozioni + Parrying + armatura pesante. Hai piu HP di chiunque altro (STR 180 = HP 155), blocchi colpi con lo scudo, e le bende curano molto con Anatomy 100. Sei piu resistente di quanto pensi.
+R: Healing + bende + pozioni + Parrying + armatura pesante. Hai piu HP di chiunque altro (STR 160 = HP 150), blocchi colpi con lo scudo, e le bende curano molto con Anatomy 100. Sei piu resistente di quanto pensi.
 
 **D: Orc, Gargoyle o Dwarf?**
-R: Orc per il danno massimo (STR 180, Blood Rage). Dwarf per il tank (STR 160, Stoneform). Gargoyle per il compromesso (STR 140, Berserk). Orc e il piu aggressivo, Dwarf il piu difensivo.
+R: Orc per il danno massimo (STR 160, Blood Rage). Dwarf per il tank (STR 145, Stoneform). Gargoyle per il compromesso (STR 135, Berserk). Orc e il piu aggressivo, Dwarf il piu difensivo.
 
 ---
 

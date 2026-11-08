@@ -21,9 +21,9 @@ Le tre skill che definiscono il Mazziere. Devono progredire insieme: tutte a 60 
 
 | Razza | Perche |
 |-------|--------|
-| 🟢 **Orc** | STR cap 180 — danno massimo con le maces. Blood Rage (+15% danni sotto 30% HP). Le maces scalano con la STR meglio di qualsiasi arma |
-| ⛏️ **Dwarf** | STR cap 160, Stoneform (resistenze +10% stando fermo). Perfetto per il combattimento posizionale con armi pesanti |
-| 🦇 **Gargoyle** | STR cap 140, resistenze naturali. Berserk sotto 25% HP. Solido e affidabile |
+| 🟢 **Orc** | STR cap 160 — danno massimo con le maces. Blood Rage (+15% danni sotto 30% HP). Le maces scalano con la STR meglio di qualsiasi arma |
+| ⛏️ **Dwarf** | STR cap 145, Stoneform (resistenze +10% stando fermo). Perfetto per il combattimento posizionale con armi pesanti |
+| 🦇 **Gargoyle** | STR cap 135, resistenze naturali. Berserk sotto 25% HP. Solido e affidabile |
 
 ## 📊 Template Skill
 
@@ -43,15 +43,15 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Orc) |
 |------|-------------------|--------------------------|
-| STR  | 180               | 180                      |
-| DEX  | 70                | 50                       |
-| INT  | 35                | 25                       |
+| STR  | 160               | 160                      |
+| DEX  | 70                | 95                       |
+| INT  | 35                | 70                       |
 
-**HP**: 155 | **Mana**: 35 | **Stamina**: 70
+**HP**: 150 | **Mana**: 35 | **Stamina**: 70
 
-> Con Orc: STR 180, DEX 70, INT 35 — HP 155, Mana 35, Stamina 70
-> Con Dwarf: STR 160, DEX 60, INT 45 — HP 147, Mana 45, Stamina 60
-> Con Gargoyle: STR 140, DEX 70, INT 75 — HP 142, Mana 75, Stamina 70
+> Con Orc: STR 160, DEX 70, INT 35 — HP 150, Mana 35, Stamina 70
+> Con Dwarf: STR 145, DEX 60, INT 45 — HP 142, Mana 45, Stamina 60
+> Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
 
 ## ⚔️ Stile di Gioco
 
@@ -63,7 +63,7 @@ Wrestling non e solo per la lotta a mani nude — ti da accesso a mosse di disar
 
 Parrying con uno scudo pesante ti rende un muro invalicabile. Con STR alta puoi usare gli scudi piu grandi senza penalita, bloccando una percentuale significativa degli attacchi nemici.
 
-La combinazione di HP alti (STR 180), Parrying, Healing e armatura pesante ti rende il personaggio piu difficile da abbattere del gioco. Non sei veloce, ma non hai bisogno di esserlo — resisti a tutto.
+La combinazione di HP alti (STR 160), Parrying, Healing e armatura pesante ti rende il personaggio piu difficile da abbattere del gioco. Non sei veloce, ma non hai bisogno di esserlo — resisti a tutto.
 
 ## 🛡️ Equipaggiamento Consigliato
 
@@ -93,7 +93,7 @@ R: War Hammer per Armor Ignore — essenziale contro tank in plate. Maul per Cru
 R: Magic Resist riduce i danni e le durate dei debuff. Porta pozioni di cura per tamponare. Se il caster mantiene la distanza, attendi — prima o poi dovra avvicinarsi o esaurire il mana. La pazienza e la tua arma migliore.
 
 **D: Orc o Dwarf?**
-R: Orc per il danno massimo (STR 180, Blood Rage). Dwarf per la difesa (STR 160, Stoneform). Orc uccide piu velocemente, Dwarf muore piu lentamente. Scegli il tuo stile.
+R: Orc per il danno massimo (STR 160, Blood Rage). Dwarf per la difesa (STR 145, Stoneform). Orc uccide piu velocemente, Dwarf muore piu lentamente. Scegli il tuo stile.
 
 ---
 

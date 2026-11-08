@@ -21,8 +21,8 @@ Le tre skill che definiscono lo Sciamano. Devono progredire insieme: tutte a 60 
 
 | Razza | Perche |
 |-------|--------|
-| 🟢 **Orc** | STR cap 180 per sopravvivenza. Connessione tribale con la natura e gli spiriti animali. Blood Rage come ultimo resort |
-| 🦇 **Gargoyle** | STR cap 140, resistenze naturali alte. Berserk sotto 25% HP. L'aspetto mistico si abbina alla tematica sciamanica |
+| 🟢 **Orc** | STR cap 160 per sopravvivenza. Connessione tribale con la natura e gli spiriti animali. Blood Rage come ultimo resort |
+| 🦇 **Gargoyle** | STR cap 135, resistenze naturali alte. Berserk sotto 25% HP. L'aspetto mistico si abbina alla tematica sciamanica |
 
 ## 📊 Template Skill
 
@@ -42,14 +42,14 @@ Totale:         700
 
 | Stat | Valore consigliato | Cap razza migliore (Orc) |
 |------|-------------------|--------------------------|
-| STR  | 120               | 180                      |
-| DEX  | 50                | 50                       |
-| INT  | 115               | 25                       |
+| STR  | 120               | 160                      |
+| DEX  | 50                | 95                       |
+| INT  | 115               | 70                       |
 
 **HP**: 130 | **Mana**: 115 | **Stamina**: 50
 
-> Con Orc: STR 180, DEX 50, INT 55 — HP 155, Mana 55, Stamina 50
-> Con Gargoyle: STR 140, DEX 70, INT 75 — HP 142, Mana 75, Stamina 70
+> Con Orc: STR 160, DEX 50, INT 55 — HP 150, Mana 55, Stamina 50
+> Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
 
 ## ⚔️ Stile di Gioco
 
@@ -90,7 +90,7 @@ R: Eval Int aumenterebbe i danni magici, ma Spirit Speak ti da una fonte di cura
 R: Lo Sciamano e versatile per design. Non eccelli in nulla di specifico, ma puoi fare quasi tutto. In gruppo sei un supporto eccezionale, da solo sei autosufficiente. La versatilita e la tua forza.
 
 **D: Orc o Gargoyle?**
-R: Orc per STR massima (180 HP!) e la tematica tribale-sciamanica perfetta. Gargoyle per stats piu bilanciate e resistenze naturali. Orc e piu robusto, Gargoyle e piu equilibrato.
+R: Orc per STR massima (HP 150) e la tematica tribale-sciamanica perfetta. Gargoyle per stats piu bilanciate e resistenze naturali. Orc e piu robusto, Gargoyle e piu equilibrato.
 
 **D: Che pet scegliere?**
 R: Per il PvE: un Drake o Bear per il tanking. Per il PvP: creature veloci che distraggono il nemico mentre tu lanci spell. Al massimo livello, un Dragon e sempre la scelta migliore — ma richiede gestione attenta.

@@ -21,7 +21,7 @@ Le tre skill che definiscono l'Esploratore. Devono progredire insieme: tutte a 6
 
 | Razza | Perche |
 |-------|--------|
-| 👤 **Human** | Stats bilanciate per un ruolo versatile. Jack of All Trades garantisce skill minime ovunque. STR 120 per trasportare il bottino |
+| 👤 **Human** | Stats bilanciate per un ruolo versatile. Jack of All Trades garantisce skill minime ovunque. STR 115 per trasportare il bottino |
 | 🧝 **Elf** | INT 130 per Magery efficiente, DEX 140 per agilita nell'esplorazione. Elven Meditation per sustain di mana |
 
 ## 📊 Template Skill
@@ -42,13 +42,13 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Elf) |
 |------|-------------------|--------------------------|
-| STR  | 55                | 55                       |
+| STR  | 55                | 85                       |
 | DEX  | 100               | 140                      |
 | INT  | 130               | 130                      |
 
 **HP**: 97 | **Mana**: 130 | **Stamina**: 100
 
-> Con Human: STR 100, DEX 80, INT 105 — HP 125, Mana 105, Stamina 80
+> Con Human: STR 100, DEX 80, INT 105 — HP 120, Mana 105, Stamina 80
 > Con Elf: STR 55, DEX 100, INT 130 — HP 97, Mana 130, Stamina 100
 
 ## ⚔️ Stile di Gioco

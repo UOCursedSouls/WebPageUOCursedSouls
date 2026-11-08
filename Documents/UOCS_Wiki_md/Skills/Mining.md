@@ -53,7 +53,7 @@ I bonus delle armature per tier sono in Armor Materials - Minerals (Meccaniche).
 
 - **Building System**: le strutture in pietra richiedono Mining come skill secondaria (livelli 20-50 secondo la categoria).
 - **Esploratore**: Mining serve per scavare i forzieri delle Treasure Map.
-- **Dwarf**: le build consigliate includono Mining 100.0; la pagina del Minatore Combattente parla di un bonus naturale al Mining, ma nessuna pagina ne indica il valore.
+- **Dwarf**: le build consigliate includono Mining 100.0; il Dwarf non ha un bonus naturale al Mining.
 
 ---
 
@@ -65,7 +65,7 @@ Mining è skill di classe del [Minatore Combattente](#sectionWiki/Classi/Combatt
 
 ## 📌 Da definire
 
-> ⚠️ **Da definire**: valore del bonus Mining del Dwarf, tasso di ritrovamento dei minerali rari e metodo di training.
+> ⚠️ **Da definire**: tasso di ritrovamento dei minerali rari e metodo di training.
 
 ---
 

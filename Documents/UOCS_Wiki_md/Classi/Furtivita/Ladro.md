@@ -21,7 +21,7 @@ Le tre skill che definiscono il Ladro. Devono progredire insieme: tutte a 60 per
 
 | Razza | Perche |
 |-------|--------|
-| 🧛 **Vampire** | DEX cap 150 — mani veloci per rubare. Life Drain per sopravvivere se scoperto. Night Vision per operare nell'oscurita |
+| 🧛 **Vampire** | DEX cap 135 — mani veloci per rubare. Life Drain per sopravvivere se scoperto. Night Vision per operare nell'oscurita |
 | 🧝 **Elf** | DEX cap 140, buona INT per versatilita. Elven Meditation per recupero mana. Agile e sfuggente |
 
 ## 📊 Template Skill
@@ -42,13 +42,13 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Vampire) |
 |------|-------------------|------------------------------|
-| STR  | 55                | 100                          |
-| DEX  | 150               | 150                          |
-| INT  | 55                | 35                           |
+| STR  | 55                | 105                          |
+| DEX  | 135               | 135                          |
+| INT  | 55                | 105                          |
 
-**HP**: 97 | **Mana**: 55 | **Stamina**: 150
+**HP**: 97 | **Mana**: 55 | **Stamina**: 135
 
-> Con Vampire: STR 80, DEX 150, INT 55 — HP 112, Mana 55, Stamina 150
+> Con Vampire: STR 80, DEX 135, INT 55 — HP 110, Mana 55, Stamina 135
 > Con Elf: STR 55, DEX 140, INT 90 — HP 97, Mana 90, Stamina 140
 
 ## ⚔️ Stile di Gioco

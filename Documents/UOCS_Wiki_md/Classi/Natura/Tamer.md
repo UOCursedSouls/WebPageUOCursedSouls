@@ -21,7 +21,7 @@ Le tre skill che definiscono il Tamer. Devono progredire insieme: tutte a 60 per
 
 | Razza | Perche |
 |-------|--------|
-| 👤 **Human** | Stats bilanciate, Jack of All Trades garantisce skill minime ovunque. STR 120 per portare equipaggiamento pesante e reagenti |
+| 👤 **Human** | Stats bilanciate, Jack of All Trades garantisce skill minime ovunque. STR 115 per portare equipaggiamento pesante e reagenti |
 | 🧝 **Elf** | INT 130 con Elven Meditation (Mana Regen +3 sotto 30% mana). DEX 140 per curare velocemente i pet con le bende |
 
 ## 📊 Template Skill
@@ -42,13 +42,13 @@ Totale:         700
 
 | Stat | Valore consigliato | Cap razza migliore (Elf) |
 |------|-------------------|--------------------------|
-| STR  | 55                | 55                       |
+| STR  | 55                | 85                       |
 | DEX  | 100               | 140                      |
 | INT  | 130               | 130                      |
 
 **HP**: 97 | **Mana**: 130 | **Stamina**: 100
 
-> Con Human: STR 90, DEX 80, INT 115 — HP 112, Mana 115, Stamina 80
+> Con Human: STR 90, DEX 80, INT 115 — HP 115, Mana 115, Stamina 80
 > Con Elf: STR 55, DEX 100, INT 130 — HP 97, Mana 130, Stamina 100
 
 ## ⚔️ Stile di Gioco

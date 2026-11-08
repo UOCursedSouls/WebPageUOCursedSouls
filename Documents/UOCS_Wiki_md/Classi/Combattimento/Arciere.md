@@ -22,7 +22,7 @@ Le tre skill che definiscono l'Arciere. Devono progredire insieme: tutte a 60 pe
 | Razza | Perche |
 |-------|--------|
 | 🧝 **Elf** | DEX cap 140 — velocita di tiro eccezionale. Elven Meditation (Mana Regen +3 sotto 30% mana) aiuta con Chivalry. INT 130 per i buff |
-| 🧛 **Vampire** | DEX cap 150 — il piu alto del gioco. Life Drain restituisce HP ad ogni colpo, perfetto per il sustained damage. Night Vision per dungeon bui |
+| 🧛 **Vampire** | DEX cap 135. Life Drain restituisce HP ad ogni colpo, perfetto per il sustained damage. Night Vision per dungeon bui |
 
 ## 📊 Template Skill
 
@@ -42,14 +42,14 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Vampire) |
 |------|-------------------|------------------------------|
-| STR  | 80                | 100                          |
-| DEX  | 150               | 150                          |
-| INT  | 55                | 35                           |
+| STR  | 80                | 105                          |
+| DEX  | 135               | 135                          |
+| INT  | 55                | 105                          |
 
-**HP**: 112 | **Mana**: 55 | **Stamina**: 150
+**HP**: 110 | **Mana**: 55 | **Stamina**: 135
 
 > Con Elf: STR 55, DEX 140, INT 90 — HP 97, Mana 90, Stamina 140
-> Con Vampire: STR 80, DEX 150, INT 55 — HP 112, Mana 55, Stamina 150
+> Con Vampire: STR 80, DEX 135, INT 55 — HP 110, Mana 55, Stamina 135
 
 ## ⚔️ Stile di Gioco
 
@@ -86,7 +86,7 @@ R: Chivalry fornisce buff potenti che scalano con la Destrezza, non l'Intelligen
 R: Composite Bow per la velocita — piu frecce al minuto significa piu DPS costante. Heavy Crossbow per il burst damage singolo. Porta entrambi e usa quello giusto per la situazione.
 
 **D: Vampire o Elf?**
-R: Vampire per il massimo DEX (150) e Life Drain che ti cura ad ogni colpo. Elf per un approccio piu bilanciato con INT 130 per Chivalry e Elven Meditation. Vampire e piu aggressivo, Elf e piu versatile.
+R: Vampire per DEX 135 e Life Drain che ti cura ad ogni colpo. Elf per un approccio piu bilanciato con INT 130 per Chivalry e Elven Meditation. Vampire e piu aggressivo, Elf e piu versatile.
 
 **D: Come gestisco i nemici che mi raggiungono in mischia?**
 R: Non lasciarli avvicinare. Se succede, usa Consecrate Weapon per danni extra e passa a un'arma da mischia di emergenza. Ma il vero Arciere non viene mai toccato — pratica il kiting.
