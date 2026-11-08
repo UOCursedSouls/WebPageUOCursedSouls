@@ -18,6 +18,8 @@ I Vampiri sono la razza piu letale e sfuggente di Cursed Souls. Con un eccellent
 | **INT** | 105 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 122 (70 + 105/2) |

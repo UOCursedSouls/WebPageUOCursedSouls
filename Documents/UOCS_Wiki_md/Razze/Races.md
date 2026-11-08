@@ -38,6 +38,10 @@ La scelta della razza influenza profondamente il tuo stile di gioco:
 
 Ogni razza ha **cap individuali per stat** — non puoi superare il cap della tua razza anche se hai punti disponibili nel stat cap totale.
 
+I cap per stat sono **massimi della singola stat**: la loro somma puo superare il totale, ma STR + DEX + INT non supera mai lo **StatCap** (255 all'inizio, 285 al massimo, vedi [Progressione StatCap](#sectionWiki/Guild%20System/StatCap%20Progression)). Quindi non puoi avere tutte le stat al cap insieme.
+
+> Esempio: un Dwarf con STR 145 (il suo cap) con StatCap 285 ha al massimo 140 punti da dividere tra DEX e INT.
+
 ---
 
 ## 🛡️ Passive Razziali

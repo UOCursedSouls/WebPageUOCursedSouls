@@ -18,6 +18,8 @@ I Dark Elf sono la razza magica per eccellenza di Cursed Souls. Con il cap INT p
 | **INT** | 160 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 117 (70 + 95/2) |
