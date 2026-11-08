@@ -18,6 +18,8 @@ Gli Umani sono la razza piu equilibrata e versatile di Cursed Souls. Non eccello
 | **INT** | 115 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 127 (70 + 115/2) |

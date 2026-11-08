@@ -18,6 +18,8 @@ I Gargoyle sono la razza piu resistente fisicamente di Cursed Souls dopo gli Orc
 | **INT** | 95 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 137 (70 + 135/2) |

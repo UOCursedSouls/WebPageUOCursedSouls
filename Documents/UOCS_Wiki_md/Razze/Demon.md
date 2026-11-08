@@ -18,6 +18,8 @@ I Demoni sono la razza piu oscura e temuta di Cursed Souls. Con un eccellente IN
 | **INT** | 140 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 132 (70 + 125/2) |

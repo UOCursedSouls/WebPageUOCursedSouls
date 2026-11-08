@@ -18,6 +18,8 @@ I Nani sono la razza piu robusta e abile nell'artigianato di Cursed Souls. Con u
 | **INT** | 95 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 142 (70 + 145/2) |

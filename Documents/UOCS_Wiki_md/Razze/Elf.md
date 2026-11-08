@@ -18,6 +18,8 @@ Gli Elfi sono la razza piu agile e magicamente dotata di Cursed Souls. Con il DE
 | **INT** | 130 |
 | **Stat Cap Totale** | 285 |
 
+> I cap per stat sono massimi della singola stat: non puoi raggiungerli tutti insieme, perche STR + DEX + INT non supera mai lo StatCap (255 all'inizio, 285 al massimo).
+
 | Derivata | Valore Max |
 |----------|-----------|
 | **HP** | 112 (70 + 85/2) |
