@@ -43,12 +43,12 @@ Totale:         700
 | Stat | Valore consigliato | Cap razza migliore (Orc) |
 |------|-------------------|--------------------------|
 | STR  | 160               | 160                      |
-| DEX  | 50                | 95                       |
+| DEX  | 55                | 95                       |
 | INT  | 70                | 70                       |
 
-**HP**: 150 | **Mana**: 70 | **Stamina**: 50
+**HP**: 150 | **Mana**: 70 | **Stamina**: 55
 
-> Con Orc: STR 160, DEX 50, INT 70 — HP 150, Mana 70, Stamina 50
+> Con Orc: STR 160, DEX 55, INT 70 — HP 150, Mana 70, Stamina 55
 > Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
 
 ## ⚔️ Stile di Gioco
