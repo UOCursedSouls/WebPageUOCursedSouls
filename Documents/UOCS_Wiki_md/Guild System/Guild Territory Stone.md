@@ -46,7 +46,7 @@ Per piazzare una Guild Territory Stone, devi trovare un luogo adatto. La stone a
 | Requisito | Dettaglio |
 |-----------|----------|
 | **Mappa valida** | Deve essere su una mappa di gioco (non interna) |
-| **Lontano da citta** | Almeno 15 tile da qualsiasi regione (dungeon, citta, aree guardate) |
+| **Lontano da citta** | Almeno 15 tile da qualsiasi regione (dungeon, città, aree guardate), vedi [Regioni del mondo](#sectionWiki/Meccaniche/Regioni%20del%20mondo) |
 | **Lontano da case** | Non sovrapposta a case di giocatori o le loro regioni |
 | **Lontano da altre stone** | Distanza minima = tuo raggio + altro raggio + 10 tile margine |
 | **A terra** | Non dentro un container |
@@ -329,4 +329,4 @@ R: No. La conferma (Officialize) e permanente. Solo un GM puo sbloccarla.
 ---
 
 *Ultimo aggiornamento: Marzo 2026*
-*Vedi anche: [Crystal Mana Sphere](#sectionWiki/Guild%20System/Crystal%20Mana%20Sphere) | [Guild Accountant](#sectionWiki/Guild%20System/Guild%20Accountant)*
+*Vedi anche: [Crystal Mana Sphere](#sectionWiki/Guild%20System/Crystal%20Mana%20Sphere) | [Guild Accountant](#sectionWiki/Guild%20System/Guild%20Accountant) | [Regioni del mondo](#sectionWiki/Meccaniche/Regioni%20del%20mondo)*
