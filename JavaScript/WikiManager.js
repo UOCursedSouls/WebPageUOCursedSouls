@@ -397,7 +397,7 @@ export default class WikiManager {
 
                 const normalizedPath = route
                     .split('/')
-                    .map(p => decodeURIComponent(p).replace(/-/g, ' '))
+                    .map(p => decodeURIComponent(p))
                     .join('/');
 
                 this.loadPage(normalizedPath);
