@@ -6,7 +6,7 @@
  * Marked.js serve per convertire Markdown -> HTML
  * Viene caricato via ESM import (unica fonte, no CDN duplicato)
  */
-import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+import { marked } from "https://cdn.jsdelivr.net/npm/marked@18.1.3/lib/marked.esm.js";
 
 export default class WikiManager {
 
