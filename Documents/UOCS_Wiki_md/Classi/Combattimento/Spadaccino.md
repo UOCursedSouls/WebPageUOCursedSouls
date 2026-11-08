@@ -21,7 +21,7 @@ Le tre skill che definiscono lo Spadaccino. Devono progredire insieme: tutte a 6
 
 | Razza | Perche |
 |-------|--------|
-| 🧛 **Vampire** | DEX cap 150 — velocita di attacco massima. Life Drain restituisce HP ad ogni colpo, perfetto per il combattimento prolungato |
+| 🧛 **Vampire** | DEX cap 135 — velocita di attacco massima. Life Drain restituisce HP ad ogni colpo, perfetto per il combattimento prolungato |
 | 🧝 **Elf** | DEX cap 140 con INT 130 per versatilita. Elven Meditation per sustain. Equilibrio tra velocita e resistenza |
 
 ## 📊 Template Skill
@@ -42,13 +42,13 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Vampire) |
 |------|-------------------|------------------------------|
-| STR  | 80                | 100                          |
-| DEX  | 150               | 150                          |
-| INT  | 55                | 35                           |
+| STR  | 80                | 105                          |
+| DEX  | 135               | 135                          |
+| INT  | 55                | 105                          |
 
-**HP**: 112 | **Mana**: 55 | **Stamina**: 150
+**HP**: 112 | **Mana**: 55 | **Stamina**: 135
 
-> Con Vampire: STR 80, DEX 150, INT 55 — HP 112, Mana 55, Stamina 150
+> Con Vampire: STR 80, DEX 135, INT 55 — HP 112, Mana 55, Stamina 135
 > Con Elf: STR 55, DEX 140, INT 90 — HP 97, Mana 90, Stamina 140
 
 ## ⚔️ Stile di Gioco
@@ -88,7 +88,7 @@ R: Fencing offre le armi piu veloci del gioco (Kryss). La velocita e fondamental
 R: Kryss per PvP (velocita massima, veleno continuo). War Fork per PvE (piu danni per colpo, migliore contro mostri con resistenza al veleno). Porta entrambi.
 
 **D: Vampire o Elf?**
-R: Vampire per il massimo DEX (150) e Life Drain che ti cura ad ogni colpo. Elf per INT piu alta (90 mana) e Elven Meditation. Vampire e il duellante perfetto, Elf e piu versatile.
+R: Vampire per DEX 135 e Life Drain che ti cura ad ogni colpo. Elf per INT piu alta (90 mana) e Elven Meditation. Vampire e il duellante perfetto, Elf e piu versatile.
 
 **D: Come gestisco i nemici con armatura pesante?**
 R: Il veleno ignora l'armatura — i danni nel tempo bypassano le difese fisiche. Concentrati sull'applicare e mantenere il veleno attivo. La Kryss con la sua velocita garantisce che il veleno non scada mai.

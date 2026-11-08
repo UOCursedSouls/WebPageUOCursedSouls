@@ -21,8 +21,8 @@ Le tre skill che definiscono il Chierico. Devono progredire insieme: tutte a 60 
 
 | Razza | Perche |
 |-------|--------|
-| 👤 **Human** | Stats bilanciate perfette per un support. STR 120 per armatura pesante, Jack of All Trades per skill minime ovunque |
-| 🦇 **Gargoyle** | STR cap 140, resistenze naturali elevate. Berserk sotto il 25% HP ti salva nei momenti critici. Tanky e difficile da abbattere |
+| 👤 **Human** | Stats bilanciate perfette per un support. STR 115 per armatura pesante, Jack of All Trades per skill minime ovunque |
+| 🦇 **Gargoyle** | STR cap 135, resistenze naturali elevate. Berserk sotto il 25% HP ti salva nei momenti critici. Tanky e difficile da abbattere |
 
 ## 📊 Template Skill
 
@@ -42,14 +42,14 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Gargoyle) |
 |------|-------------------|-------------------------------|
-| STR  | 110               | 140                           |
-| DEX  | 70                | 70                            |
-| INT  | 105               | 75                            |
+| STR  | 110               | 135                           |
+| DEX  | 70                | 105                           |
+| INT  | 105               | 95                            |
 
 **HP**: 130 | **Mana**: 105 | **Stamina**: 70
 
 > Con Human: STR 100, DEX 80, INT 105 — HP 125, Mana 105, Stamina 80
-> Con Gargoyle: STR 140, DEX 70, INT 75 — HP 142, Mana 75, Stamina 70
+> Con Gargoyle: STR 135, DEX 70, INT 75 — HP 137, Mana 75, Stamina 70
 
 ## ⚔️ Stile di Gioco
 
@@ -89,7 +89,7 @@ R: Spirit Speak fornisce rigenerazione HP passiva e ti permette di interagire co
 R: Puoi usare le spell offensive di Magery in caso di necessita, ma non e il tuo ruolo. Un Chierico che prova a fare il DPS e un Chierico che non sta curando — e questo significa alleati morti.
 
 **D: Human o Gargoyle?**
-R: Human per stats bilanciate e versatilita (STR 120, DEX 80, INT 115 raggiungibili). Gargoyle per massima tankyness (STR 140, resistenze naturali). Human e piu mago, Gargoyle e piu tanky.
+R: Human per stats bilanciate e versatilita (STR 115, DEX 80, INT 115 raggiungibili). Gargoyle per massima tankyness (STR 135, resistenze naturali). Human e piu mago, Gargoyle e piu tanky.
 
 **D: Come gestisco il mana in battaglie lunghe?**
 R: Alterna bende e spell. Le bende sono gratuite — usale sempre quando possibile. Meditation durante i momenti di calma. Porta pozioni di mana per le emergenze. Non usare mai una spell se una benda basta.

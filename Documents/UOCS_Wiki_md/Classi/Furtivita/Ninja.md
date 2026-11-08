@@ -21,7 +21,7 @@ Le tre skill che definiscono il Ninja. Devono progredire insieme: tutte a 60 per
 
 | Razza | Perche |
 |-------|--------|
-| 🧛 **Vampire** | DEX cap 150 — attacchi fulminei. Life Drain restituisce HP, Night Vision per vedere nelle ombre. Perfetto tematicamente e meccanicamente |
+| 🧛 **Vampire** | DEX cap 135 — attacchi fulminei. Life Drain restituisce HP, Night Vision per vedere nelle ombre. Perfetto tematicamente e meccanicamente |
 | 🧝 **Elf** | DEX cap 140, buon compromesso. Elven Meditation aiuta con il mana per Ninjitsu. Agile e veloce |
 
 ## 📊 Template Skill
@@ -42,13 +42,13 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Vampire) |
 |------|-------------------|------------------------------|
-| STR  | 80                | 100                          |
-| DEX  | 150               | 150                          |
-| INT  | 55                | 35                           |
+| STR  | 80                | 105                          |
+| DEX  | 135               | 135                          |
+| INT  | 55                | 105                          |
 
-**HP**: 112 | **Mana**: 55 | **Stamina**: 150
+**HP**: 112 | **Mana**: 55 | **Stamina**: 135
 
-> Con Vampire: STR 80, DEX 150, INT 55 — HP 112, Mana 55, Stamina 150
+> Con Vampire: STR 80, DEX 135, INT 55 — HP 112, Mana 55, Stamina 135
 > Con Elf: STR 55, DEX 140, INT 90 — HP 97, Mana 90, Stamina 140
 
 ## ⚔️ Stile di Gioco
@@ -86,7 +86,7 @@ R: Le armi da Fencing (Kryss, Dagger) sono le piu veloci del gioco e hanno la mi
 R: Stealth e fondamentale. Senza Stealth puoi nasconderti ma non muoverti — sei un bersaglio immobile. Stealth ti permette di posizionarti per l'attacco e fuggire dopo. Non e opzionale.
 
 **D: Vampire o Elf?**
-R: Vampire per il massimo DEX (150) e Life Drain per la sopravvivenza negli scambi rapidi. Elf per INT piu alta (90 mana per piu abilita Ninjitsu). Vampire e piu aggressivo, Elf piu tattico.
+R: Vampire per DEX 135 e Life Drain per la sopravvivenza negli scambi rapidi. Elf per INT piu alta (90 mana per piu abilita Ninjitsu). Vampire e piu aggressivo, Elf piu tattico.
 
 **D: Come gestisco i nemici con Detect Hidden?**
 R: Se ti scoprono, usa immediatamente Smoke Bomb per rinasconderti. Mirror Image compra tempo extra. Se tutto fallisce, avvelena e fuggi — il veleno fara il lavoro al posto tuo.

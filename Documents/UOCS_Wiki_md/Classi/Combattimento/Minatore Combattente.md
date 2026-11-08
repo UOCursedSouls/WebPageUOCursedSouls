@@ -21,8 +21,8 @@ Le tre skill che definiscono il Minatore Combattente. Devono progredire insieme:
 
 | Razza | Perche |
 |-------|--------|
-| ⛏️ **Dwarf** | STR cap 160, bonus naturale al Mining. Stoneform (resistenze +10% stando fermo) perfetto per quando mini o forgi. Nato per questa build |
-| 🟢 **Orc** | STR cap 180 — massimo danno e capacita di carico per trasportare minerali pesanti. Blood Rage per il combattimento |
+| ⛏️ **Dwarf** | STR cap 145. Stoneform (resistenze +10% stando fermo) perfetto per quando mini o forgi. Nato per questa build |
+| 🟢 **Orc** | STR cap 160 — massimo danno e capacita di carico per trasportare minerali pesanti. Blood Rage per il combattimento |
 
 ## 📊 Template Skill
 
@@ -42,14 +42,14 @@ Totale:        700
 
 | Stat | Valore consigliato | Cap razza migliore (Dwarf) |
 |------|-------------------|----------------------------|
-| STR  | 160               | 160                        |
-| DEX  | 60                | 60                         |
-| INT  | 45                | 45                         |
+| STR  | 145               | 145                        |
+| DEX  | 60                | 85                         |
+| INT  | 45                | 95                         |
 
-**HP**: 147 | **Mana**: 45 | **Stamina**: 60
+**HP**: 142 | **Mana**: 45 | **Stamina**: 60
 
-> Con Dwarf: STR 160, DEX 60, INT 45 — HP 147, Mana 45, Stamina 60
-> Con Orc: STR 180, DEX 70, INT 35 — HP 155, Mana 35, Stamina 70
+> Con Dwarf: STR 145, DEX 60, INT 45 — HP 142, Mana 45, Stamina 60
+> Con Orc: STR 160, DEX 70, INT 35 — HP 150, Mana 35, Stamina 70
 
 ## ⚔️ Stile di Gioco
 
@@ -75,7 +75,6 @@ In combattimento sei un guerriero solido. Non hai Parrying o Magic Resist, ma ha
 
 - Mini sempre nelle **zone piu profonde** delle dungeon — i minerali rari si trovano solo li
 - Porta un **pack animal** (cavallo da soma) quando vai a minare — i minerali pesano troppo per portarli da solo
-- Come **Dwarf**, il bonus Mining naturale ti da un vantaggio enorme — trovi minerali rari piu spesso
 - **Arms Lore** ti permette di sapere esattamente cosa stai forgiando — non sprecare minerali rari su tentativi a caso
 - Forgia sempre con i minerali migliori disponibili — la differenza tra un'arma in ferro e una in Valorite e enorme
 
@@ -88,7 +87,7 @@ R: Arms Lore migliora la qualita degli oggetti forgiati e ti permette di valutar
 R: Sei piu vulnerabile ai caster, ma la tua armatura forgiata con minerali rari compensa parzialmente. In gruppo, lascia che altri gestiscano i caster — tu concentrati sui nemici melee.
 
 **D: Dwarf o Orc?**
-R: Dwarf per il bonus Mining e Stoneform — e la razza perfetta per questa build. Orc per STR 180 e capacita di carico massima. Dwarf e il minatore perfetto, Orc e il combattente piu forte.
+R: Dwarf per Stoneform — e la razza perfetta per questa build. Orc per STR 160 e capacita di carico massima. Dwarf e il minatore perfetto, Orc e il combattente piu forte.
 
 **D: Posso guadagnare bene con questa build?**
 R: Assolutamente. Forgiare e vendere equipaggiamento in minerali rari e una delle attivita piu redditizie del gioco. Sei autosufficiente e puoi vendere l'eccesso — e la build perfetta per accumulare ricchezza.
