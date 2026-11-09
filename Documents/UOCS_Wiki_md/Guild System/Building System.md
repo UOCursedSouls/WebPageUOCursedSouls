@@ -16,6 +16,7 @@
 - [Attaccare gli Statici](#attaccare-gli-statici)
 - [Riparazione](#riparazione)
 - [Decadimento e Reclaim](#decadimento-e-reclaim)
+- [Porte e Lockdown](#porte-e-lockdown)
 - [Limiti](#limiti)
 - [FAQ](#faq)
 
@@ -27,7 +28,7 @@ Il **Building System** permette ai giocatori di costruire strutture all'interno 
 
 Gli statici costruiti sono oggetti reali nel mondo di gioco: hanno durabilita, possono essere attaccati e distrutti da chiunque, e possono essere spostati, ruotati e bloccati in posizione.
 
-> **Requisiti**: Appartenere a una gilda con un [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) attivo e avere il permesso di building dal leader della gilda.
+> **Requisiti**: Appartenere a una gilda con un [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) attivo e avere il permesso di building (vedi [Permessi di Building](#permessi-di-building)).
 
 ### Cosa puoi fare:
 - Craftare strutture al banco da lavoro (muri, pavimenti, tetti, scale, porte, mobili...)
@@ -65,7 +66,7 @@ Architecture e la **skill principale** per tutti i craft del building system. Og
 
 ## 🔐 Permessi di Building
 
-Non tutti i membri della gilda possono costruire. Il **leader della gilda** deve concedere il permesso individualmente.
+Non tutti i membri della gilda possono costruire. Il **leader della gilda** costruisce sempre, senza bisogno di essere in lista; per tutti gli altri membri deve concedere il permesso individualmente.
 
 ### Come funziona:
 
@@ -80,7 +81,6 @@ Non tutti i membri della gilda possono costruire. Il **leader della gilda** deve
 | Informazione | Descrizione |
 |-------------|-------------|
 | **Placed Statics** | Numero di statici piazzati / massimo per territorio |
-| **Max Per Player** | Limite di statici per singolo giocatore |
 | **Lista giocatori** | Mostra chi ha il permesso e quanti statici ha piazzato |
 
 > ⚠️ Solo il **leader della gilda** puo gestire i permessi di building. I Warlord e gli altri rank non possono farlo.
@@ -158,7 +158,7 @@ Fai doppio click sul tool (deve essere nel backpack) per aprire il menu:
 - Ogni azione **consuma 1 uso** dal tool
 - Place, Pick Up, Rotate e Lock/Unlock danno possibilita di aumentare Architecture
 - Per piazzare, spostare, ruotare e bloccare serve il **permesso building**
-- Per **attaccare** non serve alcun permesso — chiunque con un tool puo farlo!
+- Per **attaccare** non serve alcun permesso — chiunque con un tool puo farlo (unica eccezione: vedi [Attaccare gli Statici](#attaccare-gli-statici))!
 - C'e un **cooldown di 2 secondi** tra un attacco e l'altro
 - Non puoi prendere uno statico **bloccato** — sbloccalo prima
 
@@ -273,7 +273,9 @@ Ogni statico mostra nel tooltip:
 
 ## ⚔️ Attaccare gli Statici
 
-**Chiunque** puo attaccare uno statico costruito — non serve essere nella stessa gilda ne avere permessi.
+**Chiunque** abbia un Building Tool puo attaccare uno statico costruito — non servono permessi e non serve essere in un'altra gilda: possono farlo anche i membri della gilda proprietaria.
+
+> ⚠️ **Eccezione**: chi ha il permesso di building non puo attaccare gli statici del proprio territorio. Per rimuoverli li raccoglie con **Pick Up Static**.
 
 ### Come attaccare:
 
@@ -352,8 +354,26 @@ Se un'altra gilda piazza una **nuova Guild Territory Stone** e gli statici orfan
 1. Il **decadimento si ferma** immediatamente
 2. Gli statici diventano **proprieta della nuova gilda**
 3. Qualsiasi membro con permesso building puo gestirli
+4. Anche porte e liste di accesso passano alla nuova gilda (vedi [Porte e Lockdown](#porte-e-lockdown))
 
 > 💡 Questo significa che conquistare un territorio abbandonato ti permette di recuperare le strutture esistenti!
+
+---
+
+## 🚪 Porte e Lockdown
+
+### Chest delle risorse:
+
+Una volta collegato alla stone, il **chest delle risorse** della gilda non puo essere spostato ne sollevato. Possono aprirlo solo il **leader** e i membri con permesso di building.
+
+### Lockdown personale:
+
+- Un contenitore si puo bloccare (lockdown) solo se il giocatore a cui viene assegnato puo possederlo: non il chest delle risorse, ne un contenitore lasciato a terra da un altro giocatore.
+- Solo il **proprietario** o il **leader** puo rilasciare un lockdown personale: il contenitore va nel **bank box del proprietario**. Se il bank box e pieno il rilascio viene rifiutato e il contenitore resta bloccato.
+
+### Porte:
+
+L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. Dopo una conquista del territorio, porte e statici appartengono alla nuova gilda.
 
 ---
 
@@ -363,19 +383,19 @@ Il sistema ha dei limiti configurabili per bilanciare il gameplay.
 
 | Limite | Valore Default |
 |--------|---------------|
-| **Max statici per territorio** | 200 |
-| **Max statici per giocatore** | 50 |
+| **Max statici per territorio** | tile del territorio x 3 (cresce con il territorio) |
+| **Max statici per tile e per piano** | 3 |
 | **Usi banco da lavoro** | 500 |
 | **Usi building tool** | 200 |
 
-Se raggiungi il limite, non potrai piazzare nuovi statici fino a quando non ne rimuovi o ne vengono distrutti.
+Non c'e un limite per singolo giocatore: i pezzi arrivano dal chest delle risorse della gilda. Se raggiungi un limite, non potrai piazzare nuovi statici fino a quando non ne rimuovi o ne vengono distrutti.
 
 ---
 
 ## ❓ FAQ
 
 **D: Dove posso costruire?**
-R: Solo all'interno del territorio di una Guild Territory Stone dove hai il permesso di building dal leader della gilda.
+R: Solo all'interno del territorio di una Guild Territory Stone dove hai il permesso di building.
 
 **D: Posso costruire ovunque nel territorio?**
 R: Si, puoi piazzare statici su qualsiasi tile dentro i confini del territorio.
@@ -384,7 +404,7 @@ R: Si, puoi piazzare statici su qualsiasi tile dentro i confini del territorio.
 R: Non potrai piu piazzare, spostare o modificare statici. Quelli gia piazzati restano al loro posto.
 
 **D: I nemici possono distruggere le mie costruzioni?**
-R: Si. Chiunque puo attaccare gli statici costruiti. Proteggi il tuo territorio con le guardie!
+R: Si. Chiunque abbia un Building Tool puo attaccare gli statici costruiti (non chi ha il permesso di building nel territorio). Proteggi il tuo territorio con le guardie!
 
 **D: Posso spostare statici costruiti da un altro membro?**
 R: Si, chiunque abbia il permesso di building puo spostare qualsiasi statico nel territorio (se non e bloccato).
