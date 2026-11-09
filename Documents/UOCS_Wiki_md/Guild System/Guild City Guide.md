@@ -63,7 +63,7 @@ Dopo il grant, avrai i permessi per:
 - Demolire foundation
 - Customizzare il design
 - Lockare personal items per altri membri
-- Releasare lockdown di personal items
+- Rilasciare un lockdown solo se il proprietario sei tu (o se sei il Leader): il baule va nel bank box del proprietario; se e' pieno il rilascio viene rifiutato
 
 > Il **Leader** non deve chiedere il permesso a nessuno — ha automaticamente tutti i diritti.
 
@@ -291,7 +291,7 @@ Ora che hai la casa, vuoi mettere un **baule personale** al suo interno che solo
 
 ### Richiedi il Lock Down al Builder
 
-Per lockare il baule e assegnarlo a te, serve un **builder** (player con `BuildPermissions`) — puoi essere tu stesso se hai i permessi, oppure devi chiedere a un altro builder della gilda.
+Per lockare il baule e assegnarlo a te, serve un **builder** (player con `BuildPermissions`) — puoi essere tu stesso se hai i permessi, oppure devi chiedere a un altro builder della gilda. Non si possono lockare il chest delle risorse della gilda ne un baule lasciato a terra da un altro giocatore.
 
 Se sei tu il builder:
 1. Apri Building Tool → azione #8 **"Lock Down & Grant"**
