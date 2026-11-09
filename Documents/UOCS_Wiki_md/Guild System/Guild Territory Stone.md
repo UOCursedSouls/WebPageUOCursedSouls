@@ -111,18 +111,35 @@ La pagina **Security** controlla le guardie e le regole di combattimento.
 
 ### Guardie
 
-Le guardie proteggono il territorio automaticamente:
+Le guardie sono creature vere (guerriero, arciere, mago) con un **posto di guardia** (home): vedono i nemici da sole, camminano verso di loro e combattono dentro il territorio.
 
-- **Attaccano criminali e murderer** che entrano nel territorio
-- **Proteggono i membri della gilda** — se qualcuno attacca un membro, le guardie intervengono
-- Si **teletrasportano** al criminale (stile citta)
-- Chiunque puo chiamare le guardie gridando **"Guards!"**
+**Chi attaccano** (solo dentro il territorio):
+
+- **Criminali e murderer** (rossi) che si trovano nel territorio
+- **Chi attacca per primo un membro della gilda proprietaria o di una gilda alleata**, animali domestici compresi: colpire il pet di un membro conta come colpire il membro
+- Chiunque puo chiamare le guardie gridando **"Guards!"** nel territorio: le guardie nel raggio di percezione attaccano chi ha aggredito il chiamante, se la regola dice di combattere
+
+**Chi non attaccano mai**: i membri della gilda proprietaria e delle gilde alleate, qualunque sia la loro notorieta. Uno scontro tra due di loro non attira nessuna guardia.
+
+**Confine**: le guardie non escono mai dal territorio. Se il bersaglio esce, non lo seguono e tornano al loro posto. Solo arcieri e maghi possono colpire un aggressore che sta fuori dal confine, sparando da dentro; i guerrieri restano dentro.
+
+**Fuga**: le guardie **scappano** dai mostri e dai membri di gilde in guerra con la gilda proprietaria (anche se sono criminali o stanno attaccando un membro), gridando avvisi in inglese, al massimo uno ogni 30 secondi per guardia:
+
+- *"Beware, flee!"*, *"Get to safety!"*, *"Monsters have invaded the territory!"*, *"We are at war, barricade yourselves!"*, *"We are being invaded!"*
+
+Scappano finche la minaccia non e piu nel loro raggio di percezione, poi tornano al posto. Un mostro e una creatura non controllata e non evocata che attacca da sola; animali pacifici, vendor e creature che attaccano solo il male (unicorni, pixie) non contano. I pet e le evocazioni sono giudicati come il loro padrone. Le gilde di tipo Order e Chaos contano come in guerra.
+
+**Membro contro innocente**: se un membro (della gilda proprietaria o di una alleata) attacca per primo un innocente che si difende, le guardie **restano fuori dallo scontro** e, quando vedono quel membro, dicono parole di disgusto (in inglese, al massimo una ogni 60 secondi per guardia e per membro), per esempio *"Shame on thee, striking an innocent!"* o *"Thou disgracest thy guild, coward."*
+
+**Attaccare una guardia**: un membro o un alleato puo attaccare le guardie del proprio territorio. La guardia attaccata si difende solo da quell'attaccante (le altre non intervengono) e smette quando l'attaccante smette o esce dal territorio. Ucciderla costa karma negativo, come uccidere un NPC innocente, ma non da murder count; la guardia lascia cadere il suo equipaggiamento e rinasce.
+
+**Guard Strength**: il fattore e `0,5 + 0,1 x Guard Strength`: 1 = 0,6x, 5 = valori base, 10 = 1,5x. Moltiplica stats, hit points e skill di ogni tipo di guardia (guerriero, arciere e mago restano diversi); le skill non superano 120. Cambiare Guard Strength aggiorna subito le guardie presenti e quelle nuove.
 
 | Opzione | Descrizione |
 |---------|-------------|
 | **Spawn Guards** | Abilita/disabilita il sistema guardie |
 | **Guard Count** | Numero massimo di guardie (0-15) |
-| **Guard Strength** | Potenza delle guardie (1-10, moltiplica le stats) |
+| **Guard Strength** | Potenza delle guardie (1-10, fattore 0,5 + 0,1 x valore su stats e skill) |
 
 ### Tipi di guardie:
 
@@ -131,6 +148,14 @@ Le guardie proteggono il territorio automaticamente:
 | **Warrior Guard** | Melee | Combattimento corpo a corpo con Halberd |
 | **Archer Guard** | Ranged | Arciere a cavallo con arco |
 | **Mage Guard** | Caster | Lancia Lightning, Paralyze, FlameStrike |
+
+Valori base a Guard Strength 5 (Str/Dex/Int, hit points, skill):
+
+| Tipo | Str/Dex/Int | Hit points | Skill |
+|------|-------------|-----------|-------|
+| **Warrior Guard** | 100/100/25 | 150 | Swords, Tactics, Anatomy, Resisting Spells 80 |
+| **Archer Guard** | 90/110/25 | 120 | Archery, Tactics, Anatomy, Resisting Spells 80 |
+| **Mage Guard** | 70/50/120 | 100 | Magery, Evaluating Intelligence, Meditation, Resisting Spells 80 |
 
 ### Regole del territorio:
 
@@ -318,7 +343,13 @@ R: Tutto viene rimosso (guardie, vendor, barriere, regione). Il gold nella treas
 R: Si, ma le stone devono rispettare le distanze minime tra loro.
 
 **D: Le guardie attaccano i miei alleati?**
-R: No. Le guardie proteggono i membri della gilda e attaccano solo criminali, murderer, e chi attacca un membro.
+R: No. Membri della gilda e alleati non sono mai bersagli delle guardie, qualunque sia la loro notorieta. Le guardie attaccano solo criminali, murderer e chi attacca per primo un membro o un alleato.
+
+**D: Le guardie si teleportano o escono dal territorio?**
+R: No. Camminano, si fermano al confine e tornano al loro posto.
+
+**D: Cosa fanno le guardie contro mostri o gilde in guerra?**
+R: Scappano e gridano avvisi in inglese.
 
 **D: Cosa succede se il mana della sfera finisce?**
 R: Le barriere magiche si disattivano automaticamente. Le guardie e i vendor continuano a funzionare normalmente.
