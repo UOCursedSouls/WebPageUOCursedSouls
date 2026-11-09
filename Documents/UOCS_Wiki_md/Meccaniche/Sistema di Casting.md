@@ -10,36 +10,36 @@ Il sistema di casting di UO Cursed Souls funziona in modo diverso dall'Ultima On
 
 ## 🎯 Come Funziona
 
-Il lancio di una spell segue 4 fasi:
+Il lancio di una spell segue 4 fasi: attivazione, bersaglio, concentrazione, esecuzione. Questo vale per i **giocatori**; i mostri, le guardie e gli altri NPC lanciano con il casting classico di Ultima Online.
 
 ### Fase 1 — Attivazione
 
 Quando clicchi una spell dal tuo spellbook, il gioco controlla:
 
-- Sei vivo e in grado di lanciare magie
+- Sei vivo
+- Non sei paralizzato né calmato
 - Hai abbastanza **mana** per la spell
-- Non sei paralizzato o congelato
-- La zona in cui ti trovi permette l'uso di magia
+- Non stai già concentrandoti su un'altra spell
 
-Se tutto e in ordine, si passa alla fase successiva.
+I reagenti non vengono controllati in questa fase. Se tutto è in ordine, si passa alla fase successiva.
 
 ### Fase 2 — Selezione del Bersaglio
 
-Appare il **cursore di targeting**: scegli chi o cosa vuoi colpire (o curare). Hai **30 secondi** per selezionare il bersaglio. Se non selezioni nulla entro il tempo, la spell viene annullata senza costi.
+Appare subito il **cursore di targeting**: scegli chi o cosa colpire (anche un punto del terreno). Il raggio è quello della spell, o 12 tile se la spell non ne ha uno. Hai **30 secondi** per scegliere. Finché il cursore è aperto la spell **non è ancora in corso**: danni ricevuti e toggle War/Peace non hanno effetto su di essa. Se premi **ESC**, se scade il tempo o se muori, la spell finisce **senza costi, senza suoni e senza messaggi**.
 
 ### Fase 3 — Concentrazione (Cast Delay)
 
-Dopo aver selezionato il bersaglio, il tuo personaggio inizia a concentrarsi:
+Dopo aver scelto il bersaglio, il tuo personaggio inizia a concentrarsi:
 
 - Pronuncia il **mantra** della spell
-- Le mani mostrano l'**animazione** di casting
-- Il tempo di concentrazione dipende dal **cerchio** della spell e dal tuo **Faster Casting**
+- Le mani mostrano l'**animazione** di casting (le mani vengono liberate: l'arma impugnata viene tolta)
+- Il tempo dipende dal **cerchio** della spell e dal tuo **Faster Casting**
 
 **Puoi muoverti liberamente** durante questa fase — non sei bloccato come nel casting tradizionale.
 
 #### Tempo di Casting
 
-Il tempo base dipende dal cerchio della spell:
+Il tempo è **(3 + cerchio) × 0.25 secondi**, meno 0.25 secondi per ogni punto di Faster Casting:
 
 | Cerchio | Tempo Base | Con FC +2 |
 |---------|-----------|-----------|
@@ -52,19 +52,24 @@ Il tempo base dipende dal cerchio della spell:
 | 7° | 2.50s | 2.00s |
 | 8° | 2.75s | 2.25s |
 
-**Faster Casting (FC)**: ogni punto di FC riduce il tempo di 0.25 secondi. Il cap per Magery e Necromancy e FC +2.
+- **Cap FC**: +2 per Magery e Necromancy.
+- **Dark Elf** con INT >= 170: **+2 FC** razziale e cap **+4**.
+- **Protection**: **-2 FC**.
+- Il tempo minimo è **0.25 secondi**.
+- Il Faster Cast Recovery non ha effetto.
 
 ### Fase 4 — Esecuzione
 
-Quando la concentrazione e completa, il gioco verifica che il bersaglio sia ancora valido:
+Quando la concentrazione è completa, il gioco verifica il bersaglio. La linea di vista **non** viene ricontrollata a questo punto.
 
-- E ancora vivo?
-- E ancora nel raggio della spell?
-- Lo puoi ancora vedere (linea di vista)?
-
-Se **tutto e valido**: la spell colpisce e l'effetto viene applicato. Mana e reagenti vengono consumati.
-
-Se il **bersaglio non e piu valido**: la spell fizza (fallisce). Perdi il **50% del mana** della spell e i **reagenti** vengono consumati.
+| Situazione alla fine del cast | Esito | Mana | Reagenti |
+|-------------------------------|-------|------|----------|
+| Bersaglio valido | La spell colpisce, il danno è istantaneo | 100% | Consumati |
+| Bersaglio fuori raggio, morto, eliminato o non visibile | Fizzle | 50% | Persi |
+| Prova di skill fallita | Fizzle | Nessuno | Persi |
+| Spell su un punto del terreno con un mobile | Colpisce il primo mobile vivo su quel tile (anche nascosto) | 100% | Consumati |
+| Spell su un tile vuoto | Si applica l'effetto sul terreno | 100% | Consumati |
+| Caster e bersaglio entrambi con Magic Reflection | La spell non ha effetto | 100% | Persi |
 
 **Nessun cooldown**: dopo aver lanciato una spell, puoi immediatamente lanciarne un'altra.
 
@@ -72,44 +77,52 @@ Se il **bersaglio non e piu valido**: la spell fizza (fallisce). Perdi il **50% 
 
 ## ⚡ Interruzione (Fizzle)
 
-Durante la fase di concentrazione, diversi eventi possono far fallire la tua spell:
+Durante la fase di concentrazione, diversi eventi possono far fallire la tua spell. Ogni fizzle produce particelle sopra la testa del caster, un **suono** e il messaggio "The spell fizzles".
 
 ### Danno Fisico
 
-Se ricevi un **colpo fisico** (spada, freccia, mazza, ecc.) durante il casting, la spell **fizza sempre**. Non c'e modo di evitarlo — nemmeno la spell Protection ti aiuta contro i danni fisici.
+Se ricevi un **colpo fisico** (spada, freccia, mazza, ecc.) durante la concentrazione, la spell **fizza sempre**. Nemmeno Protection aiuta.
 
 - **Mana perso**: 100% del costo della spell
-- **Protection**: non ha effetto
 
 ### Danno Non-Fisico
 
-Se ricevi **danno magico** (fuoco, freddo, veleno, energia) durante il casting, la spell **puo** fizzare, ma la spell **Protection riduce la probabilita** di fizzle.
+Se ricevi **danno magico** (fuoco, freddo, veleno, energia) durante la concentrazione, la spell **può** fizzare, ma **Protection riduce la probabilità** di fizzle.
 
 - **Mana perso**: 100% del costo della spell
-- **Protection**: riduce la chance di fizzle
 
-### Annullamento Volontario
+### Toggle War/Peace
 
-Puoi **annullare volontariamente** la spell durante il casting in due modi:
-
-1. **Premendo TAB** (toggle War/Peace mode)
-2. **Lanciando un'altra spell** prima che il casting finisca
-
-L'annullamento volontario e meno costoso di un fizzle da danno:
+Se cambi modalità War/Peace durante la concentrazione, la spell fizza.
 
 - **Mana perso**: 50% del costo della spell
-- **Reagenti**: non vengono consumati
+
+### Morte
+
+Se muori durante la concentrazione la spell si interrompe e non perdi nulla.
+
+### Lanciare un'altra spell (Recast)
+
+Puoi lanciare una nuova spell mentre un'altra è in corso:
+
+- **Il cursore della vecchia spell è ancora aperto** (non hai ancora scelto il bersaglio): la vecchia spell finisce senza costi, animazione, suono o messaggio, e il cursore diventa quello della nuova. Anche una spell senza bersaglio chiude gratis un cursore aperto.
+- **La vecchia spell è in concentrazione**: aprire il cursore della nuova non tocca la vecchia. Quando scegli il bersaglio della nuova, la vecchia **fizza** (nessun mana perso per lei) e paghi subito il **50% del mana della NUOVA spell** (arrotondato per difetto); poi parte la concentrazione della nuova, che costa il mana intero quando va a segno.
+- **ESC o scadenza** sul cursore della nuova spell: la vecchia continua e va a segno. Se la vecchia finisce di concentrarsi mentre il cursore della nuova è aperto, va a segno, e scegliere poi il bersaglio è un lancio normale senza penalità.
+- **Mana insufficiente** per la penalità: la nuova spell fallisce e la vecchia continua.
+- **Bacchette** (costo 0 mana): se scegli il bersaglio di una spell da bacchetta mentre un'altra spell è in concentrazione, la vecchia fizza e perdi il **50% del mana della vecchia spell**.
 
 ### Tabella Riassuntiva
 
-| Causa | Mana Perso | Reagenti Persi | Protection Aiuta? |
-|-------|-----------|----------------|-------------------|
-| Danno fisico | 100% | No | No — fizzle garantito |
-| Danno non-fisico | 100% | No | Si — riduce la chance |
-| TAB / nuova spell | 50% | No | — |
-| Target non valido | 50% | Si | — |
-
-> Ogni fizzle produce un **effetto visivo** sopra la testa del caster e un **suono** caratteristico, cosi sia tu che i tuoi avversari saprete che la spell e fallita.
+| Causa | Mana Perso | Protection Aiuta? |
+|-------|-----------|-------------------|
+| Danno fisico | 100% | No — fizzle garantito |
+| Danno non-fisico | 100% | Sì — riduce la chance |
+| Toggle War/Peace | 50% | — |
+| Nuova spell (bersaglio scelto) | 50% della nuova spell | — |
+| Bacchetta durante un'altra spell | 50% della vecchia spell | — |
+| Bersaglio non valido a fine cast | 50% | — |
+| Prova di skill fallita | Nessuno | — |
+| ESC, scadenza o morte con cursore aperto | Nessuno | — |
 
 ---
 
@@ -119,7 +132,7 @@ La spell **Protection** (Secondo Cerchio di Magery) ha un ruolo specifico in que
 
 - **Non protegge** dai danni fisici — un colpo di spada interrompe sempre il casting
 - **Protegge** dai danni magici — riduce la probabilita che una spell nemica interrompa il tuo casting
-- **Penalita**: Protection riduce il tuo Faster Casting di 2 punti
+- **Penalità**: Protection riduce il tuo Faster Casting di 2 punti
 
 Questo crea una scelta strategica: Protection ti rende piu sicuro contro i caster nemici, ma rallenta il tuo casting. Contro i guerrieri in mischia, Protection non ti aiuta.
 
@@ -132,7 +145,7 @@ Questo crea una scelta strategica: Protection ti rende piu sicuro contro i caste
 - **Mantieni la distanza** dai guerrieri — i loro colpi fisici interrompono sempre le tue spell
 - Usa **Protection** quando combatti contro altri caster per resistere ai loro tentativi di interruzione
 - Sfrutta la **mobilita** — puoi muoverti durante il casting, quindi non restare fermo
-- Se sei sotto pressione, **annulla la spell con TAB** per perdere solo il 50% del mana invece del 100%
+- Se sei sotto pressione, **cambia modalità War/Peace** per perdere solo il 50% del mana invece del 100%
 - Nessun cooldown tra le spell: puoi **lanciare spell in rapida successione** se non vieni interrotto
 
 ### Per i Guerrieri
@@ -153,9 +166,9 @@ Questo crea una scelta strategica: Protection ti rende piu sicuro contro i caste
 
 - Impara a riconoscere il **suono del fizzle** — ti dice che il tuo avversario ha fallito una spell
 - Se un nemico sta castando, un singolo **colpo fisico** e sufficiente per interromperlo
-- Non sprecare mana se sei sotto pressione — meglio **annullare con TAB** e perdere il 50% che subire un fizzle da 100%
+- Non sprecare mana se sei sotto pressione — meglio **annullare con il toggle War/Peace** e perdere il 50% che subire un fizzle da 100%
 - Il **Faster Casting** e fondamentale — meno tempo passi a castare, meno possibilita hai di essere interrotto
-- Come **Dark Elf** con INT >= 170, ottieni **+2 FC bonus** razziale — il casting piu veloce del gioco
+- Come **Dark Elf** con INT >= 170, ottieni **+2 FC bonus** razziale e il cap sale a +4 — il casting più veloce del gioco
 
 ---
 
@@ -165,7 +178,7 @@ Questo crea una scelta strategica: Protection ti rende piu sicuro contro i caste
 R: Si! A differenza dell'UO tradizionale, puoi muoverti liberamente durante il casting. Non sei bloccato in nessun momento.
 
 **D: Come annullo una spell che sto castando?**
-R: Premi TAB (toggle War/Peace) oppure lancia un'altra spell. Perdi il 50% del mana della spell annullata.
+R: Prima di scegliere il bersaglio basta ESC: nessun costo. Durante la concentrazione puoi cambiare modalità War/Peace (perdi il 50% del mana) oppure lanciare un'altra spell (perdi il 50% del mana della nuova).
 
 **D: Il danno da veleno (Poison) interrompe il casting?**
 R: Il danno da Poison e danno non-fisico, quindi puo interrompere il casting ma Protection riduce la probabilita. Non e un fizzle garantito come il danno fisico.
@@ -177,8 +190,14 @@ R: No. Puoi lanciare spell una dopo l'altra senza aspettare. L'unico limite e il
 R: Dipende dal nemico. Contro guerrieri e arcieri (danno fisico), Protection non aiuta e ti rallenta il casting (-2 FC). Contro altri caster, puo salvarti spell importanti. Valuta la situazione.
 
 **D: Se il mio bersaglio si muove fuori range durante il casting?**
-R: Quando il cast delay finisce, il gioco controlla se il bersaglio e ancora nel range e nella linea di vista. Se non lo e, la spell fizza — perdi il 50% del mana e i reagenti.
+R: Quando il cast delay finisce, il gioco controlla se il bersaglio è ancora nel raggio, vivo e visibile (la linea di vista non viene ricontrollata). Se non lo è, la spell fizza: perdi il 50% del mana e i reagenti.
 
 ---
 
-*Ultimo aggiornamento: Marzo 2026*
+## 🔗 Vedi anche
+
+- [Magery](#sectionWiki/Skills/Magery)
+
+---
+
+*Ultimo aggiornamento: Novembre 2026*
