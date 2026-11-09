@@ -117,21 +117,24 @@ Le guardie sono creature vere (guerriero, arciere, mago) con un **posto di guard
 
 - **Criminali e murderer** (rossi) che si trovano nel territorio
 - **Chi attacca per primo un membro della gilda proprietaria o di una gilda alleata**, animali domestici compresi: colpire il pet di un membro conta come colpire il membro
+- **Chi colpisce una guardia** del territorio (anche un non membro, con arco, magie o pet): la guardia colpita lo combatte; vedi *Attaccare una guardia*
 - Chiunque puo chiamare le guardie gridando **"Guards!"** nel territorio: le guardie nel raggio di percezione attaccano chi ha aggredito il chiamante, se la regola dice di combattere
 
 **Chi non attaccano mai**: i membri della gilda proprietaria e delle gilde alleate, qualunque sia la loro notorieta. Uno scontro tra due di loro non attira nessuna guardia.
 
-**Confine**: le guardie non escono mai dal territorio. Se il bersaglio esce, non lo seguono e tornano al loro posto. Solo arcieri e maghi possono colpire un aggressore che sta fuori dal confine, sparando da dentro; i guerrieri restano dentro.
+**Confine**: le guardie non escono mai dal territorio. Se il bersaglio esce, non lo seguono e tornano al loro posto. Solo arcieri e maghi possono colpire un aggressore che sta fuori dal confine, sparando da dentro; i guerrieri restano dentro. Vale anche per chi, da fuori, ha colpito una guardia: non si possono uccidere le guardie dal confine senza rischio.
 
 **Fuga**: le guardie **scappano** dai mostri e dai membri di gilde in guerra con la gilda proprietaria (anche se sono criminali o stanno attaccando un membro), gridando avvisi in inglese, al massimo uno ogni 30 secondi per guardia:
 
 - *"Beware, flee!"*, *"Get to safety!"*, *"Monsters have invaded the territory!"*, *"We are at war, barricade yourselves!"*, *"We are being invaded!"*
 
-Scappano finche la minaccia non e piu nel loro raggio di percezione, poi tornano al posto. Un mostro e una creatura non controllata e non evocata che attacca da sola; animali pacifici, vendor e creature che attaccano solo il male (unicorni, pixie) non contano. I pet e le evocazioni sono giudicati come il loro padrone. Le gilde di tipo Order e Chaos contano come in guerra.
+Mentre scappano le guardie sono in **war mode**; tornano in pace una volta al loro posto. Scappano finche la minaccia non e piu nel loro raggio di percezione, poi tornano al posto. I mostri aggressivi attaccano le guardie come attaccherebbero un giocatore. Un mostro e una creatura non controllata e non evocata che attacca da sola; animali pacifici, vendor e creature che attaccano solo il male (unicorni, pixie) non contano. I pet e le evocazioni sono giudicati come il loro padrone. Le gilde di tipo Order e Chaos contano come in guerra.
 
 **Membro contro innocente**: se un membro (della gilda proprietaria o di una alleata) attacca per primo un innocente che si difende, le guardie **restano fuori dallo scontro** e, quando vedono quel membro, dicono parole di disgusto (in inglese, al massimo una ogni 60 secondi per guardia e per membro), per esempio *"Shame on thee, striking an innocent!"* o *"Thou disgracest thy guild, coward."*
 
-**Attaccare una guardia**: un membro o un alleato puo attaccare le guardie del proprio territorio. La guardia attaccata si difende solo da quell'attaccante (le altre non intervengono) e smette quando l'attaccante smette o esce dal territorio. Ucciderla costa karma negativo, come uccidere un NPC innocente, ma non da murder count; la guardia lascia cadere il suo equipaggiamento e rinasce.
+**Innocente che chiama le guardie**: se un innocente attaccato per primo da un membro o da un alleato grida **"Guards!"**, le guardie non combattono comunque, ma una guardia nel raggio risponde con una frase di scuse in inglese (al massimo una ogni 30 secondi per guardia), per esempio *"We are sorry, but we cannot raise arms against our own."*, *"Forgive us, stranger, we serve this guild."* o *"Our oath binds us; we cannot help thee."* Le scuse vanno solo all'innocente, mai a un compagno di gilda o a un murderer attaccato dal membro.
+
+**Attaccare una guardia**: un membro o un alleato puo attaccare le guardie del proprio territorio. La guardia attaccata si difende solo da quell'attaccante (le altre non intervengono) e smette quando l'attaccante smette o esce dal territorio. Anche una guardia colpita da un mostro o da un membro di una gilda in guerra combatte contro quell'attaccante (le altre continuano a scappare da lui): guerrieri, arcieri e maghi allo stesso modo, e arcieri e maghi sparano da dentro se l'attaccante esce dal confine. Ucciderla costa il normale karma negativo di ModernUO (circa -65, meno se il karma e gia basso), ma non da murder count; la guardia lascia cadere il suo equipaggiamento e rinasce.
 
 **Guard Strength**: il fattore e `0,5 + 0,1 x Guard Strength`: 1 = 0,6x, 5 = valori base, 10 = 1,5x. Moltiplica stats, hit points e skill di ogni tipo di guardia (guerriero, arciere e mago restano diversi); le skill non superano 120. Cambiare Guard Strength aggiorna subito le guardie presenti e quelle nuove.
 
@@ -349,7 +352,7 @@ R: No. Membri della gilda e alleati non sono mai bersagli delle guardie, qualunq
 R: No. Camminano, si fermano al confine e tornano al loro posto.
 
 **D: Cosa fanno le guardie contro mostri o gilde in guerra?**
-R: Scappano e gridano avvisi in inglese.
+R: Scappano in war mode e gridano avvisi in inglese. Se un mostro o un membro di una gilda in guerra colpisce una guardia, quella guardia lo combatte.
 
 **D: Cosa succede se il mana della sfera finisce?**
 R: Le barriere magiche si disattivano automaticamente. Le guardie e i vendor continuano a funzionare normalmente.
