@@ -80,7 +80,7 @@ Dopo il collegamento il chest **non si sposta né si solleva**, e lo aprono solo
 2. Doppio click sul tool e scegli **City Management**.
 3. Si apre la **palette del builder**, con le schede **Walls, Doors, Floors, Stairs, Roofs, Misc** e i pezzi che hai nel chest, con quanti ne restano.
 
-Se i pezzi che ti aspetti non ci sono, non sono nel chest. Un client senza palette riceve ancora il vecchio pannello a gump.
+Se i pezzi che ti aspetti non ci sono, non sono nel chest. Un client senza palette non può costruire: riceve solo una riga che chiede di aggiornare il client.
 
 ---
 

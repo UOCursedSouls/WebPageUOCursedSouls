@@ -85,6 +85,26 @@ Una volta piazzata la stone in un luogo valido, la cattura inizia automaticament
 | **Tick rate** | 2 secondi | Frequenza di aggiornamento del progresso |
 | **Raggio cattura** | 5 tile | Distanza massima dalla stone per contribuire |
 
+### Quando la stone cambia proprietario:
+
+Quando una gilda cattura una stone che era di un'altra gilda:
+
+- La **modifica del territorio in corso** del vecchio proprietario viene annullata: la bozza e scartata e nessun gold si muove. Chi non puo piu gestire la stone smette di esserne l'editor.
+- La **treasury resta nella stone**: la nuova gilda la conquista insieme al territorio.
+- I **conti tasse** dei membri della vecchia gilda vengono azzerati, crediti e debiti compresi.
+
+### Se la gilda si scioglie:
+
+Quando la gilda proprietaria viene sciolta, la stone si libera **subito**, senza aspettare un riavvio del server:
+
+- La stone resta **senza proprietario** e puo essere catturata da un'altra gilda.
+- La **treasury resta nella stone**: la prende chi la cattura.
+- I **conti tasse** della vecchia gilda vengono azzerati.
+- Il **chest delle risorse** viene scollegato dalla stone (non e piu fisso sul posto).
+- Una **modifica del territorio in corso** viene annullata, come sopra.
+
+> ⚠️ Se una stone viene distrutta mentre e **senza proprietario**, la sua treasury non viene pagata a nessuno: il gold e perso.
+
 ---
 
 ## 🏛️ Gestione del Territorio
@@ -341,7 +361,7 @@ Puoi ordinare la lista per:
 R: No. Una volta attivata, la stone e fissa. Puoi distruggerla e piazzarne una nuova.
 
 **D: Cosa succede se distruggo la stone?**
-R: Tutto viene rimosso (guardie, vendor, barriere, regione). Il gold nella treasury viene restituito al leader della gilda.
+R: Tutto viene rimosso (guardie, vendor, barriere, regione). Il gold nella treasury viene restituito al leader della gilda. Se la stone e senza proprietario, il gold non va a nessuno.
 
 **D: Posso avere piu di un territorio?**
 R: Si, ma le stone devono rispettare le distanze minime tra loro.
