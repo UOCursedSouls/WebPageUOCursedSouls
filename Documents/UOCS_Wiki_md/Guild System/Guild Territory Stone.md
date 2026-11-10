@@ -181,7 +181,7 @@ Quando viene conquistata, la stone crea un territorio di **11x11 tile** centrato
 ### Come espandere:
 
 1. Clicca **"Start editing"** per entrare in modalita edit
-2. Vedrai i **marker colorati** a terra:
+2. Solo sul **tuo** schermo il terreno si colora (nessun oggetto nel mondo, gli altri giocatori non vedono nulla):
    - 🟢 **Verde**: tile del territorio attuale (invariati)
    - 🟡 **Giallo**: tile nuovi che stai aggiungendo
    - 🔴 **Rosso**: tile che stai rimuovendo
@@ -192,7 +192,8 @@ Quando viene conquistata, la stone crea un territorio di **11x11 tile** centrato
 
 ### Pausa e ripresa:
 
-- **Pause Edit**: Nasconde i marker ma conserva le modifiche. Puoi tornare e riprendere quando vuoi.
+- **Pause Edit**: Toglie il colore dal terreno ma conserva le modifiche. Puoi tornare e riprendere quando vuoi.
+- Il colore sparisce anche quando l'editing finisce.
 - **Cancel Edit**: Scarta TUTTE le modifiche e torna al territorio originale.
 - Se ti allontani troppo (10+ tile dal confine), l'editing va automaticamente in pausa.
 

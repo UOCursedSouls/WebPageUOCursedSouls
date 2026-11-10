@@ -175,7 +175,7 @@ L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appa
 
 ## 🌈 Modificare il territorio
 
-*In arrivo con il client aggiornato.* Mentre un giocatore modifica l'area del territorio dalla stone, solo il **suo** schermo colora il terreno già disegnato, senza mettere oggetti nel mondo e senza che gli altri vedano nulla:
+Mentre un giocatore modifica l'area del territorio dalla stone, solo il **suo** schermo colora il terreno già disegnato, senza mettere oggetti nel mondo e senza che gli altri vedano nulla:
 
 | Colore | Significato |
 |--------|-------------|
@@ -183,7 +183,7 @@ L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appa
 | **Giallo** | Tile che vengono aggiunti |
 | **Rosso** | Tile che vengono tolti |
 
-I colori sono scelti dal server. Vedi [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) per la modifica dell'area.
+I colori sono scelti dal server e il colore sparisce quando smetti di modificare. Vedi [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) per la modifica dell'area.
 
 ---
 
