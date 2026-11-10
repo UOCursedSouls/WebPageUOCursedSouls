@@ -67,7 +67,7 @@ Senza un chest collegato non si può piazzare nulla.
 
 ## 🎨 Il builder
 
-Apri il Building Tool e scegli **City Management**: con il client UOCS si apre la **palette del builder**; un client senza palette riceve ancora il vecchio pannello a gump.
+Apri il Building Tool e scegli **City Management**: con il client UOCS si apre la **palette del builder**; un client senza palette non può costruire e riceve solo una riga che chiede di aggiornare il client.
 
 ### La palette
 
@@ -169,7 +169,7 @@ Con 3 pezzi per tile e per piano si può costruire una colonna di muri alta quat
 
 ### Porte
 
-L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. Con **Assign Door Owner** il Building Tool assegna una porta a un membro. Dopo una conquista del territorio, porte e pezzi appartengono alla nuova gilda.
+L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. La lista di accesso di una porta accetta solo membri della gilda che possiede la stone. Un proprietario che ha lasciato la gilda non può gestire la porta finché non rientra nella gilda. Con **Assign Door Owner** il Building Tool assegna una porta a un membro. Dopo una conquista del territorio, porte e pezzi appartengono alla nuova gilda.
 
 ---
 

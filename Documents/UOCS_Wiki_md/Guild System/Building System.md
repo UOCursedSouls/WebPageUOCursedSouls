@@ -375,7 +375,7 @@ Una volta collegato alla stone, il **chest delle risorse** della gilda non puo e
 
 ### Porte:
 
-L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. Dopo una conquista del territorio, porte e statici appartengono alla nuova gilda.
+L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. La lista di accesso di una porta accetta solo membri della gilda che possiede la stone. Un proprietario che ha lasciato la gilda non puo gestire la porta finche non rientra nella gilda. Dopo una conquista del territorio, porte e statici appartengono alla nuova gilda.
 
 ---
 
