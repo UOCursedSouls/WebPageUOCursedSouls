@@ -32,7 +32,7 @@ Gli statici costruiti sono oggetti reali nel mondo di gioco: hanno durabilita, p
 
 ### Cosa puoi fare:
 - Craftare strutture al banco da lavoro (muri, pavimenti, tetti, scale, porte, mobili...)
-- Piazzare, spostare e ruotare gli statici nel territorio
+- Piazzare gli statici nel territorio pezzo per pezzo con il builder (vedi [Guild City System](#sectionWiki/Guild%20System/Guild%20City%20System)) e ruotarli
 - Bloccare gli statici per impedirne lo spostamento
 - Riparare strutture danneggiate
 - Attaccare e distruggere strutture nemiche
@@ -90,7 +90,7 @@ Non tutti i membri della gilda possono costruire. Il **leader della gilda** cost
 | Azione | Chi puo farla |
 |--------|--------------|
 | **Craftare statici** | Chiunque con permesso building |
-| **Piazzare statici** | Chiunque con permesso building |
+| **Piazzare statici** | Chiunque con permesso building (il leader sempre) |
 | **Spostare/ruotare** | Chiunque con permesso building |
 | **Bloccare/sbloccare** | Chiunque con permesso building |
 | **Attaccare statici** | **Tutti** (anche non membri) |
@@ -147,8 +147,9 @@ Fai doppio click sul tool (deve essere nel backpack) per aprire il menu:
 
 | Azione | Descrizione |
 |--------|-------------|
-| **Place Static** | Piazza uno statico dal backpack nel territorio |
-| **Pick Up Static** | Prendi uno statico piazzato (se non bloccato) |
+| **City Management** | Apre il builder (la palette) per piazzare i pezzi dal chest delle risorse; vedi [Guild City System](#sectionWiki/Guild%20System/Guild%20City%20System) |
+| **Place Static** | Blocca in posizione uno statico gia a terra nel territorio |
+| **Pick Up Static** | Toglie uno statico bloccato e lo rimette nel chest delle risorse |
 | **Rotate Static** | Ruota lo statico (cambia orientamento) |
 | **Lock / Unlock** | Blocca o sblocca lo statico |
 | **Attack Static** | Attacca uno statico con la tua arma |
@@ -160,13 +161,13 @@ Fai doppio click sul tool (deve essere nel backpack) per aprire il menu:
 - Per piazzare, spostare, ruotare e bloccare serve il **permesso building**
 - Per **attaccare** non serve alcun permesso — chiunque con un tool puo farlo (unica eccezione: vedi [Attaccare gli Statici](#attaccare-gli-statici))!
 - C'e un **cooldown di 2 secondi** tra un attacco e l'altro
-- Non puoi prendere uno statico **bloccato** — sbloccalo prima
+- Il builder piazza i pezzi che sono nel **chest delle risorse** della gilda, non quelli nello zaino
 
 ---
 
 ## ⚒️ Crafting degli Statici
 
-Il processo di crafting crea uno statico nel tuo backpack, pronto per essere piazzato.
+Il processo di crafting crea uno statico nel tuo backpack: mettilo nel chest delle risorse della gilda e sara disponibile nella palette del builder.
 
 ### Flusso completo:
 
@@ -180,7 +181,8 @@ Il processo di crafting crea uno statico nel tuo backpack, pronto per essere pia
    - Hai le risorse necessarie?
 5. Se tutto ok → crafting in corso...
 6. Successo → lo statico appare nel backpack
-7. Usa il Building Tool → "Place Static" per piazzarlo
+7. Metti lo statico nel chest delle risorse
+8. Usa il Building Tool → "City Management" per piazzarlo con la palette
 ```
 
 ### Qualita del craft:
@@ -416,7 +418,7 @@ R: Si consumano ad ogni utilizzo. Quando gli usi finiscono, l'oggetto si rompe e
 R: No. Il banco DEVE essere posizionato a terra e devi essere smontato dalla cavalcatura.
 
 **D: La stone e stata distrutta — i miei statici sono persi?**
-R: Non subito! Il decadimento e molto lento (~1 mese). Se un'altra gilda piazza una stone nello stesso territorio, gli statici vengono recuperati.
+R: Non subito! Il decadimento e molto lento (circa 3 mesi per il legno). Se un'altra gilda piazza una stone nello stesso territorio, gli statici vengono recuperati.
 
 **D: Come posso proteggere le costruzioni dai nemici?**
 R: Usa le guardie del territorio, le barriere magiche, e posiziona gli statici importanti lontano dai confini.
@@ -424,4 +426,4 @@ R: Usa le guardie del territorio, le barriere magiche, e posiziona gli statici i
 ---
 
 *Ultimo aggiornamento: Aprile 2026*
-*Vedi anche: [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) | [Crystal Mana Sphere](#sectionWiki/Guild%20System/Crystal%20Mana%20Sphere)*
+*Vedi anche: [Guild City System](#sectionWiki/Guild%20System/Guild%20City%20System) | [Guild City Guide](#sectionWiki/Guild%20System/Guild%20City%20Guide) | [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone) | [Crystal Mana Sphere](#sectionWiki/Guild%20System/Crystal%20Mana%20Sphere)*
