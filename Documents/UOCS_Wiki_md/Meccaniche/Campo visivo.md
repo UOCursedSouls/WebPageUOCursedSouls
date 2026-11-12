@@ -11,8 +11,8 @@ Il campo visivo è fatto di due regole separate:
 
 | Regola | Cosa fa |
 |--------|---------|
-| **Cono visivo** | Il personaggio vede **225 gradi** nella direzione in cui è girato |
-| **Distanza visiva** | Il personaggio vede fino a una distanza decisa dallo shard; oltre c'è la nebbia |
+| **Cono visivo** | Il personaggio vede davanti a sé un'ampiezza in gradi decisa dallo shard (oggi **225 gradi**) |
+| **Distanza visiva** | Il personaggio vede fino a una distanza decisa dallo shard; oltre si vede in grigio il terreno già esplorato, il resto è coperto dal fumo |
 
 Lo shard può accendere una sola delle due, tutte e due o nessuna.
 
@@ -20,12 +20,15 @@ Lo shard può accendere una sola delle due, tutte e due o nessuna.
 
 ## 🔦 Il cono visivo
 
-Il personaggio vede **225 gradi** davanti a sé. Quello che resta alle spalle si divide in due gruppi:
+Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dallo staff per tutto lo shard: oggi è di **225 gradi**, valore che lo staff può cambiare. Quello che resta alle spalle si divide in due gruppi:
 
 | Alle spalle | Si vede? |
 |-------------|----------|
 | Creature, giocatori, oggetti sciolti (che si possono spostare) e cadaveri | **No** |
 | Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, ma più scuri** |
+
+- Il bordo del cono è **sfumato**, senza uno stacco netto.
+- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro.
 
 - I **2 tile** attorno al personaggio si vedono sempre, in ogni direzione.
 - I propri **pet**, i compagni di **party** e i membri della propria **gilda** alle spalle sono nascosti come chiunque altro.
@@ -35,7 +38,32 @@ Il personaggio vede **225 gradi** davanti a sé. Quello che resta alle spalle si
 
 ## 🌫️ La distanza visiva
 
-Lo shard decide fino a quanti tile si vede attorno al personaggio: **12 tile all'inizio**, valore che può cambiare. Oltre questa distanza c'è la **nebbia**.
+Lo shard decide fino a quanti tile si vede attorno al personaggio: **12 tile all'inizio**, valore che può cambiare.
+
+- Il bordo della distanza visiva è un **cerchio dal bordo morbido**, che segue il personaggio in modo fluido mentre cammina.
+- Ciò che entra nel campo visivo **compare con una breve dissolvenza**.
+
+### 🗺️ Terreno esplorato
+
+Oltre la distanza visiva il mondo non diventa tutto nero:
+
+| Oltre la distanza visiva | Come appare |
+|--------------------------|-------------|
+| Terreno **mai esplorato** | Coperto da un **fumo scuro** |
+| Terreno **già esplorato** | Visibile, **in grigio** e pulito, senza fumo |
+
+Sul terreno già esplorato il personaggio vede, in grigio, le cose **come le ha viste l'ultima volta**, anche se nel frattempo sono cambiate o sono state portate via, finché non torna a vedere quel punto:
+
+| Cosa c'era | Oltre la distanza visiva |
+|------------|--------------------------|
+| Cose fisse: porte, pezzi costruiti, decorazioni e case | Ricordate come viste l'ultima volta, in grigio |
+| Oggetti sciolti e cadaveri | Ricordati come visti l'ultima volta, in grigio |
+| Barche, con gli oggetti sciolti e i cadaveri che portano | Ricordate come viste l'ultima volta, in grigio |
+| Creature, NPC e altri giocatori | **Mai** ricordati: non si vedono |
+| Cose temporanee: sangue, campi e muri magici, portali di Gate Travel, fuochi da campo | **Mai** ricordate |
+
+- Questo vale **solo oltre la distanza visiva**. Alle spalle del personaggio, dentro la distanza visiva, le cose restano nascoste come spiegato nel [cono visivo](#sectionWiki/Meccaniche/Campo%20visivo).
+- Il gioco ricorda per sempre il terreno esplorato, **per ogni personaggio**, sul computer su cui si gioca.
 
 ---
 
@@ -77,7 +105,7 @@ I propri **pet** obbediscono agli ordini qualunque cosa vedano.
 
 ## ⛵ Barche
 
-I passeggeri e gli oggetti sul ponte di una barca si vedono solo quando sono nel proprio campo visivo.
+I passeggeri e gli oggetti sul ponte di una barca si vedono solo quando sono nel proprio campo visivo. Oltre la distanza visiva, su terreno già esplorato, una barca resta disegnata in grigio come vista l'ultima volta, con gli oggetti sciolti e i cadaveri che porta (vedi [Terreno esplorato](#sectionWiki/Meccaniche/Campo%20visivo)).
 
 ---
 
