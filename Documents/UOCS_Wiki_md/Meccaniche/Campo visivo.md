@@ -28,7 +28,7 @@ Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dal
 | Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, ma più scuri** |
 
 - Il bordo del cono è **sfumato**, senza uno stacco netto.
-- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro.
+- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro. Arriva fino alla distanza visiva, o fino al bordo dello schermo se il terreno esplorato si vede a colori (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)).
 
 - I **2 tile** attorno al personaggio si vedono sempre, in ogni direzione.
 - I propri **pet**, i compagni di **party** e i membri della propria **gilda** alle spalle sono nascosti come chiunque altro.
@@ -73,9 +73,12 @@ Come appare il terreno già esplorato oltre la distanza visiva lo sceglie ogni g
 
 | Opzione | Cosa fa |
 |---------|---------|
-| Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito. Spenta: si vede **in grigio**, come prima |
+| Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito (alle spalle vale il buio descritto sotto). Spenta: si vede **in grigio**, come prima |
 | Cursore **"Darkness of the explored grey:"** | Vale quando la casella è spenta: decide quanto è scuro o chiaro quel grigio. All'inizio è il grigio di prima |
 
+- Con la casella **accesa**, il buio alle spalle del personaggio non si ferma alla distanza visiva: continua fino al bordo dello schermo, sopra il terreno esplorato e le cose ricordate. Così il terreno esplorato si vede a colori pieni solo davanti e ai lati.
+- Il **fumo** sul terreno mai esplorato resta uguale tutto attorno, davanti e alle spalle.
+- Con la casella **spenta** non cambia nulla.
 - È una scelta del giocatore, sul **proprio computer**: cambia solo l'aspetto. Cosa viene ricordato, fino a quando e cosa resta nascosto non cambia.
 - Creature, NPC e altri giocatori **non si vedono mai** oltre la distanza visiva, con qualunque opzione.
 - Le opzioni mostrano solo ciò che il personaggio ha già visto: il gioco non riceve nulla di più.
