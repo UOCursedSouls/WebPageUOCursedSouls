@@ -46,9 +46,9 @@ Per piazzare una Guild Territory Stone, devi trovare un luogo adatto. La stone a
 | Requisito | Dettaglio |
 |-----------|----------|
 | **Mappa valida** | Deve essere su una mappa di gioco (non interna) |
-| **Lontano da citta** | Almeno 15 tile da qualsiasi regione (dungeon, città, aree guardate), vedi [Regioni del mondo](#sectionWiki/Meccaniche/Regioni%20del%20mondo) |
+| **Lontano da citta** | Almeno 15 tile da qualsiasi regione (dungeon, città, aree guardate) e dai territori di altre gilde, vedi [Regioni del mondo](#sectionWiki/Meccaniche/Regioni%20del%20mondo) |
 | **Lontano da case** | Non sovrapposta a case di giocatori o le loro regioni |
-| **Lontano da altre stone** | Distanza minima = tuo raggio + altro raggio + 10 tile margine |
+| **Lontano da altre stone** | Distanza minima = tuo raggio + altro raggio + 10 tile margine, in aggiunta ai 15 tile |
 | **A terra** | Non dentro un container |
 
 ### Feedback di piazzamento

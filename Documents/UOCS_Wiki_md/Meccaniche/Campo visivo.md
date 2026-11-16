@@ -33,6 +33,8 @@ Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dal
 - I **2 tile** attorno al personaggio si vedono sempre, in ogni direzione.
 - I propri **pet**, i compagni di **party** e i membri della propria **gilda** alle spalle sono nascosti come chiunque altro.
 - Gli **effetti grafici** (magie, esplosioni) si vedono solo dove si guarda.
+- I **fantasmi** vedono e sono visti con le stesse regole dei vivi.
+- Il contenuto di un contenitore che si può spostare, lasciato alle spalle, segue il contenitore e **non si vede**; il contenuto di un contenitore fisso **si vede**.
 
 ---
 

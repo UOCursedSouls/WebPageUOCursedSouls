@@ -341,6 +341,8 @@ Quando una [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory
 | **Tempo totale (legno)** | Circa **3 mesi** (100 HP base) |
 | **Tempo totale (metallo exc.)** | Circa **7 mesi** (225 HP) |
 
+Il tempo del decadimento e contato per ogni struttura e scorre solo mentre il server e acceso; nel mondo generato si ferma anche quando l'area non e caricata perche nessun giocatore e vicino, come per gli oggetti a terra (vedi [Regioni del mondo](#sectionWiki/Meccaniche/Regioni%20del%20mondo)). Le 22 ore e i mesi della tabella sono di questo tempo contato, non di calendario.
+
 Quando la stone viene distrutta:
 1. Tutti gli statici collegati diventano **orfani**
 2. Inizia un **timer di decadimento** molto lento
@@ -372,6 +374,7 @@ Una volta collegato alla stone, il **chest delle risorse** della gilda non puo e
 
 - Un contenitore si puo bloccare (lockdown) solo se il giocatore a cui viene assegnato puo possederlo: non il chest delle risorse, ne un contenitore lasciato a terra da un altro giocatore.
 - Solo il **proprietario** o il **leader** puo rilasciare un lockdown personale: il contenitore va nel **bank box del proprietario**. Se il bank box e pieno il rilascio viene rifiutato e il contenitore resta bloccato.
+- Il contenuto di un contenitore bloccato non decade mai, nelle case e negli edifici della citta di gilda.
 
 ### Porte:
 

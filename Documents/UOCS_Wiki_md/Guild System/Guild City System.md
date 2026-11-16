@@ -166,10 +166,15 @@ Con 3 pezzi per tile e per piano si può costruire una colonna di muri alta quat
 - Solo il **proprietario** o il **leader** può rilasciare un lockdown personale (**Release Lockdown**). Il contenitore va nel **bank box del proprietario**; se il bank box è pieno il rilascio viene rifiutato e il contenitore resta bloccato.
 - Se il proprietario non esiste più, il leader può rilasciare il lockdown e l'oggetto resta dov'è, sbloccato.
 - Il numero di **bauli personali** per membro dipende dal suo credito nel conto tasse della gilda: **1 baule ogni 25.000 gold** di credito (vedi [Guild Accountant](#sectionWiki/Guild%20System/Guild%20Accountant)). Il controllo avviene solo al momento del lockdown: se il credito scende dopo, i bauli già bloccati restano. Tavoli, sedie e altri oggetti non contano.
+- Il contenuto di un contenitore bloccato non decade mai, nelle case e negli edifici della città di gilda.
 
 ### Porte
 
 L'accesso del proprietario di una porta e le sue liste di accesso seguono l'appartenenza alla gilda: un membro che lascia la gilda li perde. La lista di accesso di una porta accetta solo membri della gilda che possiede la stone. Un proprietario che ha lasciato la gilda non può gestire la porta finché non rientra nella gilda. Con **Assign Door Owner** il Building Tool assegna una porta a un membro. Dopo una conquista del territorio, porte e pezzi appartengono alla nuova gilda.
+
+- Il proprietario di una porta gestisce la sua lista di accesso dal **menu della porta**, senza bisogno di un Building Tool, ma non da morto.
+- Una porta (chiusa o aperta) si crafta e si piazza solo come porta, mai come pezzo semplice, e **Rotate** non trasforma mai un pezzo semplice in una porta.
+- Le porte segrete di pietra e la portcullis restano pezzi semplici.
 
 ---
 
