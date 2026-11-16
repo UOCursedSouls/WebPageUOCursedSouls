@@ -12,7 +12,7 @@ Il campo visivo è fatto di due regole separate:
 | Regola | Cosa fa |
 |--------|---------|
 | **Cono visivo** | Il personaggio vede davanti a sé un'ampiezza in gradi decisa dallo shard (oggi **225 gradi**) |
-| **Distanza visiva** | Il personaggio vede fino a una distanza decisa dallo shard; oltre si vede in grigio il terreno già esplorato, il resto è coperto dal fumo |
+| **Distanza visiva** | Il personaggio vede fino a una distanza decisa dallo shard; oltre si vede il terreno già esplorato (in grigio, o a colori se il giocatore lo sceglie nelle opzioni), il resto è coperto dal fumo |
 
 Lo shard può accendere una sola delle due, tutte e due o nessuna.
 
@@ -38,7 +38,7 @@ Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dal
 
 ## 🌫️ La distanza visiva
 
-Lo shard decide fino a quanti tile si vede attorno al personaggio: **12 tile all'inizio**, valore che può cambiare.
+Lo shard decide fino a quanti tile si vede attorno al personaggio: **12 tile all'inizio**, valore che può cambiare. Lo staff può portarla al massimo a **24 tile**.
 
 - Il bordo della distanza visiva è un **cerchio dal bordo morbido**, che segue il personaggio in modo fluido mentre cammina.
 - Ciò che entra nel campo visivo **compare con una breve dissolvenza**.
@@ -50,20 +50,33 @@ Oltre la distanza visiva il mondo non diventa tutto nero:
 | Oltre la distanza visiva | Come appare |
 |--------------------------|-------------|
 | Terreno **mai esplorato** | Coperto da un **fumo scuro** |
-| Terreno **già esplorato** | Visibile, **in grigio** e pulito, senza fumo |
+| Terreno **già esplorato** | Visibile e pulito, senza fumo: **in grigio**, a meno che il giocatore scelga i colori (vedi sotto) |
 
-Sul terreno già esplorato il personaggio vede, in grigio, le cose **come le ha viste l'ultima volta**, anche se nel frattempo sono cambiate o sono state portate via, finché non torna a vedere quel punto:
+Sul terreno già esplorato il personaggio vede le cose **come le ha viste l'ultima volta**, anche se nel frattempo sono cambiate o sono state portate via, finché non torna a vedere quel punto:
 
 | Cosa c'era | Oltre la distanza visiva |
 |------------|--------------------------|
-| Cose fisse: porte, pezzi costruiti, decorazioni e case | Ricordate come viste l'ultima volta, in grigio |
-| Oggetti sciolti e cadaveri | Ricordati come visti l'ultima volta, in grigio |
-| Barche, con gli oggetti sciolti e i cadaveri che portano | Ricordate come viste l'ultima volta, in grigio |
+| Cose fisse: porte, pezzi costruiti, decorazioni e case | Ricordate come viste l'ultima volta |
+| Oggetti sciolti e cadaveri | Ricordati come visti l'ultima volta |
+| Barche, con gli oggetti sciolti e i cadaveri che portano | Ricordate come viste l'ultima volta |
 | Creature, NPC e altri giocatori | **Mai** ricordati: non si vedono |
 | Cose temporanee: sangue, campi e muri magici, portali di Gate Travel, fuochi da campo | **Mai** ricordate |
 
 - Questo vale **solo oltre la distanza visiva**. Alle spalle del personaggio, dentro la distanza visiva, le cose restano nascoste come spiegato nel [cono visivo](#sectionWiki/Meccaniche/Campo%20visivo).
 - Il gioco ricorda per sempre il terreno esplorato, **per ogni personaggio**, sul computer su cui si gioca.
+
+### 🎨 Grigio o colori
+
+Come appare il terreno già esplorato oltre la distanza visiva lo sceglie ogni giocatore nelle opzioni del gioco (finestra **Options**, scheda **General**):
+
+| Opzione | Cosa fa |
+|---------|---------|
+| Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito. Spenta: si vede **in grigio**, come prima |
+| Cursore **"Darkness of the explored grey:"** | Vale quando la casella è spenta: decide quanto è scuro o chiaro quel grigio. All'inizio è il grigio di prima |
+
+- È una scelta del giocatore, sul **proprio computer**: cambia solo l'aspetto. Cosa viene ricordato, fino a quando e cosa resta nascosto non cambia.
+- Creature, NPC e altri giocatori **non si vedono mai** oltre la distanza visiva, con qualunque opzione.
+- Le opzioni mostrano solo ciò che il personaggio ha già visto: il gioco non riceve nulla di più.
 
 ---
 
@@ -105,7 +118,7 @@ I propri **pet** obbediscono agli ordini qualunque cosa vedano.
 
 ## ⛵ Barche
 
-I passeggeri e gli oggetti sul ponte di una barca si vedono solo quando sono nel proprio campo visivo. Oltre la distanza visiva, su terreno già esplorato, una barca resta disegnata in grigio come vista l'ultima volta, con gli oggetti sciolti e i cadaveri che porta (vedi [Terreno esplorato](#sectionWiki/Meccaniche/Campo%20visivo)).
+I passeggeri e gli oggetti sul ponte di una barca si vedono solo quando sono nel proprio campo visivo. Oltre la distanza visiva, su terreno già esplorato, una barca resta disegnata come vista l'ultima volta (in grigio, a meno che il giocatore scelga i colori), con gli oggetti sciolti e i cadaveri che porta (vedi [Terreno esplorato](#sectionWiki/Meccaniche/Campo%20visivo)).
 
 ---
 
