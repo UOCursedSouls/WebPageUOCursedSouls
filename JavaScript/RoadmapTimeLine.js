@@ -55,7 +55,9 @@ export default class RoadmapTimeline {
 
         this.roadmapData.forEach((item) => {
             const config = this.statusConfig[item.status] || this.statusConfig.future;
-            const dateRange = `${this.formatDate(item.date_start)} - ${this.formatDate(item.date_end)}`;
+            const dateRange = item.date_start === item.date_end
+                ? this.formatDate(item.date_start)
+                : `${this.formatDate(item.date_start)} - ${this.formatDate(item.date_end)}`;
 
             // Item wrapper
             const itemEl = document.createElement('div');
@@ -119,8 +121,9 @@ export default class RoadmapTimeline {
     formatDate(dateStr) {
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        // 'YYYY-MM-DD' parses as UTC midnight: read it with UTC getters or west of Greenwich it shows the day before
         const date = new Date(dateStr);
-        return `${months[date.getMonth()]} ${date.getFullYear()}`;
+        return `${date.getUTCDate()} ${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
     }
 
     /*===============================*/

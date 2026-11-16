@@ -34,6 +34,70 @@
                 "description": "Designing and building a unique world map, featuring custom dungeons, cities, and wilderness areas."
             },
             {
+                "status": "completed",
+                "date_start": "2026-11-03",
+                "date_end": "2026-11-08",
+                "title": "World Streaming",
+                "image_url": "",
+                "description": "The map no longer has to be on the player's computer: the server sends the world piece by piece as the character walks, and it is the same after a restart."
+            },
+            {
+                "status": "completed",
+                "date_start": "2026-11-08",
+                "date_end": "2026-11-08",
+                "title": "Map Conversion Tool",
+                "image_url": "",
+                "description": "UOMapWeaver, our map tool, converts an area of a classic Ultima Online map into a world the shard can run, and back."
+            },
+            {
+                "status": "completed",
+                "date_start": "2026-11-08",
+                "date_end": "2026-11-08",
+                "title": "Wiki Overhaul",
+                "image_url": "",
+                "description": "Every page in the wiki index now exists and every link works; the recommended class builds respect the stat caps."
+            },
+            {
+                "status": "completed",
+                "date_start": "2026-11-08",
+                "date_end": "2026-11-08",
+                "title": "World Regions",
+                "image_url": "",
+                "description": "Towns, dungeons and other areas with their own rules are now part of the world itself, and game masters can draw new ones in game. A Guild Territory Stone must stay at least 15 tiles away from any region."
+            },
+            {
+                "status": "completed",
+                "date_start": "2026-11-08",
+                "date_end": "2026-11-09",
+                "title": "Guild Territory Guards",
+                "image_url": "",
+                "description": "Territory guards are now real creatures: warriors, archers and mages that keep a post, fight criminals, murderers and whoever attacks a member or an ally, never leave the territory and get stronger with Guard Strength."
+            },
+            {
+                "status": "active",
+                "date_start": "2026-11-10",
+                "date_end": "2026-11-10",
+                "title": "Guild City Builder",
+                "image_url": "",
+                "description": "Guild cities are built piece by piece from a palette of the pieces in the guild's resource chest, with a preview under the cursor and a floor selector. Built; the final in-game test is still to come."
+            },
+            {
+                "status": "active",
+                "date_start": "2026-11-10",
+                "date_end": "2026-11-11",
+                "title": "Field of View",
+                "image_url": "",
+                "description": "Characters see what is in front of them: a view cone and a view distance set by the shard, with the two tiles around the character always seen. Monsters have a blind side too. Built; the final in-game test is still to come."
+            },
+            {
+                "status": "active",
+                "date_start": "2026-11-11",
+                "date_end": "2026-11-16",
+                "title": "Explored Ground and Visual Effects",
+                "image_url": "",
+                "description": "The view follows the character smoothly, with soft borders. Ground already explored stays visible beyond the view distance, in grey or in colour as the player chooses, and smoke covers what was never explored. Built; the final in-game test is still to come."
+            },
+            {
                 "status": "future",
                 "date_start": "2026-06-01",
                 "date_end": "2026-07-13",
