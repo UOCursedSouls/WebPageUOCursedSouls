@@ -5,7 +5,7 @@
 
 ## Benvenuto, avventuriero!
 
-**Cursed Souls** e uno shard custom di Ultima Online che espande il mondo classico con razze uniche, materiali esclusivi, un sistema di gilde territoriale e una progressione di stats personalizzata. Questa wiki contiene tutte le informazioni per padroneggiare ogni aspetto del gioco.
+**Cursed Souls** e uno shard custom di Ultima Online che espande il mondo classico con razze uniche, materiali esclusivi, un sistema di gilde territoriale e una progressione di stats personalizzata. Il mondo viene generato mentre i giocatori lo esplorano, come in Minecraft, fino a 32768 x 32768 tile. Questa wiki contiene tutte le informazioni per padroneggiare ogni aspetto del gioco.
 
 ---
 
@@ -39,7 +39,10 @@ Guida al combattimento: melee, ranged, magia, effetto del moltiplicatore x1.2 e 
 Le 18 classi build disponibili: Alchimista, Arcanista, Arciere, Assassino d'Ombra, Bardo, Chierico, Esploratore, Guerriero, Ladro, Mazziere, Minatore Combattente, Necromante, Ninja, Ranger, Sciamano, Spadaccino, Tamer, Templare.
 
 ### [Guild System](#sectionWiki/Guild%20System/Guild%20Territory%20Stone)
-Il sistema di gilde territoriale: Guild Territory Stone, Crystal Mana Sphere, Guild Accountant e la progressione StatCap.
+Il sistema di gilde territoriale: Guild Territory Stone, Crystal Mana Sphere, Guild Accountant, la progressione StatCap e la citta di gilda (Building System, Guild City System, Guild City Guide).
+
+### [Meccaniche](#sectionWiki/Meccaniche/Campo%20visivo)
+Le regole del mondo di gioco: Campo visivo, Regioni del mondo, Sistema di Casting, Sistema di Tossicita da Pozioni e Armor System.
 
 ### [Items](#sectionWiki/Items/Resource/Ore/Iron)
 Tutti gli oggetti del gioco: armi, armature, risorse (minerali, pelli, legni), libri magici e strumenti.

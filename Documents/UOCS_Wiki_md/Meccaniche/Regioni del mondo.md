@@ -16,6 +16,13 @@ Nel mondo di UOCS quattro parole hanno un significato preciso:
 
 ---
 
+## 🌱 Un mondo generato esplorando
+
+- Il mondo viene generato mentre i giocatori lo esplorano, come in Minecraft.
+- Il mondo arriva fino a **32768 x 32768 tile**.
+
+---
+
 ## 🌍 Da dove arrivano le regioni
 
 - Un mondo convertito dalla mappa classica di Felucca porta con sé le **regioni classiche** della sua area.
@@ -26,7 +33,7 @@ Nel mondo di UOCS quattro parole hanno un significato preciso:
 
 ## 🏰 Regioni e territori di gilda
 
-La Guild Territory Stone non si può piazzare vicino a una regione: deve restare ad almeno **15 tile da qualsiasi regione**.
+La Guild Territory Stone non si può piazzare vicino a una regione: deve restare ad almeno **15 tile da qualsiasi regione**, compresi i territori delle altre gilde. Vale in più la distanza minima tra due stone (vedi [Guild Territory Stone](#sectionWiki/Guild%20System/Guild%20Territory%20Stone)).
 
 ---
 

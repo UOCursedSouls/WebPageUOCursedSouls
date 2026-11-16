@@ -15,6 +15,7 @@
 - [Step 7 — Costruisci in alto](#step-7--costruisci-in-alto)
 - [Step 8 — Correggi e rimuovi](#step-8--correggi-e-rimuovi)
 - [Step 9 — Lockdown del tuo primo baule personale](#step-9--lockdown-del-tuo-primo-baule-personale)
+- [Step 10 — Gestisci la lista di accesso di una porta](#step-10--gestisci-la-lista-di-accesso-di-una-porta)
 - [Errori comuni](#errori-comuni)
 - [Next steps](#next-steps)
 
@@ -129,6 +130,15 @@ Non c'è un annulla: se sbagli, rimuovi e piazza di nuovo.
 4. Per liberarlo: azione **Release Lockdown**. Può farlo solo il **proprietario** o il **leader**. Il contenitore va nel **bank box del proprietario**; se è pieno il rilascio viene rifiutato e il contenitore resta bloccato.
 
 Limiti: non si blocca il chest delle risorse né un contenitore lasciato a terra da un altro giocatore, e ogni membro ha **1 baule personale ogni 25.000 gold** di credito nel conto tasse della gilda ([Guild Accountant](#sectionWiki/Guild%20System/Guild%20Accountant)).
+
+---
+
+## 🚪 Step 10 — Gestisci la lista di accesso di una porta
+
+1. Una porta si crafta e si piazza solo come porta, dalla scheda **Doors** della palette.
+2. Con **Assign Door Owner** il Building Tool assegna la porta a un membro della gilda.
+3. Il proprietario gestisce la lista di accesso dal **menu della porta**: non gli serve un Building Tool, ma da morto non può farlo.
+4. La lista accetta solo membri della gilda che possiede la stone (vedi [Guild City System](#sectionWiki/Guild%20System/Guild%20City%20System)).
 
 ---
 
