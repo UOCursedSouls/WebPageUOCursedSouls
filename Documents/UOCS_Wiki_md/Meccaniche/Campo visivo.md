@@ -25,10 +25,11 @@ Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dal
 | Alle spalle | Si vede? |
 |-------------|----------|
 | Creature, giocatori, oggetti sciolti (che si possono spostare) e cadaveri | **No** |
-| Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, ma più scuri** (in grigio se il terreno esplorato si vede a colori, vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)) |
+| Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, in grigio**, come il terreno esplorato (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)) |
 
 - Il bordo del cono è **sfumato**, senza uno stacco netto.
-- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro. Arriva fino alla distanza visiva. Se il terreno esplorato si vede a colori, alle spalle al posto del buio c'è il grigio del terreno esplorato (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)).
+- Alle spalle non c'è una zona buia: dai **2 tile** attorno al personaggio fino al bordo dello schermo, il terreno esplorato e ciò che vi sta si vedono nel **grigio del terreno esplorato** (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)).
+- Se lo shard accende il cono visivo senza la distanza visiva, alle spalle resta invece un buio che **cresce con la distanza**.
 
 - I **2 tile** attorno al personaggio si vedono sempre, in ogni direzione.
 - I propri **pet**, i compagni di **party** e i membri della propria **gilda** alle spalle sono nascosti come chiunque altro.
@@ -74,12 +75,12 @@ Come appare il terreno già esplorato oltre la distanza visiva lo sceglie ogni g
 | Opzione | Cosa fa |
 |---------|---------|
 | Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito (alle spalle vale il grigio descritto sotto). Spenta: si vede **in grigio**, come prima |
-| Cursore **"Darkness of the explored grey:"** | Decide quanto è scuro o chiaro quel grigio: con la casella spenta per tutto il terreno esplorato, con la casella accesa per quello alle spalle. All'inizio è il grigio di prima |
+| Cursore **"Darkness of the explored grey:"** | Decide quanto è scuro o chiaro quel grigio: per il terreno esplorato alle spalle sempre, e oltre la distanza visiva anche davanti e ai lati quando la casella è spenta. All'inizio è il grigio di prima |
 
-- Con la casella **accesa**, alle spalle del personaggio non c'è più una zona buia: il terreno esplorato e le cose ricordate si vedono nello **stesso grigio** che hanno con la casella spenta (quello del cursore), dai **2 tile** attorno al personaggio fino al bordo dello schermo, anche dentro la distanza visiva. Così si legge come un tutt'uno con il terreno esplorato. Davanti e ai lati si vede a colori.
+- Alle spalle del personaggio, con la casella **accesa o spenta**, non c'è una zona buia: il terreno esplorato e le cose ricordate si vedono nel **grigio del terreno esplorato** (quello del cursore), dai **2 tile** attorno al personaggio fino al bordo dello schermo, anche dentro la distanza visiva. Così si legge come un tutt'uno con il terreno esplorato.
+- La casella decide solo come appare il terreno esplorato davanti e ai lati oltre la distanza visiva: **a colori** se accesa, **in grigio** se spenta.
 - Se lo shard accende il cono visivo senza la distanza visiva, alle spalle resta il buio di prima.
 - Il **fumo** sul terreno mai esplorato resta uguale tutto attorno, davanti e alle spalle.
-- Con la casella **spenta** non cambia nulla.
 - È una scelta del giocatore, sul **proprio computer**: cambia solo l'aspetto. Cosa viene ricordato, fino a quando e cosa resta nascosto non cambia.
 - Creature, NPC e altri giocatori **non si vedono mai** oltre la distanza visiva, con qualunque opzione.
 - Le opzioni mostrano solo ciò che il personaggio ha già visto: il gioco non riceve nulla di più.
@@ -118,7 +119,7 @@ I propri **pet** obbediscono agli ordini qualunque cosa vedano.
 ## 🏗️ Costruire in una città di gilda
 
 - La palette rifiuta un pezzo oltre la distanza visiva.
-- I pezzi già costruiti alle spalle restano visibili (più scuri, o in grigio con il terreno esplorato a colori): si può costruire in ogni direzione.
+- I pezzi già costruiti alle spalle restano visibili (in grigio): si può costruire in ogni direzione.
 
 ---
 
