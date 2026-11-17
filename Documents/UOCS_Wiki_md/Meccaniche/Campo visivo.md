@@ -25,10 +25,10 @@ Il personaggio vede davanti a sé un cono la cui ampiezza in gradi è decisa dal
 | Alle spalle | Si vede? |
 |-------------|----------|
 | Creature, giocatori, oggetti sciolti (che si possono spostare) e cadaveri | **No** |
-| Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, ma più scuri** |
+| Terreno, porte, pezzi costruiti, decorazioni e case | **Sì, ma più scuri** (in grigio se il terreno esplorato si vede a colori, vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)) |
 
 - Il bordo del cono è **sfumato**, senza uno stacco netto.
-- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro. Arriva fino alla distanza visiva, o fino al bordo dello schermo se il terreno esplorato si vede a colori (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)).
+- Alle spalle il buio **cresce con la distanza**: più un punto è lontano, più è scuro. Arriva fino alla distanza visiva. Se il terreno esplorato si vede a colori, alle spalle al posto del buio c'è il grigio del terreno esplorato (vedi [Grigio o colori](#sectionWiki/Meccaniche/Campo%20visivo)).
 
 - I **2 tile** attorno al personaggio si vedono sempre, in ogni direzione.
 - I propri **pet**, i compagni di **party** e i membri della propria **gilda** alle spalle sono nascosti come chiunque altro.
@@ -73,10 +73,11 @@ Come appare il terreno già esplorato oltre la distanza visiva lo sceglie ogni g
 
 | Opzione | Cosa fa |
 |---------|---------|
-| Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito (alle spalle vale il buio descritto sotto). Spenta: si vede **in grigio**, come prima |
-| Cursore **"Darkness of the explored grey:"** | Vale quando la casella è spenta: decide quanto è scuro o chiaro quel grigio. All'inizio è il grigio di prima |
+| Casella **"Explored area beyond the vision circle in colour"** (spenta all'inizio) | Accesa: il terreno esplorato e tutto ciò che vi è ricordato (cose fisse, oggetti sciolti, cadaveri, barche) si vede **a colori**, identico a come appare dentro la distanza visiva, non scurito (alle spalle vale il grigio descritto sotto). Spenta: si vede **in grigio**, come prima |
+| Cursore **"Darkness of the explored grey:"** | Decide quanto è scuro o chiaro quel grigio: con la casella spenta per tutto il terreno esplorato, con la casella accesa per quello alle spalle. All'inizio è il grigio di prima |
 
-- Con la casella **accesa**, il buio alle spalle del personaggio non si ferma alla distanza visiva: continua fino al bordo dello schermo, sopra il terreno esplorato e le cose ricordate. Così il terreno esplorato si vede a colori pieni solo davanti e ai lati.
+- Con la casella **accesa**, alle spalle del personaggio non c'è più una zona buia: il terreno esplorato e le cose ricordate si vedono nello **stesso grigio** che hanno con la casella spenta (quello del cursore), dai **2 tile** attorno al personaggio fino al bordo dello schermo, anche dentro la distanza visiva. Così si legge come un tutt'uno con il terreno esplorato. Davanti e ai lati si vede a colori.
+- Se lo shard accende il cono visivo senza la distanza visiva, alle spalle resta il buio di prima.
 - Il **fumo** sul terreno mai esplorato resta uguale tutto attorno, davanti e alle spalle.
 - Con la casella **spenta** non cambia nulla.
 - È una scelta del giocatore, sul **proprio computer**: cambia solo l'aspetto. Cosa viene ricordato, fino a quando e cosa resta nascosto non cambia.
@@ -117,7 +118,7 @@ I propri **pet** obbediscono agli ordini qualunque cosa vedano.
 ## 🏗️ Costruire in una città di gilda
 
 - La palette rifiuta un pezzo oltre la distanza visiva.
-- I pezzi già costruiti alle spalle restano visibili (più scuri): si può costruire in ogni direzione.
+- I pezzi già costruiti alle spalle restano visibili (più scuri, o in grigio con il terreno esplorato a colori): si può costruire in ogni direzione.
 
 ---
 
